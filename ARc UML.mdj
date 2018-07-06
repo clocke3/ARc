@@ -11036,9 +11036,9 @@
 											"font": "Arial;13;1",
 											"left": 165,
 											"top": 1127,
-											"width": 128.2861328125,
+											"width": 162.22705078125,
 											"height": 13,
-											"text": "ReturnToMainButton"
+											"text": "ReturnToMainMenuButton"
 										},
 										{
 											"_type": "LabelView",
@@ -11071,7 +11071,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 1120,
-									"width": 138.2861328125,
+									"width": 172.22705078125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFkYaIwU5SqhWw="
@@ -11098,7 +11098,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 1145,
-									"width": 138.2861328125,
+									"width": 172.22705078125,
 									"height": 10
 								},
 								{
@@ -11123,7 +11123,7 @@
 											"font": "Arial;13;0",
 											"left": 165,
 											"top": 1160,
-											"width": 128.2861328125,
+											"width": 162.22705078125,
 											"height": 13,
 											"text": "+loadMainMenu()",
 											"horizontalAlignment": 0
@@ -11132,7 +11132,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 1155,
-									"width": 138.2861328125,
+									"width": 172.22705078125,
 									"height": 23
 								},
 								{
@@ -11172,7 +11172,7 @@
 							"containerChangeable": true,
 							"left": 160,
 							"top": 1120,
-							"width": 138.2861328125,
+							"width": 172.22705078125,
 							"height": 58,
 							"nameCompartment": {
 								"$ref": "AAAAAAFkYaIwU5SpkzI="
@@ -17003,7 +17003,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ReturnToMainButton",
+					"name": "ReturnToMainMenuButton",
 					"operations": [
 						{
 							"_type": "UMLOperation",
