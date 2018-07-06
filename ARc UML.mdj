@@ -12667,7 +12667,7 @@
 											"top": 823,
 											"width": 158.6279296875,
 											"height": 13,
-											"text": "FeatureManager"
+											"text": "ItemManager"
 										},
 										{
 											"_type": "LabelView",
@@ -16882,7 +16882,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "FeatureManager",
+					"name": "ItemManager",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
