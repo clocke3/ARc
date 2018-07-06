@@ -4,16 +4,17 @@ using System.Collections.Generic;
 
 public abstract class Profiable : MonoBehaviour
 {
-    protected int typeID, qrID, galleryID;
+    protected int typeID, galleryID;
+    protected string qrID;
 
     private int getTypeID(){
         return typeID;
     }
-    private int getQRID(){
-        return qrID;
-    }
     private int getGalleryID(){
         return galleryID;
+    }
+    private string getQRID(){
+        return qrID;
     }
 }
 

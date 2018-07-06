@@ -21,7 +21,7 @@ public class Department : Profiable
         this.divisions = divisions;
     }
 
-    protected Department(int typeID, int qrID, int galleryID)
+    protected Department(int typeID, string qrID, int galleryID)
     {
         this.typeID = typeID;
         this.qrID = qrID;
@@ -45,7 +45,7 @@ public class Department : Profiable
         return typeID;
     }
 
-    protected int getQRID()
+    protected string getQRID()
     {
         return qrID;
     }

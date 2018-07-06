@@ -28,7 +28,7 @@ public class Employee : Profiable
         this.hobbies = hobbies;
     }
 
-    protected Employee (int typeId, int qrID, int galleryID){
+    protected Employee (int typeId, string qrID, int galleryID){
         this.typeID = typeId;
         this.qrID = qrID;
         this.galleryID = galleryID;
@@ -57,7 +57,7 @@ public class Employee : Profiable
         return typeID;
     }
 
-    protected int getQRID(){
+    protected string getQRID(){
         return qrID;
     }
     protected int getGalleryID(){
