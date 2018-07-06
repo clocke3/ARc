@@ -4,34 +4,49 @@ using UnityEngine;
 
 public class Role : MonoBehaviour {
 
-    string Name;
+    string name;
     List<Employee> employees; 
     Division division;
 
     public Role() {
-        
+        name = null;
+        employees = null;
+        division = null;
     }
 
     public Role(string name, Division division, List<Employee> employees)
     {
-        Name = name;
-        Division Division = division;
-        List<Employee> Employee = employees; 
+        this.name = name;
+        this.division = division;
+        this.employees = employees; 
 
     }
 
     public string getName() {
-        Name = name; 
+        return name; 
     }
 
     public Division getDivision() {
-        Division Division = division;
+        return division; 
     }
 
     public List<Employee> getEmployees() {
-        List<Employee> Employee = employees;
+        return employees; 
     }
 
+     public bool isEqual(Role role) {
+        if (this.name != role.name) return false;
+
+        if (!this.division.isEqual(role.division)) return false;
+
+        if (this.employees.Count != role.employees.Count) return false;
+
+        for (int i = 0; i < this.employees.Count; i++) {
+            if (!this.employees[i].isEqual(role.employees[i])) return false;
+        }
+
+        return true;
+    }
 
 
 }
