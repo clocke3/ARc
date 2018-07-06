@@ -1385,7 +1385,7 @@
 											"top": 401,
 											"width": 143,
 											"height": 13,
-											"text": "+getEmployeeList()",
+											"text": "+getEmployees()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -15469,7 +15469,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkYMBQWiaxZ9M="
 							},
-							"name": "getEmployeeList"
+							"name": "getEmployees"
 						},
 						{
 							"_type": "UMLOperation",
