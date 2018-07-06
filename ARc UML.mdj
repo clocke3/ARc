@@ -152,7 +152,7 @@
 											"top": 277,
 											"width": 143,
 											"height": 13,
-											"text": "+position",
+											"text": "+role",
 											"horizontalAlignment": 0
 										},
 										{
@@ -14766,8 +14766,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkYLFlISQaL/c="
 							},
-							"name": "position",
-							"type": ""
+							"name": "role"
 						},
 						{
 							"_type": "UMLAttribute",
