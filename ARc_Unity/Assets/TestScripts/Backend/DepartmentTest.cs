@@ -1,102 +1,50 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//not working
 public class DepartmentTest : MonoBehaviour
 {
+        private Department model;
 
-    // run tests on Start
-    private void Start()
-    {
-        if (!testConstructor())
-        {
-            Debug.Log("CONSTRUCTOR FAIL");
-        }
-
-        if (!testGetName())
-        {
-            Debug.Log("GETNAME FAIL");
-        }
-
-        if (!testGetDepartment())
-        {
-            Debug.Log("GETDEPARTMENT FAIL");
-        }
-
-        if (!testGetRoles())
-        {
-            Debug.Log("GETROLES FAIL");
-        }
-
-        if (!testIsEqual())
-        {
-            Debug.Log("ISEQUAL FAIL");
-        }
+    private void Start() {
+        Setup();
     }
 
-
-    // test constructor
-    public bool testConstructor()
-    {
-        string name = "test department";
-        Department department = new Department();
-
-        if (name != department.name)
-        {
-            return false;
+    //set up
+    public void Setup() throw Exception{
+            model = new Department();
+            model.name = "Information Technology";
+            model.description = "This department is in charge of all computers in the building.";
+            model.divisions = new List<Division>("GIS", "Application Development", "Database");
+            model.typeID = 2;
+            model.qrID = "CAO2973";
+            model.galleryID = 7;
         }
-        return true;
-    }
 
+        //tests
+        public void test_getName(){
+            Assert.areEqual(model.getName(), "Information Technology");
+        }
 
-    // test functions
-    //      getters
-    public bool testGetName()
-    {
-        string name = "test department";
+        public void test_getDescription(){
+            Assert.areEqual(model.getDescription(), "This department is in charge of all computers in the building.");
+        }
 
-        Department  = new Department ("Housing", null, null);
+        public void test_getDivisions(){
+            Assert.areEqual(model.getDivisions(), new List<Division>("GIS", "Application Development", "Database"));
+        }
 
-        if (name == department.getName()) return false;
+        public void test_getTypeID(){
+            Assert.areEqual(model.getTypeID(), 2);
+        }
 
-        return true;
-    }
+        public void test_getQRID(){
+            Assert.areEqual(model.getQRID(), "CAO2973");
+        }
 
-    public bool testGetDepartment()
-    {
-        Department department = new Department();
-
-        Division division = new Division(null, department, null);
-
-        if (!department.isEqual(division.getDepartment())) return false;
-
-        return true;
-    }
-
-    public bool testGetRoles()
-    {
-        List<Role> roles = new List<Role>();
-
-        Division division = new Division(null, null, roles);
-
-        if (!roles.Equals(division.getRoles())) return false;
-
-        return true;
-    }
-
-    //      comparison
-    public bool testIsEqual()
-    {
-        string name = "test division";
-        Department department = new Department();
-        List<Role> roles = new List<Role>();
-
-        Division division1 = new Division(name, department, roles);
-        Division division2 = new Division(name, department, roles);
-
-        if (!division1.isEqual(division2)) return false;
-
-        return true;
-    }
-
+        public void test_getGalleryID(){
+            Assert.areEqual(model.getGalleryID(), 7);
+        }
 }

@@ -7,13 +7,13 @@ public abstract class Profiable : MonoBehaviour
     protected int typeID, galleryID;
     protected string qrID;
 
-    private int getTypeID(){
+    public int getTypeID(){
         return typeID;
     }
-    private int getGalleryID(){
+    public int getGalleryID(){
         return galleryID;
     }
-    private string getQRID(){
+    public string getQRID(){
         return qrID;
     }
 }

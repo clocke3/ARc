@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Department : Profiable
 {
@@ -14,15 +15,11 @@ public class Department : Profiable
         divisions = null;
     }
 
-    public Department(string name, string description, List<Division> divisions)
+    public Department(string name, string description, List<Division> divisions, int typeID, string qrID, int galleryID)
     {
         this.name = name;
         this.description = description;
         this.divisions = divisions;
-    }
-
-    protected Department(int typeID, string qrID, int galleryID)
-    {
         this.typeID = typeID;
         this.qrID = qrID;
         this.galleryID = galleryID;
@@ -36,21 +33,28 @@ public class Department : Profiable
     {
         return divisions;
     }
-    private string getName()
+    public string getName()
     {
         return name;
     }
-    protected int getTypeID()
-    {
-        return typeID;
-    }
 
-    protected string getQRID()
+    public bool isEqual(Department other)
     {
-        return qrID;
+        if (this.name != other.name)
+            return false;
+
+        if (this.description != other.description)
+            return false;
+
+        if (this.divisions.Count != other.divisions.Count)
+            return false;
+        if (this.typeID != other.typeID)
+            return false;
+        if (this.qrID != other.qrID)
+            return false;
+        if (this.galleryID != other.galleryID)
+            return false;
+        return true;
     }
-    protected int getGalleryID()
-    {
-        return galleryID;
-    }
+   
 }
