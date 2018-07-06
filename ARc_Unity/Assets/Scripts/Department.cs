@@ -7,13 +7,11 @@ public class Department : Profiable
     private string name, description;
     private List<Division> divisions;
 
-    public Department(){
+    public Department()
+    {
         name = "";
         description = "";
         divisions = null;
-        typeID = null;
-        qrID = null;
-        galleryID = null;
     }
 
     public Department(string name, string description, List<Division> divisions)
@@ -21,24 +19,38 @@ public class Department : Profiable
         this.name = name;
         this.description = description;
         this.divisions = divisions;
-    }     
+    }
 
-    protected Department(int typeID, int qrID, int galleryID){
+    protected Department(int typeID, int qrID, int galleryID)
+    {
         this.typeID = typeID;
         this.qrID = qrID;
         this.galleryID = galleryID;
     }
 
-    public string getDescription(){
+    public string getDescription()
+    {
         return description;
     }
-    public List<Division> getDivisions(){
+    public List<Division> getDivisions()
+    {
         return divisions;
     }
-    private string getName(){
+    private string getName()
+    {
         return name;
     }
-    protected int getGalleryID(){
+    protected int getTypeID()
+    {
+        return typeID;
+    }
+
+    protected int getQRID()
+    {
+        return qrID;
+    }
+    protected int getGalleryID()
+    {
         return galleryID;
     }
 }
