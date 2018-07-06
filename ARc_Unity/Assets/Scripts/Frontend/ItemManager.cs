@@ -2,8 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour {
+public abstract class ItemManager : MonoBehaviour {
+
+    // variables
+    protected DatabaseManager databaseManager;
+    public ProfileManager profileManager;
+    protected string currentCode;
 
 
-	
+    // constructor
+    private void Start() {
+        databaseManager = DatabaseManager.getInstance();
+    }
+
+    // functions
+    public void updateCurrentCode(string newCode) {
+        currentCode = newCode;
+    }
+
+    public void displayCodeProfile() {
+        profileManager.displayProfile(currentCode);
+        this.gameObject.SetActive(false);
+    }
+
 }
