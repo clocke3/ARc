@@ -4,15 +4,22 @@ using System.Collections.Generic;
 
 public class Department : Profiable
 {
-    private string description;
+    private string name, description;
     private List<string> divisions;
-    private string name;
     private int galleryID;
 
-    private Department (name, description, divisions, galleryID){
+    public Department(){
+        name = "";
+        description = "";
+        divisions = null;
+        galleryID = 0;
+    }
+
+    public Department(string name, string description, List<string> divisions, int galleryID)
+    {
         this.name = name;
         this.description = description;
-        this.divisions = divisons;
+        this.divisions = divisions;
         this.galleryID = galleryID;
     }
 
