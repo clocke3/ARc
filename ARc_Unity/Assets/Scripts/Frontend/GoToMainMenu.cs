@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ReturnToMainMenuButton : MonoBehaviour {
+public class GoToMainMenu : MonoBehaviour {
 
+    // variables
     private string mainMenuSceneName = "MainMenu";
 
-	// load main menu scene
+    // load main menu scene
     public void loadMainMenu() {
         SceneManager.LoadScene(mainMenuSceneName);
     }
