@@ -5,34 +5,40 @@ using System.Collections.Generic;
 public class Department : Profiable
 {
     private string name, description;
-    private List<string> divisions;
-    private int galleryID;
+    private List<Division> divisions;
 
     public Department(){
         name = "";
         description = "";
         divisions = null;
-        galleryID = 0;
+        typeID = null;
+        qrID = null;
+        galleryID = null;
     }
 
-    public Department(string name, string description, List<string> divisions, int galleryID)
+    public Department(string name, string description, List<Division> divisions)
     {
         this.name = name;
         this.description = description;
         this.divisions = divisions;
+    }     
+
+    protected Department(int typeID, int qrID, int galleryID){
+        this.typeID = typeID;
+        this.qrID = qrID;
         this.galleryID = galleryID;
     }
 
     public string getDescription(){
         return description;
     }
-    public List<string> getDivisions(){
+    public List<Division> getDivisions(){
         return divisions;
     }
     private string getName(){
         return name;
     }
-    private int getGalleryID(){
+    protected int getGalleryID(){
         return galleryID;
     }
 }
