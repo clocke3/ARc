@@ -10,7 +10,13 @@ public class Division : MonoBehaviour {
     private List<Role> roles;
 
 
-    // constructor
+    // constructors
+    public Division(){
+        name = "";
+        department = null;
+        roles = null;
+    }
+
     public Division(string name, Department department, List<Role> roles) {
         this.name = name;
         this.department = department;
@@ -29,6 +35,22 @@ public class Division : MonoBehaviour {
 
     public List<Role> getRoles() {
         return roles;
+    }
+
+
+    // comparison
+    public bool isEqual(Division other) {
+        if (this.name != other.name) return false;
+
+        if (!this.department.isEqual(other.department)) return false;
+
+        if (this.roles.Count != other.roles.Count) return false;
+
+        for (int i = 0; i < this.roles.Count; i++) {
+            if (!this.roles[i].isEqual(other.roles[i])) return false;
+        }
+
+        return true;
     }
 
 }
