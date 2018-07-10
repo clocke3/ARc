@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class Employee : Profiable
 {
-    private Role position;
-    private Department department;
-    private Division division;
+    // variables
+    private Role role;
     private List<string> hobbies;
 
+    // constructors
     public Employee(){
         label = "";
-        position = new Role();
+        role = new Role();
         department = new Department();
         division = new Division();
         workDuration = 0;
@@ -23,7 +23,7 @@ public class Employee : Profiable
 
     public Employee (string name, Role position, Department department, Division division, int workDuration, List<string> hobbies, int typeId, string qrID, int galleryID){
         this.label = name;
-        this.position = position;
+        this.role = position;
         this.department = department;
         this.division = division;
         this.workDuration = workDuration;
@@ -43,7 +43,7 @@ public class Employee : Profiable
         return label;
     }
     public Role getPosition(){
-        return position;
+        return role;
     }
     public string getworkDuration(){
         return workDuration.ToString();

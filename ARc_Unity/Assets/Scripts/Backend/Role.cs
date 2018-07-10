@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class Role : DatabaseObject {
 
-    List<Employee> employees; 
-    Division division;
+    // variables
+    private Division division;
+    private List<Employee> employees; 
 
-    public Role() {
-        label = null;
-        employees = null;
-        division = null;
+    // constructors
+    public Role() : base("") {
+        division = new Division();
+        employees = new List<Employee>();
     }
 
-    public Role(string name, Division division, List<Employee> employees)
+    public Role(string label, Division division, List<Employee> employees) : base(label)
     {
-        this.label = name;
         this.division = division;
-        this.employees = employees; 
-
+        this.employees = employees;
     }
 
-    public string getName() {
-        return label; 
+    // setters
+    protected override void setTypeID()
+    {
+        this.typeID = DatabaseObject.ROLE;
     }
 
+    // getters
     public Division getDivision() {
         return division; 
     }
@@ -32,7 +34,6 @@ public class Role : DatabaseObject {
     public List<Employee> getEmployees() {
         return employees; 
     }
-
 
 
 }

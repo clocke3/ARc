@@ -619,23 +619,6 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFkYL4iDyaeVxM=",
-											"_parent": {
-												"$ref": "AAAAAAFkYL2D2yZux1A="
-											},
-											"model": {
-												"$ref": "AAAAAAFkYL4h4Sabfso="
-											},
-											"font": "Arial;13;0",
-											"left": 421,
-											"top": 670,
-											"width": 102.24169921875,
-											"height": 13,
-											"text": "+roles",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAFkYYqE59muUlQ=",
 											"_parent": {
 												"$ref": "AAAAAAFkYL2D2yZux1A="
@@ -645,10 +628,27 @@
 											},
 											"font": "Arial;13;0",
 											"left": 421,
-											"top": 685,
+											"top": 670,
 											"width": 102.24169921875,
 											"height": 13,
 											"text": "+department",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFkYL4iDyaeVxM=",
+											"_parent": {
+												"$ref": "AAAAAAFkYL2D2yZux1A="
+											},
+											"model": {
+												"$ref": "AAAAAAFkYL4h4Sabfso="
+											},
+											"font": "Arial;13;0",
+											"left": 421,
+											"top": 685,
+											"width": 102.24169921875,
+											"height": 13,
+											"text": "+roles",
 											"horizontalAlignment": 0
 										}
 									],
@@ -867,23 +867,6 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFkYMDZ/ybqJ6Q=",
-											"_parent": {
-												"$ref": "AAAAAAFkYMBQWya54to="
-											},
-											"model": {
-												"$ref": "AAAAAAFkYMDZxSbnsTA="
-											},
-											"font": "Arial;13;0",
-											"left": 629,
-											"top": 670,
-											"width": 98.6298828125,
-											"height": 13,
-											"text": "+employees",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAFkYYpiWtam+pk=",
 											"_parent": {
 												"$ref": "AAAAAAFkYMBQWya54to="
@@ -893,10 +876,27 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 685,
+											"top": 670,
 											"width": 98.6298828125,
 											"height": 13,
 											"text": "+division",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFkYMDZ/ybqJ6Q=",
+											"_parent": {
+												"$ref": "AAAAAAFkYMBQWya54to="
+											},
+											"model": {
+												"$ref": "AAAAAAFkYMDZxSbnsTA="
+											},
+											"font": "Arial;13;0",
+											"left": 629,
+											"top": 685,
+											"width": 98.6298828125,
+											"height": 13,
+											"text": "+employees",
 											"horizontalAlignment": 0
 										}
 									],
@@ -15282,20 +15282,20 @@
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAFkYL4h4Sabfso=",
-							"_parent": {
-								"$ref": "AAAAAAFkYL2D2iZmyyE="
-							},
-							"name": "roles",
-							"type": ""
-						},
-						{
-							"_type": "UMLAttribute",
 							"_id": "AAAAAAFkYYqEv9mrBWY=",
 							"_parent": {
 								"$ref": "AAAAAAFkYL2D2iZmyyE="
 							},
 							"name": "department",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFkYL4h4Sabfso=",
+							"_parent": {
+								"$ref": "AAAAAAFkYL2D2iZmyyE="
+							},
+							"name": "roles",
 							"type": ""
 						}
 					],
@@ -15444,20 +15444,20 @@
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAFkYMDZxSbnsTA=",
-							"_parent": {
-								"$ref": "AAAAAAFkYMBQWiaxZ9M="
-							},
-							"name": "employees",
-							"type": ""
-						},
-						{
-							"_type": "UMLAttribute",
 							"_id": "AAAAAAFkYYpiL9ajDkg=",
 							"_parent": {
 								"$ref": "AAAAAAFkYMBQWiaxZ9M="
 							},
 							"name": "division",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFkYMDZxSbnsTA=",
+							"_parent": {
+								"$ref": "AAAAAAFkYMBQWiaxZ9M="
+							},
+							"name": "employees",
 							"type": ""
 						}
 					],

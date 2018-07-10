@@ -11,7 +11,7 @@ public class MediaGallery : DatabaseObject {
     private List<RawImage> images;
     private List<VideoClip> videos;
 
-    // constructor
+    // constructors
     public MediaGallery() : base("") {
         videos = new List<VideoClip>();
         images = new List<RawImage>();
