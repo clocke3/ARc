@@ -4,13 +4,35 @@ using UnityEngine;
 
 public class ProfileManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // variables
+    private DatabaseManager databaseManager;
+    public ItemManager itemManager;
+    public List<GameObject> panels;
+
+    // initialization
+    void Start() {
+        databaseManager = DatabaseManager.getInstance();
+        this.gameObject.SetActive(false);
+    }
+
+    // clearing panels
+    private void clearPanels() {
+        panels.Clear();
+    }
+
+    public void back() {
+        clearPanels();
+        itemManager.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
+    }
+
+    // adding panels
+    public void addPanel(DatabaseObject databaseObject) {
+        
+    }
+
+    public void displayProfile(string qrID) {
+        addPanel(databaseManager.getProfiable(qrID));
+    }
+
 }

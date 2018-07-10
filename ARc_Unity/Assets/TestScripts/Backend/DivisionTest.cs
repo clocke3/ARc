@@ -40,7 +40,7 @@ public class DivisionTest : MonoBehaviour {
 
         Division division = new Division(label, department, roles);
 
-        if (label != division.getName()) {
+        if (label != division.getLabel()) {
             return false;
         }
 
@@ -63,7 +63,7 @@ public class DivisionTest : MonoBehaviour {
 
         Division division = new Division(label, null, null);
 
-        if (label == division.getName()) return false;
+        if (label == division.getLabel()) return false;
 
         return true;
     }

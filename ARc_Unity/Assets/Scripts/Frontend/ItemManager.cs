@@ -11,7 +11,7 @@ public abstract class ItemManager : MonoBehaviour {
 
 
     // constructor
-    private void Start() {
+    void Start() {
         databaseManager = DatabaseManager.getInstance();
     }
 
@@ -21,6 +21,7 @@ public abstract class ItemManager : MonoBehaviour {
     }
 
     public void displayCodeProfile() {
+        profileManager.gameObject.SetActive(true);
         profileManager.displayProfile(currentCode);
         this.gameObject.SetActive(false);
     }

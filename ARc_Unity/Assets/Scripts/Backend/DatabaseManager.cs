@@ -5,7 +5,7 @@ using UnityEngine;
 public class DatabaseManager : MonoBehaviour {
 
     // variables
-    public static DatabaseManager instance = null;
+    private static DatabaseManager instance = null;
     private static DatabaseObject database;         //database (FIX WHEN READY)
     private static List<Department> departments;
 
