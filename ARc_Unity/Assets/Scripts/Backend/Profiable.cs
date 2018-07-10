@@ -6,9 +6,7 @@ public abstract class Profiable : DatabaseObject
 {
 
     // variables
-    public const int DEPARTMENT = 0, EMPLOYEE = 1;
     protected string qrID;
-    protected int typeID;
     protected MediaGallery gallery;
 
     // constructor
@@ -18,14 +16,7 @@ public abstract class Profiable : DatabaseObject
         this.gallery = gallery;
     }
 
-    // setters
-    protected abstract void setTypeID();
-
     // getters
-    public int getTypeID(){
-        return typeID;
-    }
-
     public MediaGallery getGallery(){
         return gallery;
     }
