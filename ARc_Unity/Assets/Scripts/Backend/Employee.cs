@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Employee : Profiable
 {
-    private string label;
     private Role position;
     private Department department;
     private Division division;
@@ -53,29 +52,5 @@ public class Employee : Profiable
         return hobbies;
     }
 
-    public bool isEqual(Employee other)
-    {
-        if (this.label != other.label)
-            return false;
-
-        if (!this.department.isEqual(other.department))
-            return false;
-
-        if (this.position != other.position)
-            return false;
-        if (this.typeID != other.typeID)
-            return false;
-        if (this.qrID != other.qrID)
-            return false;
-        if (this.galleryID != other.galleryID)
-            return false;
-        if (this.division != other.division)
-            return false;
-        if (this.workDuration != other.workDuration)
-            return false;
-        if (this.hobbies.Count != other.hobbies.Count)
-            return false;
-        return true;
-    }
    
 } 

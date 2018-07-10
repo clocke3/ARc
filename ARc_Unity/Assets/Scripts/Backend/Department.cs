@@ -5,57 +5,39 @@ using System;
 
 public class Department : Profiable
 {
-    private string label, description;
+
+    // variables
+    private string description;
     private List<Division> divisions;
 
-
-    public Department()
+    // constructors
+    public Department() : base("", "", new MediaGallery())
     {
-        label = "";
         description = "";
-        divisions = null;
+        divisions = new List<Division>();
     }
 
-    public Department(string name, string description, List<Division> divisions, int typeID, string qrID, int galleryID)
+    public Department(string label, string qrID, MediaGallery gallery, string description, List<Division> divisions) : base(label, qrID, gallery)
     {
-        this.label = name;
         this.description = description;
         this.divisions = divisions;
-        this.typeID = typeID;
-        this.qrID = qrID;
-        this.galleryID = galleryID;
     }
 
+    // setters
+    protected override void setTypeID()
+    {
+        this.typeID = DatabaseObject.DEPARTMENT;
+    }
+
+    // getters
     public string getDescription()
     {
         return description;
     }
+
     public List<Division> getDivisions()
     {
         return divisions;
-    }
-    public string getName()
-    {
-        return label;
-    }
-
-    public bool isEqual(Department other)
-    {
-        if (this.label != other.label)
-            return false;
-
-        if (this.description != other.description)
-            return false;
-
-        if (this.divisions.Count != other.divisions.Count)
-            return false;
-        if (this.typeID != other.typeID)
-            return false;
-        if (this.qrID != other.qrID)
-            return false;
-        if (this.galleryID != other.galleryID)
-            return false;
-        return true;
     }
    
 }

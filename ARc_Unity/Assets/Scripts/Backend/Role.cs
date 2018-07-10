@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Role : MonoBehaviour {
+public class Role : DatabaseObject {
 
-    string label;
     List<Employee> employees; 
     Division division;
 
@@ -34,19 +33,6 @@ public class Role : MonoBehaviour {
         return employees; 
     }
 
-     public bool isEqual(Role role) {
-        if (this.label != role.label) return false;
-
-        if (!this.division.isEqual(role.division)) return false;
-
-        if (this.employees.Count != role.employees.Count) return false;
-
-        for (int i = 0; i < this.employees.Count; i++) {
-            if (!this.employees[i].isEqual(role.employees[i])) return false;
-        }
-
-        return true;
-    }
 
 
 }
