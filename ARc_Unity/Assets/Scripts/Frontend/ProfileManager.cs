@@ -28,7 +28,7 @@ public class ProfileManager : MonoBehaviour {
     }
 
     // adding panels
-    public void addPanel(DatabaseObject databaseObject)
+    public void addPanel(DatabaseObject databaseObject)                         // FIX UP POSITIONING!!!!!
     {
         Panel newPanel;
         switch (databaseObject.getTypeID())

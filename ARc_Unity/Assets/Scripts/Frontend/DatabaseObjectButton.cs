@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class DatabaseObjectButton : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private Panel panel;
+    private DatabaseObject databaseObject;
+
+    // setters
+    public void setup(Panel panel, DatabaseObject databaseObject) {
+        this.panel = panel;
+        this.databaseObject = databaseObject;
+    }
+
+    // openers
+    public void openPanel() {
+        panel.openObject(databaseObject);
+    }
+
 }
