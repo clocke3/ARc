@@ -293,6 +293,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 389243408}
     m_Modifications:
+    - target: {fileID: 114264927846156148, guid: c130b3f6d22d54ed78ef56b6487cef8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224988536491049046, guid: c130b3f6d22d54ed78ef56b6487cef8d,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -451,6 +456,36 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -149.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264927846156148, guid: c130b3f6d22d54ed78ef56b6487cef8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264927846156148, guid: c130b3f6d22d54ed78ef56b6487cef8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264927846156148, guid: c130b3f6d22d54ed78ef56b6487cef8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 728429113}
+    - target: {fileID: 114264927846156148, guid: c130b3f6d22d54ed78ef56b6487cef8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: showNum
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264927846156148, guid: c130b3f6d22d54ed78ef56b6487cef8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264927846156148, guid: c130b3f6d22d54ed78ef56b6487cef8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1423
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c130b3f6d22d54ed78ef56b6487cef8d, type: 2}
