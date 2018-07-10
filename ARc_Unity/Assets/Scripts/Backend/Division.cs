@@ -5,20 +5,20 @@ using UnityEngine;
 public class Division : MonoBehaviour {
 
     // data
-    private string name;
+    private string label;
     private Department department;
     private List<Role> roles;
 
 
     // constructors
     public Division(){
-        name = "";
+        label = "";
         department = null;
         roles = null;
     }
 
     public Division(string name, Department department, List<Role> roles) {
-        this.name = name;
+        this.label = name;
         this.department = department;
         this.roles = roles;
     }
@@ -26,7 +26,7 @@ public class Division : MonoBehaviour {
 
     // getters
     public string getName() {
-        return name;
+        return label;
     }
 
     public Department getDepartment() {
@@ -40,7 +40,7 @@ public class Division : MonoBehaviour {
 
     // comparison
     public bool isEqual(Division other) {
-        if (this.name != other.name) return false;
+        if (this.label != other.label) return false;
 
         if (!this.department.isEqual(other.department)) return false;
 

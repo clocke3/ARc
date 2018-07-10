@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Role : MonoBehaviour {
 
-    string name;
+    string label;
     List<Employee> employees; 
     Division division;
 
     public Role() {
-        name = null;
+        label = null;
         employees = null;
         division = null;
     }
 
     public Role(string name, Division division, List<Employee> employees)
     {
-        this.name = name;
+        this.label = name;
         this.division = division;
         this.employees = employees; 
 
     }
 
     public string getName() {
-        return name; 
+        return label; 
     }
 
     public Division getDivision() {
@@ -35,7 +35,7 @@ public class Role : MonoBehaviour {
     }
 
      public bool isEqual(Role role) {
-        if (this.name != role.name) return false;
+        if (this.label != role.label) return false;
 
         if (!this.division.isEqual(role.division)) return false;
 

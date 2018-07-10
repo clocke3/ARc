@@ -4,27 +4,26 @@ using System.Collections.Generic;
 
 public class Employee : Profiable
 {
-    private string name;
+    private string label;
     private Role position;
     private Department department;
     private Division division;
-    private int workDuration;
     private List<string> hobbies;
 
     public Employee(){
-        name = "";
-        position = "";
-        department = null;
-        division = null;
+        label = "";
+        position = new Role();
+        department = new Department();
+        division = new Division();
         workDuration = 0;
-        hobbies = null;
+        hobbies = new List<string>();
         typeID = 0;
-        qrID = null;
+        qrID = "";
         galleryID = 0;
     }
 
     public Employee (string name, Role position, Department department, Division division, int workDuration, List<string> hobbies, int typeId, string qrID, int galleryID){
-        this.name = name;
+        this.label = name;
         this.position = position;
         this.department = department;
         this.division = division;
@@ -42,7 +41,7 @@ public class Employee : Profiable
         return division;
     }
     public string getName(){
-        return name;
+        return label;
     }
     public Role getPosition(){
         return position;
@@ -56,7 +55,7 @@ public class Employee : Profiable
 
     public bool isEqual(Employee other)
     {
-        if (this.name != other.name)
+        if (this.label != other.label)
             return false;
 
         if (!this.department.isEqual(other.department))

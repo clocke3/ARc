@@ -5,19 +5,20 @@ using System;
 
 public class Department : Profiable
 {
-    private string name, description;
+    private string label, description;
     private List<Division> divisions;
+
 
     public Department()
     {
-        name = "";
+        label = "";
         description = "";
         divisions = null;
     }
 
     public Department(string name, string description, List<Division> divisions, int typeID, string qrID, int galleryID)
     {
-        this.name = name;
+        this.label = name;
         this.description = description;
         this.divisions = divisions;
         this.typeID = typeID;
@@ -35,12 +36,12 @@ public class Department : Profiable
     }
     public string getName()
     {
-        return name;
+        return label;
     }
 
     public bool isEqual(Department other)
     {
-        if (this.name != other.name)
+        if (this.label != other.label)
             return false;
 
         if (this.description != other.description)

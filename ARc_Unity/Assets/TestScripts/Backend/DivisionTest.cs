@@ -34,13 +34,13 @@ public class DivisionTest : MonoBehaviour {
 
     // test constructor
     public bool testConstructor() {
-        string name = "test division";
+        string label = "test division";
         Department department = new Department();
         List<Role> roles = new List<Role>();
 
-        Division division = new Division(name, department, roles);
+        Division division = new Division(label, department, roles);
 
-        if (name != division.name) {
+        if (label != division.getName()) {
             return false;
         }
 
@@ -59,11 +59,11 @@ public class DivisionTest : MonoBehaviour {
     // test functions
     //      getters
     public bool testGetName() {
-        string name = "test division";
+        string label = "test division";
 
-        Division division = new Division(name, null, null);
+        Division division = new Division(label, null, null);
 
-        if (name == division.getName()) return false;
+        if (label == division.getName()) return false;
 
         return true;
     }
@@ -92,12 +92,12 @@ public class DivisionTest : MonoBehaviour {
 
     //      comparison
     public bool testIsEqual() {
-        string name = "test division";
+        string label = "test division";
         Department department = new Department();
         List<Role> roles = new List<Role>();
 
-        Division division1 = new Division(name, department, roles);
-        Division division2 = new Division(name, department, roles);
+        Division division1 = new Division(label, department, roles);
+        Division division2 = new Division(label, department, roles);
 
         if(!division1.isEqual(division2)) return false;
 
