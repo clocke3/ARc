@@ -9,45 +9,27 @@ public class Employee : Profiable
     private List<string> hobbies;
 
     // constructors
-    public Employee(){
-        label = "";
+    public Employee() : base("", "", new MediaGallery()){
         role = new Role();
-        department = new Department();
-        division = new Division();
-        workDuration = 0;
         hobbies = new List<string>();
-        typeID = 0;
-        qrID = "";
-        galleryID = 0;
     }
 
-    public Employee (string name, Role position, Department department, Division division, int workDuration, List<string> hobbies, int typeId, string qrID, int galleryID){
-        this.label = name;
-        this.role = position;
-        this.department = department;
-        this.division = division;
-        this.workDuration = workDuration;
+    public Employee (string label, string qrID, MediaGallery gallery, Role role, List<string> hobbies) : base(label, qrID, gallery){
+        this.role = role;
         this.hobbies = hobbies;
-        this.typeID = typeId;
-        this.qrID = qrID;
-        this.galleryID = galleryID;
     }
 
-    public Department getDepartment(){
-        return department;
+    // setters
+    protected override void setTypeID()
+    {
+        this.typeID = DatabaseObject.EMPLOYEE;
     }
-    public Division getDivision(){
-        return division;
-    }
-    public string getName(){
-        return label;
-    }
-    public Role getPosition(){
+
+    // getters
+    public Role getRole(){
         return role;
     }
-    public string getworkDuration(){
-        return workDuration.ToString();
-    }
+
     public List<string> getHobbies(){
         return hobbies;
     }
