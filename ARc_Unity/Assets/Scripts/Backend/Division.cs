@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class Division : DatabaseObject {
 
-    // data
+    // variables
     private Department department;
     private List<Role> roles;
 
 
     // constructors
-    public Division(){
-        label = "";
-        department = null;
-        roles = null;
+    public Division() : base("") {
+        department = new Department();
+        roles = new List<Role>();
     }
 
-    public Division(string name, Department department, List<Role> roles) {
-        this.label = name;
+    public Division(string label, Department department, List<Role> roles) : base(label) {
         this.department = department;
         this.roles = roles;
     }
 
-
-    // getters
-    public string getName() {
-        return label;
+    // setters
+    protected override void setTypeID()
+    {
+        this.typeID = DatabaseObject.DIVISION;
     }
 
+    // getters
     public Department getDepartment() {
         return department;
     }
