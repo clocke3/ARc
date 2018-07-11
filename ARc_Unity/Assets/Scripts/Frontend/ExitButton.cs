@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExitButton : MonoBehaviour {
     
     // variables
-    Panel panel;
+    public Panel panel;
 
     // setup
     public void setup(Panel panel) {
