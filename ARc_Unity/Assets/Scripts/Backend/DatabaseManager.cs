@@ -42,7 +42,16 @@ public class DatabaseManager : MonoBehaviour {
     // finders
     public Profiable getProfiable(string qrID) {
         // search through departments and return the Profiable with the given qrID, or null if the qrID never comes up
-        return new Department();
+        Division division1 = Division.CreateInstance("Peter", null, null);
+        Division division2 = Division.CreateInstance("Fin", null, null);
+        List<Division> divisions = new List<Division>();
+        divisions.Add(division1);
+        divisions.Add(division2);
+        Department department = Department.CreateInstance("fuckface", "hello", MediaGallery.CreateInstance(), "farts", divisions);
+
+        if (department.equalQRID(qrID)) return department;
+
+        return null;
     }
 
     public bool containsCode(string qrID) {

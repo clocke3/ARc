@@ -6,12 +6,13 @@ public abstract class Panel : MonoBehaviour {
 
     // variables
     protected ProfileManager profileManager;
-    private List<DatabaseObjectButton> databaseObjectButtons;
+    protected List<DatabaseObjectButton> databaseObjectButtons;
     public DatabaseObjectButton databaseObjectButtonPrefab;
 
     // setters
     public void setup(ProfileManager profileManager, DatabaseObject databaseObject) {
         this.profileManager = profileManager;
+        this.transform.parent = profileManager.transform;
         setToRepresent(databaseObject);
         setAttributes();
     }
@@ -26,8 +27,7 @@ public abstract class Panel : MonoBehaviour {
     }
 
     // closer
-    public void exit()
-    {
+    public void exit() {
         Destroy(gameObject);
     }
 
