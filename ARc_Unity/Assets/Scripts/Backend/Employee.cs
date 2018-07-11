@@ -9,14 +9,32 @@ public class Employee : Profiable
     private List<string> hobbies;
 
     // constructors
-    public Employee() : base("", "", new MediaGallery()){
-        role = new Role();
+    private void init()
+    {
+        role = Role.CreateInstance();
         hobbies = new List<string>();
+        this.profiableInit();
     }
 
-    public Employee (string label, string qrID, MediaGallery gallery, Role role, List<string> hobbies) : base(label, qrID, gallery){
+    private void init(string label, string qrID, MediaGallery gallery, Role role, List<string> hobbies)
+    {
         this.role = role;
         this.hobbies = hobbies;
+        this.profiableInit(label, qrID, gallery);
+    }
+
+    public static Employee CreateInstance()
+    {
+        Employee employee = CreateInstance<Employee>();
+        employee.init();
+        return employee;
+    }
+
+    public static Employee CreateInstance(string label, string qrID, MediaGallery gallery, Role role, List<string> hobbies)
+    {
+        Employee employee = CreateInstance<Employee>();
+        employee.init(label, qrID, gallery, role, hobbies);
+        return employee;
     }
 
     // setters

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class DatabaseObject : MonoBehaviour {
+public abstract class DatabaseObject : ScriptableObject {
 
     // constants
     public const int DEPARTMENT = 0, DIVISION = 1, ROLE = 2, EMPLOYEE = 3, MEDIAGALLERY = 4;
@@ -11,8 +11,14 @@ public abstract class DatabaseObject : MonoBehaviour {
     protected string label;
     protected int typeID;
 
-    // constructor
-    protected DatabaseObject(string label) {
+    // constructors
+    protected void databaseObjectInit()
+    {
+        this.label = "";
+        setTypeID();
+    }
+
+    protected void databaseObjectInit(string label) {
         this.label = label;
         setTypeID();
     }

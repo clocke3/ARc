@@ -11,16 +11,29 @@ public class Department : Profiable
     private List<Division> divisions;
 
     // constructors
-    public Department() : base("", "", new MediaGallery())
-    {
+    private void init() {
         description = "";
         divisions = new List<Division>();
+        this.profiableInit();
     }
 
-    public Department(string label, string qrID, MediaGallery gallery, string description, List<Division> divisions) : base(label, qrID, gallery)
-    {
+    private void init(string label, string qrID, MediaGallery gallery, string description, List<Division> divisions) {
         this.description = description;
         this.divisions = divisions;
+        this.profiableInit(label, qrID, gallery);
+    }
+
+    public static Department CreateInstance()
+    {
+        Department department = CreateInstance<Department>();
+        department.init();
+        return department;
+    }
+
+    public static Department CreateInstance(string label, string qrID, MediaGallery gallery, string description, List<Division> divisions) {
+        Department department = CreateInstance<Department>();
+        department.init(label, qrID, gallery, description, divisions);
+        return department;
     }
 
     // setters

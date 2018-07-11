@@ -9,15 +9,32 @@ public class Role : DatabaseObject {
     private List<Employee> employees; 
 
     // constructors
-    public Role() : base("") {
-        division = new Division();
+    private void init()
+    {
+        division = Division.CreateInstance();
         employees = new List<Employee>();
+        this.databaseObjectInit();
     }
 
-    public Role(string label, Division division, List<Employee> employees) : base(label)
+    private void init(string label, Division division, List<Employee> employees)
     {
         this.division = division;
         this.employees = employees;
+        this.databaseObjectInit(label);
+    }
+
+    public static Role CreateInstance()
+    {
+        Role role = CreateInstance<Role>();
+        role.init();
+        return role;
+    }
+
+    public static Role CreateInstance(string label, Division division, List<Employee> employees)
+    {
+        Role role = CreateInstance<Role>();
+        role.init(label, division, employees);
+        return role;
     }
 
     // setters

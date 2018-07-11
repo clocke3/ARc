@@ -9,11 +9,19 @@ public abstract class Profiable : DatabaseObject
     protected string qrID;
     protected MediaGallery gallery;
 
-    // constructor
-    protected Profiable(string label, string qrID, 
-                        MediaGallery gallery) : base(label) {
+    // constructors
+    protected void profiableInit()
+    {
+        this.qrID = "";
+        this.gallery = MediaGallery.CreateInstance();
+        this.databaseObjectInit();
+    }
+
+    protected void profiableInit(string label, string qrID,
+                        MediaGallery gallery) {
         this.qrID = qrID;
         this.gallery = gallery;
+        this.databaseObjectInit(label);
     }
 
     // getters

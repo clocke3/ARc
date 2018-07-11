@@ -8,16 +8,33 @@ public class Division : DatabaseObject {
     private Department department;
     private List<Role> roles;
 
-
     // constructors
-    public Division() : base("") {
-        department = new Department();
+    private void init()
+    {
+        department = Department.CreateInstance();
         roles = new List<Role>();
+        this.databaseObjectInit();
     }
 
-    public Division(string label, Department department, List<Role> roles) : base(label) {
+    private void init(string label, Department department, List<Role> roles)
+    {
         this.department = department;
         this.roles = roles;
+        this.databaseObjectInit(label);
+    }
+
+    public static Division CreateInstance()
+    {
+        Division division = CreateInstance<Division>();
+        division.init();
+        return division;
+    }
+
+    public static Division CreateInstance(string label, Department department, List<Role> roles)
+    {
+        Division division = CreateInstance<Division>();
+        division.init(label, department, roles);
+        return division;
     }
 
     // setters

@@ -12,16 +12,34 @@ public class MediaGallery : DatabaseObject {
     private List<VideoClip> videos;
 
     // constructors
-    public MediaGallery() : base("") {
-        videos = new List<VideoClip>();
-        images = new List<RawImage>();
+    private void init()
+    {
         profiable = null;
+        images = new List<RawImage>();
+        videos = new List<VideoClip>();
+        this.databaseObjectInit();
     }
 
-    public MediaGallery(string label, Profiable profiable, List<RawImage> images, List<VideoClip> videos) : base(label) {
+    private void init(string label, Profiable profiable, List<RawImage> images, List<VideoClip> videos)
+    {
         this.profiable = profiable;
-        this.videos = videos;
         this.images = images;
+        this.videos = videos;
+        this.databaseObjectInit(label);
+    }
+
+    public static MediaGallery CreateInstance()
+    {
+        MediaGallery gallery = CreateInstance<MediaGallery>();
+        gallery.init();
+        return gallery;
+    }
+
+    public static MediaGallery CreateInstance(string label, Profiable profiable, List<RawImage> images, List<VideoClip> videos)
+    {
+        MediaGallery gallery = CreateInstance<MediaGallery>();
+        gallery.init(label, profiable, images, videos);
+        return gallery;
     }
 
     // setters
