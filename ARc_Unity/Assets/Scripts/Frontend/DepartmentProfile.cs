@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DepartmentProfile : Panel {
 
-    Department department;
+    private Department department;
+    public Text label;
+    public Text description;
 
     protected override void setToRepresent(DatabaseObject databaseObject)
     {
@@ -14,6 +17,13 @@ public class DepartmentProfile : Panel {
 
     protected override void setAttributes()
     {
+        // set up department label
+        label.text = department.getLabel();
+
+        // set up description
+        description.text = department.getDescription();
+
+        // set up divisions
         List<Division> divisions = department.getDivisions();
         foreach (Division division in divisions)
         {

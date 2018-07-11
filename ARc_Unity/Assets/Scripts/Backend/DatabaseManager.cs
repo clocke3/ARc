@@ -47,7 +47,7 @@ public class DatabaseManager : MonoBehaviour {
         List<Division> divisions = new List<Division>();
         divisions.Add(division1);
         divisions.Add(division2);
-        Department department = Department.CreateInstance("fuckface", "hello", MediaGallery.CreateInstance(), "farts", divisions);
+        Department department = Department.CreateInstance("fuckface", "hello", MediaGallery.CreateInstance(), "This department is a stupid buttface that is stupid and I hate it!", divisions);
 
         if (department.equalQRID(qrID)) return department;
 
