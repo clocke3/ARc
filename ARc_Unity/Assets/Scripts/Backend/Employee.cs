@@ -43,6 +43,10 @@ public class Employee : Profiable
         this.typeID = DatabaseObject.EMPLOYEE;
     }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     // getters
     public Role getRole(){
         return role;

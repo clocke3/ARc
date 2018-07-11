@@ -43,6 +43,10 @@ public class Role : DatabaseObject {
         this.typeID = DatabaseObject.ROLE;
     }
 
+    public void setDivision(Division division) {
+        this.division = division;
+    }
+
     // getters
     public Division getDivision() {
         return division; 
