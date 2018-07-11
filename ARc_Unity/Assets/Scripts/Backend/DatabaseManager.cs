@@ -49,12 +49,17 @@ public class DatabaseManager : MonoBehaviour {
         roles.Add(role2);
 
         Division division1 = Division.CreateInstance("Peter", null, roles);
-        Division division2 = Division.CreateInstance("Fin", null, roles);
+        Division division2 = Division.CreateInstance("Fin", null, null);
         List<Division> divisions = new List<Division>();
         divisions.Add(division1);
         divisions.Add(division2);
 
         Department department = Department.CreateInstance("fuckface", "hello", MediaGallery.CreateInstance(), "This department is a stupid buttface that is stupid and I hate it!", divisions);
+
+        foreach (Role role in roles)
+        {
+            role.setDivision(division1);
+        }
 
         foreach (Division division in divisions)
         {

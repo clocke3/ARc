@@ -24,16 +24,21 @@ public class DivisionBlock : Panel {
         label.text = division.getLabel();
 
         // set up department button
-        departmentButton.setup(this, division.getDepartment());
-
-        // set up roles
-        List<Role> roles = division.getRoles();
-        foreach (Role role in roles)
+        if (division.getDepartment() != null)
         {
-            DatabaseObjectButton roleButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
-            roleButton.setup(this, role);
-            roleButton.transform.SetParent(rolesParent.transform, true);
-            databaseObjectButtons.Add(roleButton);
+            departmentButton.setup(this, division.getDepartment());
+        }
+        // set up roles
+        if (division.getRoles() != null)
+        {
+            List<Role> roles = division.getRoles();
+            foreach (Role role in roles)
+            {
+                DatabaseObjectButton roleButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
+                roleButton.setup(this, role);
+                roleButton.transform.SetParent(rolesParent.transform, true);
+                databaseObjectButtons.Add(roleButton);
+            }
         }
     }
 

@@ -28,16 +28,22 @@ public class DepartmentProfile : Panel {
         description.text = department.getDescription();
 
         // set up gallery button
-        galleryButton.setup(this, department.getGallery());
+        if (department.getGallery() != null)
+        {
+            galleryButton.setup(this, department.getGallery());
+        }
 
         // set up divisions
-        List<Division> divisions = department.getDivisions();
-        foreach (Division division in divisions)
+        if (department.getDivisions() != null)
         {
-            DatabaseObjectButton divisionButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
-            divisionButton.setup(this, division);
-            divisionButton.transform.SetParent(divisionsParent.transform, true);
-            databaseObjectButtons.Add(divisionButton);
+            List<Division> divisions = department.getDivisions();
+            foreach (Division division in divisions)
+            {
+                DatabaseObjectButton divisionButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
+                divisionButton.setup(this, division);
+                divisionButton.transform.SetParent(divisionsParent.transform, true);
+                databaseObjectButtons.Add(divisionButton);
+            }
         }
     }
 }
