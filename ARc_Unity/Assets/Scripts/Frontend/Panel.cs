@@ -25,4 +25,10 @@ public abstract class Panel : MonoBehaviour {
         profileManager.addPanel(databaseObject);
     }
 
+    // closer
+    public void exit()
+    {
+        Destroy(gameObject);
+    }
+
 }
