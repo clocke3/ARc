@@ -8,6 +8,7 @@ public abstract class Panel : MonoBehaviour {
     protected ProfileManager profileManager;
     protected List<DatabaseObjectButton> databaseObjectButtons = new List<DatabaseObjectButton>();
     public DatabaseObjectButton databaseObjectButtonPrefab;
+    public bool isOn = true;
 
     // setters
     public void setup(ProfileManager profileManager, DatabaseObject databaseObject) {
@@ -28,6 +29,8 @@ public abstract class Panel : MonoBehaviour {
 
     // closer
     public void exit() {
+        isOn = false;
+        profileManager.updatePanels();
         Destroy(gameObject);
     }
 

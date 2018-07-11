@@ -31,6 +31,15 @@ public class ProfileManager : MonoBehaviour {
         this.gameObject.SetActive(false);
     }
 
+    public void updatePanels() {
+        for (int i = 0; i < panels.Count; i++)
+        {
+            if(!panels[i].isOn) {
+                panels.RemoveAt(i);
+            }
+        }
+    }
+
     // adding panels
     public void addPanel(DatabaseObject databaseObject)                         // FIX UP POSITIONING!!!!!
     {
