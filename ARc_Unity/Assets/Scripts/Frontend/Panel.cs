@@ -6,13 +6,13 @@ public abstract class Panel : MonoBehaviour {
 
     // variables
     protected ProfileManager profileManager;
-    protected List<DatabaseObjectButton> databaseObjectButtons;
+    protected List<DatabaseObjectButton> databaseObjectButtons = new List<DatabaseObjectButton>();
     public DatabaseObjectButton databaseObjectButtonPrefab;
 
     // setters
     public void setup(ProfileManager profileManager, DatabaseObject databaseObject) {
         this.profileManager = profileManager;
-        this.transform.parent = profileManager.transform;
+        this.transform.SetParent(profileManager.transform, true);
         setToRepresent(databaseObject);
         setAttributes();
     }

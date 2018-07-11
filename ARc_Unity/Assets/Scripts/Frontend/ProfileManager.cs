@@ -7,7 +7,7 @@ public class ProfileManager : MonoBehaviour {
     // variables
     private DatabaseManager databaseManager;
     public ItemManager itemManager;
-    private List<Panel> panels;
+    private List<Panel> panels = new List<Panel>();
     public Panel[] panelPrefabs = new Panel[5];
 
     // initialization
@@ -18,6 +18,10 @@ public class ProfileManager : MonoBehaviour {
 
     // clearing panels
     private void clearPanels() {
+        foreach (Panel panel in panels)
+        {
+            Destroy(panel.gameObject);
+        }
         panels.Clear();
     }
 
