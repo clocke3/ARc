@@ -25,7 +25,6 @@ public class DatabaseObjectButton : MonoBehaviour {
     }
 
     public void setText() {
-        //Debug.Log(databaseObject.getLabel());
         button.GetComponentInChildren<Text>().text = databaseObject.getLabel();
     }
 
