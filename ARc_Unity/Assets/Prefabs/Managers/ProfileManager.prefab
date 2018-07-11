@@ -188,7 +188,7 @@ MonoBehaviour:
   itemManager: {fileID: 0}
   panelPrefabs:
   - {fileID: 114824685487601572, guid: e50b8a6daedea4197ad21f0e2bd6bde7, type: 2}
-  - {fileID: 0}
+  - {fileID: 114865702703625812, guid: d21db28b571da4c389c15ce97cdc424f, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -218,10 +218,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 646, y: 336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224537697428764406
 RectTransform:

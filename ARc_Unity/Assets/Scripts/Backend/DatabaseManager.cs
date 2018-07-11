@@ -42,12 +42,24 @@ public class DatabaseManager : MonoBehaviour {
     // finders
     public Profiable getProfiable(string qrID) {
         // search through departments and return the Profiable with the given qrID, or null if the qrID never comes up
-        Division division1 = Division.CreateInstance("Peter", null, null);
-        Division division2 = Division.CreateInstance("Fin", null, null);
+        Role role1 = Role.CreateInstance("Matthew", null, null);
+        Role role2 = Role.CreateInstance("David", null, null);
+        List<Role> roles = new List<Role>();
+        roles.Add(role1);
+        roles.Add(role2);
+
+        Division division1 = Division.CreateInstance("Peter", null, roles);
+        Division division2 = Division.CreateInstance("Fin", null, roles);
         List<Division> divisions = new List<Division>();
         divisions.Add(division1);
         divisions.Add(division2);
+
         Department department = Department.CreateInstance("fuckface", "hello", MediaGallery.CreateInstance(), "This department is a stupid buttface that is stupid and I hate it!", divisions);
+
+        foreach (Division division in divisions)
+        {
+            division.setDepartment(department);
+        }
 
         if (department.equalQRID(qrID)) return department;
 

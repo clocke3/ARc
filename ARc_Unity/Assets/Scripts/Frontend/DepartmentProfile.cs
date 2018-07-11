@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class DepartmentProfile : Panel {
 
+    // variables
     private Department department;
     public Text label;
     public Text description;
+    public DatabaseObjectButton galleryButton;
+    public GameObject divisionsParent;
 
+    // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
     {
         if (databaseObject is Department) department = databaseObject as Department;
@@ -23,13 +27,16 @@ public class DepartmentProfile : Panel {
         // set up description
         description.text = department.getDescription();
 
+        // set up gallery button
+        galleryButton.setup(this, department.getGallery());
+
         // set up divisions
         List<Division> divisions = department.getDivisions();
         foreach (Division division in divisions)
         {
             DatabaseObjectButton divisionButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
             divisionButton.setup(this, division);
-            divisionButton.transform.SetParent(this.transform, true);
+            divisionButton.transform.SetParent(divisionsParent.transform, true);
             databaseObjectButtons.Add(divisionButton);
         }
     }
