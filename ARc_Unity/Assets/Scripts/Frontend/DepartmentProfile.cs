@@ -42,7 +42,6 @@ public class DepartmentProfile : Panel {
                 DatabaseObjectButton divisionButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
                 divisionButton.setup(this, division);
                 divisionButton.transform.SetParent(divisionsParent.transform, true);
-                databaseObjectButtons.Add(divisionButton);
             }
         }
     }

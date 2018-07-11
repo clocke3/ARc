@@ -6,7 +6,6 @@ public abstract class Panel : MonoBehaviour {
 
     // variables
     protected ProfileManager profileManager;
-    protected List<DatabaseObjectButton> databaseObjectButtons = new List<DatabaseObjectButton>();
     public DatabaseObjectButton databaseObjectButtonPrefab;
     public bool isOn = true;
 

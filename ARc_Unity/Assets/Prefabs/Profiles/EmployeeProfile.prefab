@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224702347647096360}
   - component: {fileID: 114735173629782212}
+  - component: {fileID: 114781305747178258}
   m_Layer: 5
   m_Name: EmployeeProfile
   m_TagString: Untagged
@@ -374,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6806a17e5442788049a3fb25d1796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
+  panel: {fileID: 114781305747178258}
 --- !u!114 &114326561749130482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -600,6 +601,26 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: DatabaseObject
+--- !u!114 &114781305747178258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530408830395666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0645d31cffb4df28aa4e8bbfcb66a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  databaseObjectButtonPrefab: {fileID: 114156490423341078, guid: 124cb2c97cde840cba75be41a4211bc5,
+    type: 2}
+  isOn: 1
+  label: {fileID: 114133888680587126}
+  roleButton: {fileID: 114887496890074300}
+  galleryButton: {fileID: 114071914544612792}
+  hobbiesParent: {fileID: 1490117570686876}
+  textPrefab: {fileID: 114493532202293030, guid: bf8d6e2d6db1f4826ba28ea9741bd72e,
+    type: 2}
 --- !u!114 &114837825805017742
 MonoBehaviour:
   m_ObjectHideFlags: 1

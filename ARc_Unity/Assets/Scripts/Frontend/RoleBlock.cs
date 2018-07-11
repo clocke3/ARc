@@ -35,9 +35,8 @@ public class RoleBlock : Panel {
             foreach (Employee employee in employees)
             {
                 DatabaseObjectButton employeeButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
-                employeeButton.setup(this, role);
+                employeeButton.setup(this, employee);
                 employeeButton.transform.SetParent(employeesParent.transform, true);
-                databaseObjectButtons.Add(employeeButton);
             }
         }
     }

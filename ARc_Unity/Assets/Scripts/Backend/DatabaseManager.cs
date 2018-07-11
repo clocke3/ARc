@@ -42,8 +42,20 @@ public class DatabaseManager : MonoBehaviour {
     // finders
     public Profiable getProfiable(string qrID) {
         // search through departments and return the Profiable with the given qrID, or null if the qrID never comes up
+
+        List<string> hobbies = new List<string>();
+        hobbies.Add("existing");
+        hobbies.Add("idk");
+        hobbies.Add("y u still ask???");
+
+        Employee employee1 = Employee.CreateInstance("Andrew", null, MediaGallery.CreateInstance(), null, hobbies);
+        Employee employee2 = Employee.CreateInstance("Khalib", null, MediaGallery.CreateInstance(), null, hobbies);
+        List<Employee> employees = new List<Employee>();
+        employees.Add(employee1);
+        employees.Add(employee2);
+
         Role role1 = Role.CreateInstance("Matthew", null, null);
-        Role role2 = Role.CreateInstance("David", null, null);
+        Role role2 = Role.CreateInstance("David", null, employees);
         List<Role> roles = new List<Role>();
         roles.Add(role1);
         roles.Add(role2);
@@ -55,6 +67,11 @@ public class DatabaseManager : MonoBehaviour {
         divisions.Add(division2);
 
         Department department = Department.CreateInstance("fuckface", "hello", MediaGallery.CreateInstance(), "This department is a stupid buttface that is stupid and I hate it!", divisions);
+
+        foreach (Employee employee in employees)
+        {
+            employee.setRole(role2);
+        }
 
         foreach (Role role in roles)
         {

@@ -37,7 +37,6 @@ public class DivisionBlock : Panel {
                 DatabaseObjectButton roleButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
                 roleButton.setup(this, role);
                 roleButton.transform.SetParent(rolesParent.transform, true);
-                databaseObjectButtons.Add(roleButton);
             }
         }
     }
