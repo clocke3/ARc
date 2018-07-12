@@ -7,6 +7,7 @@ public class DatabaseObjectButton : MonoBehaviour {
 
     // variables
     private Panel panel;
+    private ItemManager itemManager;
     private DatabaseObject databaseObject;
     private Button button;
 
@@ -24,13 +25,25 @@ public class DatabaseObjectButton : MonoBehaviour {
         setText();
     }
 
+    public void setup(ItemManager itemManager, DatabaseObject databaseObject)
+    {
+        button = this.gameObject.GetComponent<Button>();
+        this.itemManager = itemManager;
+        this.databaseObject = databaseObject;
+        setText();
+    }
+
     public void setText() {
         button.GetComponentInChildren<Text>().text = databaseObject.getLabel();
     }
 
     // openers
     public void openPanel() {
-        panel.openObject(databaseObject);
+        if(panel != null) {
+            panel.openObject(databaseObject);
+        } else if(itemManager != null) {
+            itemManager.displayProfile(databaseObject);
+        }
     }
 
 }
