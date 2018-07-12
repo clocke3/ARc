@@ -11,6 +11,7 @@ public class MediaGalleryBlock : Panel
     public Text profiableHeader;
     public DatabaseObjectButton profiableButton;
     public GameObject picturesParent;
+    public RawImage imagePrefab;
     public GameObject videosParent;
 
     // panel stuff
@@ -52,9 +53,9 @@ public class MediaGalleryBlock : Panel
             List<RawImage> images = gallery.getImages();
             foreach (RawImage image in images)
             {
-                DatabaseObjectButton employeeButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
-                employeeButton.setup(this, employee);
-                employeeButton.transform.SetParent(employeesParent.transform, true);
+                //DatabaseObjectButton employeeButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
+                //employeeButton.setup(this, employee);
+                //employeeButton.transform.SetParent(employeesParent.transform, true);
             }
         }
 

@@ -38,6 +38,8 @@ public class ProfileManager : MonoBehaviour {
                 panels.RemoveAt(i);
             }
         }
+
+        if (panels.Count == 0) back();
     }
 
     // adding panels
