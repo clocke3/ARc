@@ -11,8 +11,10 @@ public abstract class ItemManager : MonoBehaviour {
 
 
     // constructor
-    void Start() {
+    protected virtual void Start() {
         databaseManager = DatabaseManager.getInstance();
+        if (databaseManager == null) Debug.Log("wut?");
+
     }
 
     // functions
@@ -23,6 +25,12 @@ public abstract class ItemManager : MonoBehaviour {
     public void displayCodeProfile() {
         profileManager.gameObject.SetActive(true);
         profileManager.displayProfile(currentCode);
+        this.gameObject.SetActive(false);
+    }
+
+    public void displayProfile(DatabaseObject databaseObject) {
+        profileManager.gameObject.SetActive(true);
+        profileManager.addPanel(databaseObject);
         this.gameObject.SetActive(false);
     }
 
