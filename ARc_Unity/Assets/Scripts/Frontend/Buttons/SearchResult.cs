@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class SearchResult : MonoBehaviour {
 
-    private SearchManager searchManager;
     private Profiable profiable;
     private int numExtraChars;
     public DatabaseObjectButton databaseObjectButton;
     public Text labelText;
 
     public void setup(SearchManager searchManager, Profiable profiable, string keyword) {
-        this.searchManager = searchManager;
         this.profiable = profiable;
         this.numExtraChars = Mathf.Abs(keyword.Length - profiable.getLabel().Length);
 
@@ -34,6 +32,10 @@ public class SearchResult : MonoBehaviour {
 
     public int getNumExtraChars() {
         return numExtraChars;
+    }
+
+    public string getLabel() {
+        return profiable.getLabel();
     }
 
 
