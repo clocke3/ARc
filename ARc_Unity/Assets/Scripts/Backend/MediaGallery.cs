@@ -11,21 +11,23 @@ public class MediaGallery : DatabaseObject {
     private List<RawImage> images;
     private List<VideoClip> videos;
 
+    private string constantLabel = "Media Gallery";
+
     // constructors
     private void init()
     {
         profiable = null;
         images = new List<RawImage>();
         videos = new List<VideoClip>();
-        this.databaseObjectInit();
+        this.databaseObjectInit(constantLabel);
     }
 
-    private void init(string label, Profiable profiable, List<RawImage> images, List<VideoClip> videos)
+    private void init(Profiable profiable, List<RawImage> images, List<VideoClip> videos)
     {
         this.profiable = profiable;
         this.images = images;
         this.videos = videos;
-        this.databaseObjectInit(label);
+        this.databaseObjectInit(constantLabel);
     }
 
     public static MediaGallery CreateInstance()
@@ -35,16 +37,20 @@ public class MediaGallery : DatabaseObject {
         return gallery;
     }
 
-    public static MediaGallery CreateInstance(string label, Profiable profiable, List<RawImage> images, List<VideoClip> videos)
+    public static MediaGallery CreateInstance(Profiable profiable, List<RawImage> images, List<VideoClip> videos)
     {
         MediaGallery gallery = CreateInstance<MediaGallery>();
-        gallery.init(label, profiable, images, videos);
+        gallery.init(profiable, images, videos);
         return gallery;
     }
 
     // setters
     protected override void setTypeID() {
         this.typeID = DatabaseObject.MEDIAGALLERY;
+    }
+
+    public void setProfiable(Profiable profiable) {
+        this.profiable = profiable;
     }
 
     // getters
