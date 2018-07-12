@@ -66,7 +66,7 @@ public class DatabaseManager : MonoBehaviour {
         divisions.Add(division1);
         divisions.Add(division2);
 
-        Department department = Department.CreateInstance("fuckface", "hello", MediaGallery.CreateInstance(), "This department is a stupid buttface that is stupid and I hate it!", divisions);
+        Department department = Department.CreateInstance("face", "hello", MediaGallery.CreateInstance(), "This department is a stupid buttface that is stupid and I hate it!", divisions);
 
         foreach (Employee employee in employees)
         {
