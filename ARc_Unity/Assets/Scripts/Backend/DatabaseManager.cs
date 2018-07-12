@@ -39,6 +39,16 @@ public class DatabaseManager : MonoBehaviour {
         return instance;
     }
 
+    public static List<Profiable> search(string keyword) {
+        // return a list of all departments and employees with a label featuring keyword
+        return null;
+    }
+
+    public static List<Profiable> search(string keyword, int typeID) {
+
+        return null;
+    }
+
     // finders
     public Profiable getProfiable(string qrID) {
         // search through departments and return the Profiable with the given qrID, or null if the qrID never comes up

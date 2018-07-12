@@ -26,4 +26,10 @@ public abstract class ItemManager : MonoBehaviour {
         this.gameObject.SetActive(false);
     }
 
+    public void displayProfile(DatabaseObject databaseObject) {
+        profileManager.gameObject.SetActive(true);
+        profileManager.addPanel(databaseObject);
+        this.gameObject.SetActive(false);
+    }
+
 }
