@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MediaGalleryBlock : Panel
 {
@@ -13,6 +14,7 @@ public class MediaGalleryBlock : Panel
     public GameObject picturesParent;
     public RawImage imagePrefab;
     public GameObject videosParent;
+    public VideoPlayer videoPlayerPrefab;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -53,12 +55,22 @@ public class MediaGalleryBlock : Panel
             List<RawImage> images = gallery.getImages();
             foreach (RawImage image in images)
             {
-                //DatabaseObjectButton employeeButton = Instantiate(databaseObjectButtonPrefab, transform.position, Quaternion.identity) as DatabaseObjectButton;
-                //employeeButton.setup(this, employee);
-                //employeeButton.transform.SetParent(employeesParent.transform, true);
+                RawImage imageHolder = Instantiate(imagePrefab, transform.position, Quaternion.identity) as RawImage;
+                imageHolder = image;
+                imageHolder.transform.SetParent(picturesParent.transform, true);
             }
         }
 
         // set up videos
+        if (gallery.getVideos() != null)
+        {
+            List<VideoClip> videos = gallery.getVideos();
+            foreach (VideoClip video in videos)
+            {
+                VideoPlayer videoPlayer = Instantiate(videoPlayerPrefab, transform.position, Quaternion.identity) as VideoPlayer;
+                videoPlayer.clip = video;
+                videoPlayer.transform.SetParent(videosParent.transform, true);
+            }
+        }
     }
 }

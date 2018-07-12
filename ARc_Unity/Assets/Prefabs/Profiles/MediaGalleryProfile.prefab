@@ -541,6 +541,8 @@ MonoBehaviour:
   imagePrefab: {fileID: 114363777951285086, guid: 3b011d648ddfa4b9d974830e70594bb5,
     type: 2}
   videosParent: {fileID: 1494540394189944}
+  videoPlayerPrefab: {fileID: 328839879790379482, guid: 8e141fcea81144535a6d2eb8f9bfb445,
+    type: 2}
 --- !u!114 &114681295075592424
 MonoBehaviour:
   m_ObjectHideFlags: 1
