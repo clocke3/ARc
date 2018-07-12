@@ -7,7 +7,7 @@ public class ProfileManager : MonoBehaviour {
     // variables
     private DatabaseManager databaseManager;
     public ItemManager itemManager;
-    private List<Panel> panels;
+    private List<Panel> panels = new List<Panel>();
     public Panel[] panelPrefabs = new Panel[5];
 
     // initialization
@@ -18,6 +18,10 @@ public class ProfileManager : MonoBehaviour {
 
     // clearing panels
     private void clearPanels() {
+        foreach (Panel panel in panels)
+        {
+            Destroy(panel.gameObject);
+        }
         panels.Clear();
     }
 
@@ -27,9 +31,23 @@ public class ProfileManager : MonoBehaviour {
         this.gameObject.SetActive(false);
     }
 
+    public void updatePanels() {
+        for (int i = 0; i < panels.Count; i++)
+        {
+            if(!panels[i].isOn) {
+                panels.RemoveAt(i);
+            }
+        }
+
+        if (panels.Count == 0) back();
+    }
+
     // adding panels
     public void addPanel(DatabaseObject databaseObject)                         // FIX UP POSITIONING!!!!!
     {
+        if(databaseObject == null) {
+            return;
+        }
         Panel newPanel;
         switch (databaseObject.getTypeID())
         {

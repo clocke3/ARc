@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DatabaseObjectButton : MonoBehaviour {
 
+    // variables
     private Panel panel;
     private DatabaseObject databaseObject;
     private Button button;
@@ -12,20 +13,18 @@ public class DatabaseObjectButton : MonoBehaviour {
     // initialization
     private void Start()
     {
-        databaseObject = Department.CreateInstance("FuckNuggets", "hello", MediaGallery.CreateInstance(), "poop", new List<Division>());
         button = this.gameObject.GetComponent<Button>();
-        setText();
     }
 
     // setters
     public void setup(Panel panel, DatabaseObject databaseObject) {
+        button = this.gameObject.GetComponent<Button>();
         this.panel = panel;
         this.databaseObject = databaseObject;
         setText();
     }
 
     public void setText() {
-        //Debug.Log(databaseObject.getLabel());
         button.GetComponentInChildren<Text>().text = databaseObject.getLabel();
     }
 

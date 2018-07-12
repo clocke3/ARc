@@ -42,7 +42,7 @@ public class DatabaseManager : MonoBehaviour {
     // finders
     public Profiable getProfiable(string qrID) {
         // search through departments and return the Profiable with the given qrID, or null if the qrID never comes up
-        return new Department();
+        return null;
     }
 
     public bool containsCode(string qrID) {
