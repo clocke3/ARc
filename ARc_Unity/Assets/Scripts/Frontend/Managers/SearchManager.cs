@@ -13,9 +13,13 @@ public class SearchManager : ItemManager {
     public GameObject resultsParent;
     private List<SearchResult> results = new List<SearchResult>();
 
-    public const string DEP = "DEP", EMP = "EMP";
+    public const string ALL = "ALL", DEP = "DEP", EMP = "EMP";
     public Text filterText;
     private string filter;
+
+    //public const string ALPH = "ALPH", DEPF = "DEPF", EMPF = "EMPF";
+    //public Text orgText;
+    //private string org;
 
     // initialization
     protected override void Start()
@@ -48,8 +52,11 @@ public class SearchManager : ItemManager {
             case EMP:
                 profiables = databaseManager.search(keyword, DatabaseObject.EMPLOYEE);
                 break;
-            default:
+            case ALL:
                 profiables = databaseManager.search(keyword);
+                break;
+            default:
+                profiables = new List<Profiable>();
                 break;
         }
 
@@ -71,9 +78,6 @@ public class SearchManager : ItemManager {
 
         return newResults;
     }
-
-    // organizing
-
 
     // clearing
     private void clearResults()
