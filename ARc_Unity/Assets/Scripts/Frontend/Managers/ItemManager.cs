@@ -11,8 +11,10 @@ public abstract class ItemManager : MonoBehaviour {
 
 
     // constructor
-    void Start() {
+    protected virtual void Start() {
         databaseManager = DatabaseManager.getInstance();
+        if (databaseManager == null) Debug.Log("wut?");
+
     }
 
     // functions

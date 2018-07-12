@@ -39,14 +39,74 @@ public class DatabaseManager : MonoBehaviour {
         return instance;
     }
 
-    public static List<Profiable> search(string keyword) {
+    public List<Profiable> search(string keyword) {
         // return a list of all departments and employees with a label featuring keyword
-        return null;
+        List<Profiable> profiables = new List<Profiable>();
+
+        foreach (Department department in departments)
+        {
+            if (department.getLabel().Contains(keyword))
+            {
+                profiables.Add(department);
+            }
+
+            if (department.getDivisions() == null) continue;
+            foreach (Division division in department.getDivisions())
+            {
+                if (division.getRoles() == null) continue;
+                foreach (Role role in division.getRoles())
+                {
+                    if (role.getEmployees() == null) continue;
+                    foreach (Employee employee in role.getEmployees())
+                    {
+                        if (employee.getLabel().Contains(keyword))
+                        {
+                            profiables.Add(employee);
+                        }
+                    }
+                }
+            }
+        }
+
+        return profiables;
     }
 
-    public static List<Profiable> search(string keyword, int typeID) {
+    public List<Profiable> search(string keyword, int typeID) {
+        // return a list of all departments/employees (determined by typeID) with labels containing keyword
+        List<Profiable> profiables = new List<Profiable>();
 
-        return null;
+        if(typeID == DatabaseObject.DEPARTMENT) {
+            foreach (Department department in departments)
+            {
+                if(department.getLabel().Contains(keyword)) {
+                    profiables.Add(department);
+                }
+            }
+
+        } else if(typeID == DatabaseObject.EMPLOYEE) {
+
+            foreach (Department department in departments)
+            {
+                if (department.getDivisions() == null) continue;
+                foreach (Division division in department.getDivisions())
+                {
+                    if (division.getRoles() == null) continue;
+                    foreach (Role role in division.getRoles())
+                    {
+                        if (role.getEmployees() == null) continue;
+                        foreach (Employee employee in role.getEmployees())
+                        {
+                            if (employee.getLabel().Contains(keyword))
+                            {
+                                profiables.Add(employee);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return profiables;
     }
 
     // finders
