@@ -43,6 +43,11 @@ public class Employee : Profiable
         this.typeID = DatabaseObject.EMPLOYEE;
     }
 
+    public void setMediaGallery(MediaGallery gallery)
+    {
+        this.gallery = gallery;
+    }
+
     public void setRole(Role role) {
         this.role = role;
     }

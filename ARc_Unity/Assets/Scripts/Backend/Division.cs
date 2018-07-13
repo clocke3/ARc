@@ -43,6 +43,11 @@ public class Division : DatabaseObject {
         this.typeID = DatabaseObject.DIVISION;
     }
 
+    public void setRole(List<Role> roles)
+    {
+        this.roles = roles;
+    }
+
     public void setDepartment(Department department) {
         this.department = department;
     }

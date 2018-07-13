@@ -42,6 +42,15 @@ public class Department : Profiable
         this.typeID = DatabaseObject.DEPARTMENT;
     }
 
+    public void setMediaGallery(MediaGallery gallery)
+    {
+        this.gallery = gallery;
+    }
+
+    public void setDivisions(List<Division> divisions) {
+        this.divisions = divisions;
+    }
+
     // getters
     public string getDescription()
     {

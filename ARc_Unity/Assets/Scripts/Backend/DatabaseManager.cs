@@ -84,9 +84,66 @@ public class DatabaseManager : MonoBehaviour
         dbconn = null;
     }
 
+    bool hasMocked = false;
+    private void addMock() {
+        if (hasMocked) return;
+        hasMocked = true;
+
+        MediaGallery gallery1 = MediaGallery.CreateInstance(null, null, null);
+        MediaGallery gallery2 = MediaGallery.CreateInstance(null, null, null);
+
+        string hobbies = "running, being cool, bongos";
+
+        Employee employee1 = Employee.CreateInstance("Donkey Kong", null, null, null, hobbies);
+        Employee employee2 = Employee.CreateInstance("Mario", null, gallery1, null, null);
+        gallery1.setProfiable(employee2);
+        List<Employee> employeesList = new List<Employee>();
+        employeesList.Add(employee1);
+        employeesList.Add(employee2);
+
+        employees.Add(employee1);
+        employees.Add(employee2);
+
+        Role role1 = Role.CreateInstance("Developers", null, null);
+        Role role2 = Role.CreateInstance("PM", null, employeesList);
+        List<Role> roles = new List<Role>();
+        roles.Add(role1);
+        roles.Add(role2);
+
+        Division division1 = Division.CreateInstance("Application Development", null, roles);
+        Division division2 = Division.CreateInstance("Finances", null, null);
+        List<Division> divisions = new List<Division>();
+        divisions.Add(division1);
+        divisions.Add(division2);
+
+        Department department = Department.CreateInstance("Utilities", "hello", gallery2, "This department is a department is a department is a department is a department!", divisions);
+
+        gallery2.setProfiable(department);
+
+        foreach (Employee employee in employees)
+        {
+            employee.setRole(role2);
+        }
+
+        foreach (Role role in roles)
+        {
+            role.setDivision(division1);
+        }
+
+        foreach (Division division in divisions)
+        {
+            division.setDepartment(department);
+        }
+
+        departments.Add(department);
+
+    }
+
     private void OnLevelWasLoaded(int level)
     {
         Start();
+        addMock();
+
     }
 
     // getters
