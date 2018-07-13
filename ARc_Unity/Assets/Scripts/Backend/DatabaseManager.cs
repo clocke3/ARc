@@ -48,37 +48,42 @@ public class DatabaseManager : MonoBehaviour {
             if (!(departments.Contains(b)))
             {
                 departments.Add(b);
-            foreach (Department find in departments) {
-                if (b.isEqual(find)){
-                    break;
-                } else {
-                    departments.Add(b);
+                foreach (Department find in departments)
+                {
+                    if (b.isEqual(find))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        departments.Add(b);
+                    }
                 }
+                Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
+                if (!(employees.Contains(e)))
+                {
+                    employees.Add(e);
+                }
+                //Debug.Log("qr =" + qrid + "name = " + in_name + "  position = " + pos +
+                //          "hob=" + hob);
+                //Debug.Log(e.getHobbies());
             }
-            Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
-            if (!(employees.Contains(e)))
+            reader.Close();
+            reader = null;
+            dbcmd.Dispose();
+            dbcmd = null;
+            dbconn.Close();
+            dbconn = null;
+
+
+            foreach (Department department in departments)
             {
-                employees.Add(e);
+                Debug.Log(department.getLabel());
             }
-            //Debug.Log("qr =" + qrid + "name = " + in_name + "  position = " + pos +
-            //          "hob=" + hob);
-            //Debug.Log(e.getHobbies());
-        }
-        reader.Close();
-        reader = null;
-        dbcmd.Dispose();
-        dbcmd = null;
-        dbconn.Close();
-        dbconn = null;
-
-
-        foreach (Department department in departments)
-        {
-            Debug.Log(department.getLabel());
-        }
-        foreach (Employee employee in employees)
-        {
-            Debug.Log(employee.getLabel());
+            foreach (Employee employee in employees)
+            {
+                Debug.Log(employee.getLabel());
+            }
         }
     }
 
