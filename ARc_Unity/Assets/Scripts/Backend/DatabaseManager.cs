@@ -47,6 +47,7 @@ public class DatabaseManager : MonoBehaviour {
             Department b = Department.CreateInstance(dep, qrid, null, null, null);
             if (!(departments.Contains(b)))
             {
+<<<<<<< HEAD
                 departments.Add(b);
                 foreach (Department find in departments)
                 {
@@ -83,6 +84,14 @@ public class DatabaseManager : MonoBehaviour {
             foreach (Employee employee in employees)
             {
                 Debug.Log(employee.getLabel());
+=======
+                departments.Add(b);
+            }
+            Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
+            if (!(employees.Contains(e)))
+            {
+                employees.Add(e);
+>>>>>>> parent of 6487d6d... Merge branch 'master' of https://github.com/clocke3/ARc
             }
         }
     }
