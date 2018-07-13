@@ -36,10 +36,10 @@ public class DatabaseManager : MonoBehaviour {
      IDataReader reader = dbcmd.ExecuteReader();
      while (reader.Read())
      {
-         string in_name = reader.GetString(0)+reader.GetString(1);
-         string pos = reader.GetString(2);
+        string in_name = reader.GetString(0)+reader.GetString(1);
+        string pos = reader.GetString(2);
         
-         Debug.Log("  name ="+in_name+"  position ="+  pos);
+         Debug.Log("name = "+in_name+"  position = "+  pos);
      }
      reader.Close();
      reader = null;
