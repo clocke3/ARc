@@ -25,42 +25,56 @@ public class DatabaseManager : MonoBehaviour {
         employees = new List<Employee>();
 	}
 
-    void Start () {
-    string conn = "URI=file:" + Application.dataPath + "/test.db"; //Path to database.
-     IDbConnection dbconn;
-     dbconn = (IDbConnection) new SqliteConnection(conn);
-     dbconn.Open(); //Open connection to the database.
-     IDbCommand dbcmd = dbconn.CreateCommand();
-     string sqlQuery = "SELECT QR_ID,LAST_NAME,FIRST_NAME,POSITION,DIVISION," +
-            "WORK_DURATION,HOBBIES " + "FROM EMPLOYEE";
-     dbcmd.CommandText = sqlQuery;
-     IDataReader reader = dbcmd.ExecuteReader();
-     while (reader.Read()) {
+    void Start()
+    {
+        string conn = "URI=file:" + Application.dataPath + "/test.db"; //Path to database.
+        IDbConnection dbconn;
+        dbconn = (IDbConnection)new SqliteConnection(conn);
+        dbconn.Open(); //Open connection to the database.
+        IDbCommand dbcmd = dbconn.CreateCommand();
+        string sqlQuery = "SELECT QR_ID,LAST_NAME,FIRST_NAME,POSITION,DIVISION," +
+               "WORK_DURATION,HOBBIES " + "FROM EMPLOYEE";
+        dbcmd.CommandText = sqlQuery;
+        IDataReader reader = dbcmd.ExecuteReader();
+        while (reader.Read())
+        {
             string qrid = reader.GetString(0);
-            string in_name = reader.GetString(1) +","+ reader.GetString(2);
+            string in_name = reader.GetString(1) + "," + reader.GetString(2);
             string pos = reader.GetString(3);
             string dep = reader.GetString(4);
             string dur = reader.GetString(5);
             string hob = reader.GetString(6);
             Department b = Department.CreateInstance(dep, qrid, null, null, null);
-            if (!(departments.Contains(b))) {
+            if (!(departments.Contains(b)))
+            {
                 departments.Add(b);
             }
             Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
-            if (!(employees.Contains(e))){
+            if (!(employees.Contains(e)))
+            {
                 employees.Add(e);
             }
-         Debug.Log("qr ="+qrid+"name = "+in_name+"  position = "+  pos +
-                   "hob="+ hob);
-            Debug.Log(e.getHobbies());
-     }
-     reader.Close();
-     reader = null;
-     dbcmd.Dispose();
-     dbcmd = null;
-     dbconn.Close();
-     dbconn = null;
- }
+            //Debug.Log("qr =" + qrid + "name = " + in_name + "  position = " + pos +
+            //          "hob=" + hob);
+            //Debug.Log(e.getHobbies());
+        }
+        reader.Close();
+        reader = null;
+        dbcmd.Dispose();
+        dbcmd = null;
+        dbconn.Close();
+        dbconn = null;
+
+
+        foreach (Department department in departments)
+        {
+            Debug.Log(department.getLabel());
+        }
+        foreach (Employee employee in employees)
+        {
+            Debug.Log(employee.getLabel());
+        }
+    }
 
     // getters
     public static DatabaseManager getInstance() {
@@ -77,6 +91,7 @@ public class DatabaseManager : MonoBehaviour {
             {
                 if (department.getLabel().Contains(keyword))
                 {
+                    Debug.Log(department.getLabel() + " and " + keyword);
                     profiables.Add(department);
                 }
             }
@@ -87,6 +102,7 @@ public class DatabaseManager : MonoBehaviour {
             {
                 if (employee.getLabel().Contains(keyword))
                 {
+                    Debug.Log(employee.getLabel() + " and " + keyword);
                     profiables.Add(employee);
                 }
             }
@@ -122,6 +138,8 @@ public class DatabaseManager : MonoBehaviour {
 
     public List<Profiable> search(string keyword, int typeID) {
         // return a list of all departments/employees (determined by typeID) with labels containing keyword
+        Debug.Log(keyword);
+
         List<Profiable> profiables = new List<Profiable>();
 
         if (typeID == DatabaseObject.DEPARTMENT)
@@ -130,8 +148,9 @@ public class DatabaseManager : MonoBehaviour {
             {
                 foreach (Department department in departments)
                 {
-                    if (department.getLabel().Contains(keyword))
+                    if (department.getLabel().ToLower().Contains(keyword.ToLower()))
                     {
+                        Debug.Log(department.getLabel() + " and " + keyword);
                         profiables.Add(department);
                     }
                 }
@@ -141,8 +160,9 @@ public class DatabaseManager : MonoBehaviour {
             {
                 foreach (Employee employee in employees)
                 {
-                    if (employee.getLabel().Contains(keyword))
+                    if (employee.getLabel().ToLower().Contains(keyword.ToLower()))
                     {
+                        Debug.Log(employee.getLabel() + " and " + keyword);
                         profiables.Add(employee);
                     }
                 }

@@ -13,9 +13,9 @@ public class SearchManager : ItemManager {
     public GameObject resultsParent;
     private List<SearchResult> results = new List<SearchResult>();
 
-    public const string ALL = "ALL", DEP = "DEP", EMP = "EMP";
+    public const string ALL = "All", DEP = "Dep", EMP = "Emp";
     public Text filterText;
-    private string filter;
+    private string filter = ALL;
 
     //public const string ALPH = "ALPH", DEPF = "DEPF", EMPF = "EMPF";
     //public Text orgText;
@@ -60,11 +60,10 @@ public class SearchManager : ItemManager {
                 break;
         }
 
-        results = profiablesToResults(profiables);
+        profiablesToResults(profiables);
     }
 
-    private List<SearchResult> profiablesToResults(List<Profiable> profiables) {
-        List<SearchResult> newResults = new List<SearchResult>();
+    private void profiablesToResults(List<Profiable> profiables) {
 
         if (profiables != null)
         {
@@ -73,10 +72,10 @@ public class SearchManager : ItemManager {
                 SearchResult searchResult = Instantiate(resultPrefab, transform.position, Quaternion.identity) as SearchResult;
                 searchResult.setup(this, profiable, keyword);
                 searchResult.transform.SetParent(resultsParent.transform, true);
+                results.Add(searchResult);
             }
         }
 
-        return newResults;
     }
 
     // clearing

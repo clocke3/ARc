@@ -8,7 +8,7 @@ public abstract class Panel : MonoBehaviour {
     protected ProfileManager profileManager;
     public DatabaseObjectButton databaseObjectButtonPrefab;
     public bool isOn = true;
-    private string label;
+    private string identifier;
 
     // setters
     public void setup(ProfileManager profileManager, DatabaseObject databaseObject) {
@@ -17,7 +17,7 @@ public abstract class Panel : MonoBehaviour {
         this.transform.SetSiblingIndex(0);
         if(databaseObject != null) {
             setToRepresent(databaseObject);
-            label = databaseObject.getLabel();
+            identifier = databaseObject.getLabel();
         }
         setAttributes();
     }
@@ -40,7 +40,7 @@ public abstract class Panel : MonoBehaviour {
 
     // getters
     public string getLabel() {
-        return label;
+        return identifier;
     }
 
 }
