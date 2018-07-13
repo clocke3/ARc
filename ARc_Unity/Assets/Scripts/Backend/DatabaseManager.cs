@@ -47,6 +47,7 @@ public class DatabaseManager : MonoBehaviour {
      dbcmd = null;
      dbconn.Close();
      dbconn = null;
+
  }
 
     // setters

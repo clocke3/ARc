@@ -12,7 +12,8 @@ public abstract class Panel : MonoBehaviour {
     // setters
     public void setup(ProfileManager profileManager, DatabaseObject databaseObject) {
         this.profileManager = profileManager;
-        this.transform.SetParent(profileManager.transform, true);
+        this.transform.SetParent(profileManager.profilesHolder.transform, true);
+        this.transform.SetSiblingIndex(0);
         setToRepresent(databaseObject);
         setAttributes();
     }

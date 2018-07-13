@@ -15,7 +15,6 @@ public class RoleBlock : Panel {
     protected override void setToRepresent(DatabaseObject databaseObject)
     {
         if (databaseObject is Role) role = databaseObject as Role;
-        else role = null;
     }
 
     protected override void setAttributes()

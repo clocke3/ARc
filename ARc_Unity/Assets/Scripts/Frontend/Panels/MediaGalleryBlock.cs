@@ -20,7 +20,6 @@ public class MediaGalleryBlock : Panel
     protected override void setToRepresent(DatabaseObject databaseObject)
     {
         if (databaseObject is MediaGallery) gallery = databaseObject as MediaGallery;
-        else gallery = null;
     }
 
     protected override void setAttributes()
