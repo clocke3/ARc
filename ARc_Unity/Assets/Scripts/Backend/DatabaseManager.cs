@@ -45,9 +45,18 @@ public class DatabaseManager : MonoBehaviour {
             string dur = reader.GetString(5);
             string hob = reader.GetString(6);
             Department b = Department.CreateInstance(dep, qrid, null, null, null);
+<<<<<<< HEAD
             if (!(departments.Contains(b)))
             {
                 departments.Add(b);
+=======
+            foreach (Department find in departments) {
+                if (b.isEqual(find)){
+                    break;
+                } else {
+                    departments.Add(b);
+                }
+>>>>>>> eccae794c3aa157704c9f6afe023ffb2c516a88e
             }
             Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
             if (!(employees.Contains(e)))
