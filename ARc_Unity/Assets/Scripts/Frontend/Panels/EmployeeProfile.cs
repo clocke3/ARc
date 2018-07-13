@@ -11,6 +11,7 @@ public class EmployeeProfile : Panel
     public DatabaseObjectButton roleButton;
     public DatabaseObjectButton galleryButton;
     public GameObject hobbiesParent;
+    public Text hobbiesText;
     public Text textPrefab;
 
     // panel stuff
@@ -39,13 +40,7 @@ public class EmployeeProfile : Panel
         // set up hobbies
         if (employee.getHobbies() != null)
         {
-            List<string> hobbies = employee.getHobbies();
-            foreach (string hobby in hobbies)
-            {
-                Text hobbyText = Instantiate(textPrefab, transform.position, Quaternion.identity) as Text;
-                hobbyText.text = "#\t" + hobby;
-                hobbyText.transform.SetParent(hobbiesParent.transform, true);
-            }
+            hobbiesText.text = employee.getHobbies();
         }
     }
 }

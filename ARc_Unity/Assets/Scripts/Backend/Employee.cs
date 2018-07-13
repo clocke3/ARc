@@ -6,17 +6,17 @@ public class Employee : Profiable
 {
     // variables
     private Role role;
-    private List<string> hobbies;
+    private string hobbies;
 
     // constructors
     private void init()
     {
         role = Role.CreateInstance();
-        hobbies = new List<string>();
+        hobbies = "";
         this.profiableInit();
     }
 
-    private void init(string label, string qrID, MediaGallery gallery, Role role, List<string> hobbies)
+    private void init(string label, string qrID, MediaGallery gallery, Role role, string hobbies)
     {
         this.role = role;
         this.hobbies = hobbies;
@@ -30,7 +30,7 @@ public class Employee : Profiable
         return employee;
     }
 
-    public static Employee CreateInstance(string label, string qrID, MediaGallery gallery, Role role, List<string> hobbies)
+    public static Employee CreateInstance(string label, string qrID, MediaGallery gallery, Role role, string hobbies)
     {
         Employee employee = CreateInstance<Employee>();
         employee.init(label, qrID, gallery, role, hobbies);
@@ -52,7 +52,7 @@ public class Employee : Profiable
         return role;
     }
 
-    public List<string> getHobbies(){
+    public string getHobbies(){
         return hobbies;
     }
 

@@ -945,7 +945,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Emp
+  m_Text: All
 --- !u!114 &114549104115151070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1389,11 +1389,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Emp
-      m_Image: {fileID: 0}
     - m_Text: All
       m_Image: {fileID: 0}
     - m_Text: Dep
+      m_Image: {fileID: 0}
+    - m_Text: Emp
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
