@@ -89,8 +89,10 @@ public class DatabaseManager : MonoBehaviour
         {
             foreach (Department department in departments)
             {
-                if (department.getLabel().Contains(keyword))
+                Debug.Log(department.getLabel());
+                if (department.getLabel().ToLower().Contains(keyword.ToLower()))
                 {
+                    Debug.Log(department.getLabel().ToLower() + " contains " + keyword.ToLower());
                     profiables.Add(department);
                 }
             }
@@ -99,8 +101,10 @@ public class DatabaseManager : MonoBehaviour
         {
             foreach (Employee employee in employees)
             {
-                if (employee.getLabel().Contains(keyword))
+                Debug.Log(employee.getLabel());
+                if (employee.getLabel().ToLower().Contains(keyword.ToLower()))
                 {
+                    Debug.Log(employee.getLabel().ToLower() + " contains " + keyword.ToLower());
                     profiables.Add(employee);
                 }
             }
@@ -145,8 +149,9 @@ public class DatabaseManager : MonoBehaviour
             {
                 foreach (Department department in departments)
                 {
-                    if (department.getLabel().Contains(keyword))
+                    if (department.getLabel().ToLower().Contains(keyword.ToLower()))
                     {
+                        Debug.Log(department.getLabel().ToLower() + " contains " + keyword.ToLower());
                         profiables.Add(department);
                     }
                 }
@@ -158,8 +163,9 @@ public class DatabaseManager : MonoBehaviour
             {
                 foreach (Employee employee in employees)
                 {
-                    if (employee.getLabel().Contains(keyword))
+                    if (employee.getLabel().ToLower().Contains(keyword.ToLower()))
                     {
+                        Debug.Log(employee.getLabel().ToLower() + " contains " + keyword.ToLower());
                         profiables.Add(employee);
                     }
                 }

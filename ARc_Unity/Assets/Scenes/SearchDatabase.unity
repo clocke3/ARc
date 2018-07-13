@@ -296,6 +296,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1024410192}
     m_Modifications:
+    - target: {fileID: 114826801422777552, guid: 74dea51f56ace491fa31502a721a99a7,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224633267038132134, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -410,6 +415,26 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826801422777552, guid: 74dea51f56ace491fa31502a721a99a7,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 87302650}
+    - target: {fileID: 114826801422777552, guid: 74dea51f56ace491fa31502a721a99a7,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: updateKeyword
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826801422777552, guid: 74dea51f56ace491fa31502a721a99a7,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826801422777552, guid: 74dea51f56ace491fa31502a721a99a7,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74dea51f56ace491fa31502a721a99a7, type: 2}
