@@ -47,17 +47,9 @@ public class ScanManager : ItemManager
     {
         // checks if the current image is a qr code
         for (int x = 0; x < img.width; x++)
-        {
             for (int y = 0; y < img.height; y++)
-            {
-                //check by each pixel 
                 if (!img.GetPixel(x, y).a.Equals(new Color(0, 0, 0, 255)) || !img.GetPixel(x, y).a.Equals(new Color(255, 255, 255, 255)))
-                {
                     return false;
-                } 
-            }
-        }
-
         return true;
     }
 
@@ -65,8 +57,7 @@ public class ScanManager : ItemManager
     {
         // checks to see if the current qr code is valid
         // scan qr code for link
-        if (isQR(img))
-        {
+        if (isQR(img)) {
             BarcodeReader barcodeReader = new BarcodeReader();
             List<BarcodeFormat> possibleFormats = new List<BarcodeFormat>();
             possibleFormats.Add(BarcodeFormat.QR_CODE);
@@ -81,11 +72,10 @@ public class ScanManager : ItemManager
             //check database
             if (!db.containsCode(result))
             {
-                    // Try rotating the image. I know that QR codes don't care about orientation, but without this the scan fails often
+                // Try rotating the image. I know that QR codes don't care about orientation, but without this the scan fails often
                 img = RotateTexture(img);
                 result = barcodeReader.Decode(img.GetPixels32(), img.width, img.height).ToString();
             }
-
             if (db.containsCode(result))
             {
                 getProfile();
@@ -95,14 +85,15 @@ public class ScanManager : ItemManager
                 return false;
             }
         }
-
         return false;
     }
 
 
     public void getProfile()
     {
-         updateCurrentCode(result);
+        updateCurrentCode(result);
         displayCodeProfile();
     }
+
+ 
 }
