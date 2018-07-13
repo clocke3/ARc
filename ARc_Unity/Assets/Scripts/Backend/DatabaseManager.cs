@@ -8,9 +8,10 @@ using System;
 public class DatabaseManager : MonoBehaviour {
 
     // variables
-    private static DatabaseManager instance = null;
-    private static DatabaseObject database;         //database (FIX WHEN READY)
+    private static DatabaseManager instance = null;       //database (FIX WHEN READY)
     private static List<Department> departments;
+    //remove after
+    private static List<Employee> employee;
 
 	// Initialization
 	void Awake () {
@@ -19,10 +20,9 @@ public class DatabaseManager : MonoBehaviour {
             instance = this;
         }
         else Destroy(gameObject);
-
         DontDestroyOnLoad(gameObject);
-
-        // set up database variable
+        departments = new List<Department>();
+        employee = new List<Employee>();
 	}
 
     void Start () {
@@ -31,15 +31,27 @@ public class DatabaseManager : MonoBehaviour {
      dbconn = (IDbConnection) new SqliteConnection(conn);
      dbconn.Open(); //Open connection to the database.
      IDbCommand dbcmd = dbconn.CreateCommand();
-     string sqlQuery = "SELECT LAST_NAME,FIRST_NAME,POSITION " + "FROM EMPLOYEE";
+     string sqlQuery = "SELECT QR_ID,LAST_NAME,FIRST_NAME,POSITION,DIVISION," +
+            "WORK_DURATION,HOBBIES " + "FROM EMPLOYEE";
      dbcmd.CommandText = sqlQuery;
      IDataReader reader = dbcmd.ExecuteReader();
-     while (reader.Read())
-     {
-        string in_name = reader.GetString(0)+reader.GetString(1);
-        string pos = reader.GetString(2);
-        
-         Debug.Log("name = "+in_name+"  position = "+  pos);
+     while (reader.Read()) {
+            string qrid = reader.GetString(0);
+            string in_name = reader.GetString(1) +","+ reader.GetString(2);
+            string pos = reader.GetString(3);
+            string dep = reader.GetString(4);
+            string dur = reader.GetString(5);
+            string hob = reader.GetString(6);
+            Department b = Department.CreateInstance(dep, qrid, null, null, null);
+            if (!(departments.Contains(b))) {
+                departments.Add(b);
+            }
+            Employee e = Employee.CreateInstance(in_name, qrid, null, null, null);
+            if (!(employee.Contains(e))){
+                employee.Add(e);
+            }
+         Debug.Log("qr ="+qrid+"name = "+in_name+"  position = "+  pos +
+                   "hob="+ hob);
      }
      reader.Close();
      reader = null;
