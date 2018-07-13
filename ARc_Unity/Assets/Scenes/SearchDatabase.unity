@@ -391,16 +391,6 @@ Prefab:
       propertyPath: profileManager
       value: 
       objectReference: {fileID: 145773408}
-    - target: {fileID: 224447300096082936, guid: 74dea51f56ace491fa31502a721a99a7,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224447300096082936, guid: 74dea51f56ace491fa31502a721a99a7,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224585279965209124, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -411,14 +401,14 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224001357727695264, guid: 74dea51f56ace491fa31502a721a99a7,
+    - target: {fileID: 224447300096082936, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
-      propertyPath: m_SizeDelta.y
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224585279965209124, guid: 74dea51f56ace491fa31502a721a99a7,
+    - target: {fileID: 224447300096082936, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
-      propertyPath: m_AnchorMin.y
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
