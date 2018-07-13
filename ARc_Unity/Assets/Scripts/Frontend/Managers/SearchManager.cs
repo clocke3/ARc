@@ -31,7 +31,6 @@ public class SearchManager : ItemManager {
     // updating
     public void updateKeyword() {
         keyword = inputText.text;
-        Debug.Log(keyword);
         updateResults();
     }
 

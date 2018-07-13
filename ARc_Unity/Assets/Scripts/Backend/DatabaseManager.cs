@@ -107,7 +107,6 @@ public class DatabaseManager : MonoBehaviour
                 Debug.Log(department.getLabel());
                 if (department.getLabel().ToLower().Contains(keyword.ToLower()))
                 {
-                    Debug.Log(department.getLabel().ToLower() + " contains " + keyword.ToLower());
                     profiables.Add(department);
                 }
             }
@@ -119,7 +118,6 @@ public class DatabaseManager : MonoBehaviour
                 Debug.Log(employee.getLabel());
                 if (employee.getLabel().ToLower().Contains(keyword.ToLower()))
                 {
-                    Debug.Log(employee.getLabel().ToLower() + " contains " + keyword.ToLower());
                     profiables.Add(employee);
                 }
             }
@@ -166,7 +164,6 @@ public class DatabaseManager : MonoBehaviour
                 {
                     if (department.getLabel().ToLower().Contains(keyword.ToLower()))
                     {
-                        Debug.Log(department.getLabel().ToLower() + " contains " + keyword.ToLower());
                         profiables.Add(department);
                     }
                 }
@@ -180,7 +177,6 @@ public class DatabaseManager : MonoBehaviour
                 {
                     if (employee.getLabel().ToLower().Contains(keyword.ToLower()))
                     {
-                        Debug.Log(employee.getLabel().ToLower() + " contains " + keyword.ToLower());
                         profiables.Add(employee);
                     }
                 }
