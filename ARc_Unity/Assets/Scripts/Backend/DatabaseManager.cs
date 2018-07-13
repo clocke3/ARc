@@ -46,12 +46,13 @@ public class DatabaseManager : MonoBehaviour {
             if (!(departments.Contains(b))) {
                 departments.Add(b);
             }
-            Employee e = Employee.CreateInstance(in_name, qrid, null, null, null);
+            Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
             if (!(employee.Contains(e))){
                 employee.Add(e);
             }
          Debug.Log("qr ="+qrid+"name = "+in_name+"  position = "+  pos +
                    "hob="+ hob);
+            Debug.Log(e.getHobbies());
      }
      reader.Close();
      reader = null;
@@ -59,15 +60,7 @@ public class DatabaseManager : MonoBehaviour {
      dbcmd = null;
      dbconn.Close();
      dbconn = null;
-
  }
-
-    // setters
-    private void dataToObjects() {
-        // translate database into database objects
-        // (i.e. fill up departments variable)
-        departments = new List<Department>();
-    }
 
     // getters
     public static DatabaseManager getInstance() {
