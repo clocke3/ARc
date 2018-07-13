@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ZXing;
@@ -11,14 +12,8 @@ public class ScanManager : ItemManager
     //variables
     private DatabaseManager db;
     private string result;
-    private int verificationTime = 5;
 
-    // frame-by-frame functions
-    private void Update()
-    {
-        // each frame, check to see if a qr code is being seen and act accordingly
-    }
-
+    // frame-by-frame function
     private static Texture2D RotateTexture(Texture2D image)
     {
         //flip image width<>height, as we rotated the image, it might be a rect. not a square image
@@ -61,7 +56,7 @@ public class ScanManager : ItemManager
     private bool isValid(Texture2D img)
     {
         // checks to see if the current qr code is valid
-        // scan qr code for links
+        // scan qr code for link
         if (isQR(img)) {
             BarcodeReader barcodeReader = new BarcodeReader();
             List<BarcodeFormat> possibleFormats = new List<BarcodeFormat>();
@@ -83,6 +78,7 @@ public class ScanManager : ItemManager
             }
             if (db.containsCode(result))
             {
+                getProfile();
                 return true;
             }
             else{
@@ -91,14 +87,13 @@ public class ScanManager : ItemManager
         }
         return false;
     }
- 
 
-    public void getProfile(Texture2D img)
+
+    public void getProfile()
     {
-        if (isValid(img))
-        {
-            updateCurrentCode(result);
-            displayCodeProfile();
-        }
+        updateCurrentCode(result);
+        displayCodeProfile();
     }
+
+ 
 }
