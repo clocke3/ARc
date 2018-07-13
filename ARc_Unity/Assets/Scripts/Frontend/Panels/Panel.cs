@@ -8,13 +8,17 @@ public abstract class Panel : MonoBehaviour {
     protected ProfileManager profileManager;
     public DatabaseObjectButton databaseObjectButtonPrefab;
     public bool isOn = true;
+    private string label;
 
     // setters
     public void setup(ProfileManager profileManager, DatabaseObject databaseObject) {
         this.profileManager = profileManager;
         this.transform.SetParent(profileManager.profilesHolder.transform, true);
         this.transform.SetSiblingIndex(0);
-        setToRepresent(databaseObject);
+        if(databaseObject != null) {
+            setToRepresent(databaseObject);
+            label = databaseObject.getLabel();
+        }
         setAttributes();
     }
 
@@ -32,6 +36,11 @@ public abstract class Panel : MonoBehaviour {
         isOn = false;
         profileManager.updatePanels();
         Destroy(gameObject);
+    }
+
+    // getters
+    public string getLabel() {
+        return label;
     }
 
 }
