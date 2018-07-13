@@ -15,7 +15,6 @@ public class DivisionBlock : Panel {
     protected override void setToRepresent(DatabaseObject databaseObject)
     {
         if (databaseObject is Division) division = databaseObject as Division;
-        else division = null;
     }
 
     protected override void setAttributes()

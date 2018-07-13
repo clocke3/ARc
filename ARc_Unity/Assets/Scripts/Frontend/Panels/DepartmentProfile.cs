@@ -16,7 +16,6 @@ public class DepartmentProfile : Panel {
     protected override void setToRepresent(DatabaseObject databaseObject)
     {
         if (databaseObject is Department) department = databaseObject as Department;
-        else department = null;
     }
 
     protected override void setAttributes()
