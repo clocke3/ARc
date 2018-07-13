@@ -7,6 +7,7 @@ public class ProfileManager : MonoBehaviour {
     // variables
     private DatabaseManager databaseManager;
     public ItemManager itemManager;
+    public GameObject profilesHolder;
     private List<Panel> panels = new List<Panel>();
     public Panel[] panelPrefabs = new Panel[5];
 

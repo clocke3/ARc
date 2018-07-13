@@ -17,7 +17,6 @@ public class EmployeeProfile : Panel
     protected override void setToRepresent(DatabaseObject databaseObject)
     {
         if (databaseObject is Employee) employee = databaseObject as Employee;
-        else employee = null;
     }
 
     protected override void setAttributes()
