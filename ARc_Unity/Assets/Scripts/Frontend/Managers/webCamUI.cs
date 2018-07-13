@@ -90,13 +90,13 @@ public class webCamUI : MonoBehaviour
                 if (selectedcam == 0)
                 {
                     clickedImage.transform.localScale = new Vector3(-1, -1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180;
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
                 else
                 {
                     clickedImage.transform.localScale = new Vector3(-1, 1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180; 
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
             }
@@ -106,13 +106,13 @@ public class webCamUI : MonoBehaviour
                 if (selectedcam == 0)
                 {
                     clickedImage.transform.localScale = new Vector3(-1, -1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180;
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
                 else
                 {
                     clickedImage.transform.localScale = new Vector3(-1, 1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180;
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
 
