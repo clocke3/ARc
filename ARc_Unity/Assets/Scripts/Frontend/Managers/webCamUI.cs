@@ -9,8 +9,6 @@ public class webCamUI : MonoBehaviour
     private ScanManager scanManager;
     public RawImage rawimage;
     public Image clickedImage;
-    private const string qrImageName = "qrImageName.jpg";
-    private byte[] fileData;
 
     private WebCamTexture webcamTexture;
 
@@ -24,7 +22,6 @@ public class webCamUI : MonoBehaviour
 
     //public GameObject backButton;
     public GameObject webCamScreen;
-    private bool scanningQRCode;
 
     void Start()
     {
@@ -93,29 +90,29 @@ public class webCamUI : MonoBehaviour
                 if (selectedcam == 0)
                 {
                     clickedImage.transform.localScale = new Vector3(-1, -1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180;
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
                 else
                 {
                     clickedImage.transform.localScale = new Vector3(-1, 1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180; 
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
             }
             else if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
-                
+
                 if (selectedcam == 0)
                 {
                     clickedImage.transform.localScale = new Vector3(-1, -1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180;
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
                 else
                 {
                     clickedImage.transform.localScale = new Vector3(-1, 1, 1);
-                    camRotationAngle = 0;
+                    camRotationAngle = -180;
                     clickedImage.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, camRotationAngle);
                 }
 
@@ -163,17 +160,19 @@ public class webCamUI : MonoBehaviour
 
         CloseSelfieScreen();
 
+        //scanManager.getProfile();
 
          //* You can save this image in local folder.
-        //byte[] outBytes;
-        //outBytes = img.EncodeToPNG ();
-        //string outFile = Application.dataPath + "/UI_Sprites/" + "Camera" + "/" + "NewScreen.png";
-        //System.IO.File.WriteAllBytes (outFile, outBytes);
+         //byte[] outBytes;
+         //outBytes = img.EncodeToPNG ();
+         //string outFile = Application.dataPath + "/UI_Sprites/" + "Camera" + "/" + "NewScreen.png";
+         //System.IO.File.WriteAllBytes (outFile, outBytes);
 
 
     }
 
-    public void CloseSelfieScreen(){
+    public void CloseSelfieScreen()
+    {
 
         StopCamera();
 
@@ -182,7 +181,8 @@ public class webCamUI : MonoBehaviour
         webCamScreen.SetActive(false);
     }
 
-    public Sprite GetSprite (Texture2D texture){
+    public Sprite GetSprite(Texture2D texture)
+    {
 
         Texture2D old = texture;
         Texture2D left = new Texture2D((int)(old.width), old.height, old.format, false);
@@ -194,48 +194,5 @@ public class webCamUI : MonoBehaviour
         return sprite;
     }
 
-    public void lookUp(){
-      
-        //start photo request
-        AndroidJavaClass mediaStoreClass = new AndroidJavaClass("android.provider.MediaStore");
-        AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
-        intentObject.Call<AndroidJavaObject>("setAction", mediaStoreClass.GetStatic<string>("ACTION_IMAGE_CAPTURE"));
-
-        //define the path and filename to save photo taken by Camera activity
-        string filePath = Application.persistentDataPath + Path.DirectorySeparatorChar + qrImageName;
-        AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
-        AndroidJavaObject fileObject = new AndroidJavaObject("java.io.File", filePath);
-        AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("fromFile", fileObject);
-
-        intentObject.Call<AndroidJavaObject>("putExtra", mediaStoreClass.GetStatic<string>("EXTRA_OUTPUT"), uriObject);
-
-        // Start the activity
-        AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
-        currentActivity.Call("startActivity", intentObject);
-
-        scanningQRCode = true;
-
-    }
-
-    public void endLookup(){
-        //end photo request
-        string qrCodeImagePath = Application.persistentDataPath + Path.DirectorySeparatorChar + qrImageName;
-        if (File.Exists(qrCodeImagePath))
-        {
-            // Load the image into a Texture2D
-            fileData = File.ReadAllBytes(qrCodeImagePath);
-            Texture2D texture2D = new Texture2D(2, 2);
-            texture2D.LoadImage(fileData);
-
-            scanManager.getProfile(texture2D);
-            //string scannedText = result == null ? "" : result.Text;
-            //OnQRCodeScanned(scannedText);
-
-            File.Delete(qrCodeImagePath);
-        }
-        scanningQRCode = false;
- 
-    }
 }
 

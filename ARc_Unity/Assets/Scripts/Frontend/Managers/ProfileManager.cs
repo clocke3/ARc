@@ -7,6 +7,7 @@ public class ProfileManager : MonoBehaviour {
     // variables
     private DatabaseManager databaseManager;
     public ItemManager itemManager;
+    public GameObject profilesHolder;
     private List<Panel> panels = new List<Panel>();
     public Panel[] panelPrefabs = new Panel[5];
 
@@ -45,7 +46,7 @@ public class ProfileManager : MonoBehaviour {
     // adding panels
     public void addPanel(DatabaseObject databaseObject)                         // FIX UP POSITIONING!!!!!
     {
-        if(databaseObject == null) {
+        if(databaseObject == null || panelContains(databaseObject)) {
             return;
         }
         Panel newPanel;
@@ -75,6 +76,15 @@ public class ProfileManager : MonoBehaviour {
 
     public void displayProfile(string qrID) {
         addPanel(databaseManager.getProfiable(qrID));
+    }
+
+    // panel update checker
+    private bool panelContains(DatabaseObject databaseObject) {
+        foreach (Panel panel in panels)
+        {
+            if (panel.getLabel().Equals(databaseObject.getLabel())) return true;
+        }
+        return false;
     }
 
 }
