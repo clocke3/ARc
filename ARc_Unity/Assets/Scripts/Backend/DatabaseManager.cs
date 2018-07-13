@@ -11,7 +11,7 @@ public class DatabaseManager : MonoBehaviour {
     private static DatabaseManager instance = null;       //database (FIX WHEN READY)
     private static List<Department> departments;
     //remove after
-    private static List<Employee> employees;
+    private static List<Employee> employee;
 
 	// Initialization
 	void Awake () {
@@ -22,7 +22,7 @@ public class DatabaseManager : MonoBehaviour {
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
         departments = new List<Department>();
-        employees = new List<Employee>();
+        employee = new List<Employee>();
 	}
 
     void Start()
@@ -88,6 +88,7 @@ public class DatabaseManager : MonoBehaviour {
                 departments.Add(b);
             }
             Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
+<<<<<<< HEAD
             if (!(employees.Contains(e)))
             {
                 employees.Add(e);
@@ -95,6 +96,22 @@ public class DatabaseManager : MonoBehaviour {
             }
         }
     }
+=======
+            if (!(employee.Contains(e))){
+                employee.Add(e);
+            }
+         Debug.Log("qr ="+qrid+"name = "+in_name+"  position = "+  pos +
+                   "hob="+ hob);
+            Debug.Log(e.getHobbies());
+     }
+     reader.Close();
+     reader = null;
+     dbcmd.Dispose();
+     dbcmd = null;
+     dbconn.Close();
+     dbconn = null;
+ }
+>>>>>>> parent of e090992... set up search functions in DatabaseManager
 
     // getters
     public static DatabaseManager getInstance() {
@@ -105,53 +122,43 @@ public class DatabaseManager : MonoBehaviour {
         // return a list of all departments and employees with a label featuring keyword
         List<Profiable> profiables = new List<Profiable>();
 
-        if (departments != null)
+        foreach (Department department in departments)
         {
-            foreach (Department department in departments)
+            if (department.getLabel().Contains(keyword))
             {
+<<<<<<< HEAD
                 if (department.getLabel().Contains(keyword))
                 {
                     Debug.Log(department.getLabel() + " and " + keyword);
                     profiables.Add(department);
                 }
+=======
+                profiables.Add(department);
+>>>>>>> parent of e090992... set up search functions in DatabaseManager
             }
-        }
-        if (employees != null)
-        {
-            foreach (Employee employee in employees)
+
+            if (department.getDivisions() == null) continue;
+            foreach (Division division in department.getDivisions())
             {
-                if (employee.getLabel().Contains(keyword))
+                if (division.getRoles() == null) continue;
+                foreach (Role role in division.getRoles())
                 {
+<<<<<<< HEAD
                     Debug.Log(employee.getLabel() + " and " + keyword);
                     profiables.Add(employee);
+=======
+                    if (role.getEmployees() == null) continue;
+                    foreach (Employee employee in role.getEmployees())
+                    {
+                        if (employee.getLabel().Contains(keyword))
+                        {
+                            profiables.Add(employee);
+                        }
+                    }
+>>>>>>> parent of e090992... set up search functions in DatabaseManager
                 }
             }
         }
-
-        //foreach (Department department in departments)
-        //{
-        //    if (department.getLabel().Contains(keyword))
-        //    {
-        //        profiables.Add(department);
-        //    }
-
-        //    if (department.getDivisions() == null) continue;
-        //    foreach (Division division in department.getDivisions())
-        //    {
-        //        if (division.getRoles() == null) continue;
-        //        foreach (Role role in division.getRoles())
-        //        {
-        //            if (role.getEmployees() == null) continue;
-        //            foreach (Employee employee in role.getEmployees())
-        //            {
-        //                if (employee.getLabel().Contains(keyword))
-        //                {
-        //                    profiables.Add(employee);
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
 
         return profiables;
     }
@@ -162,6 +169,7 @@ public class DatabaseManager : MonoBehaviour {
 
         List<Profiable> profiables = new List<Profiable>();
 
+<<<<<<< HEAD
         if (typeID == DatabaseObject.DEPARTMENT)
         {
             if (departments != null)
@@ -173,9 +181,18 @@ public class DatabaseManager : MonoBehaviour {
                         Debug.Log(department.getLabel() + " and " + keyword);
                         profiables.Add(department);
                     }
+=======
+        if(typeID == DatabaseObject.DEPARTMENT) {
+            foreach (Department department in departments)
+            {
+                if(department.getLabel().Contains(keyword)) {
+                    profiables.Add(department);
+>>>>>>> parent of e090992... set up search functions in DatabaseManager
                 }
             }
+
         } else if(typeID == DatabaseObject.EMPLOYEE) {
+<<<<<<< HEAD
             if (employees != null)
             {
                 foreach (Employee employee in employees)
@@ -185,41 +202,29 @@ public class DatabaseManager : MonoBehaviour {
                         Debug.Log(employee.getLabel() + " and " + keyword);
                         profiables.Add(employee);
                     }
+=======
+
+            foreach (Department department in departments)
+            {
+                if (department.getDivisions() == null) continue;
+                foreach (Division division in department.getDivisions())
+                {
+                    if (division.getRoles() == null) continue;
+                    foreach (Role role in division.getRoles())
+                    {
+                        if (role.getEmployees() == null) continue;
+                        foreach (Employee employee in role.getEmployees())
+                        {
+                            if (employee.getLabel().Contains(keyword))
+                            {
+                                profiables.Add(employee);
+                            }
+                        }
+                    }
+>>>>>>> parent of e090992... set up search functions in DatabaseManager
                 }
             }
         }
-
-
-        //if(typeID == DatabaseObject.DEPARTMENT) {
-        //    foreach (Department department in departments)
-        //    {
-        //        if(department.getLabel().Contains(keyword)) {
-        //            profiables.Add(department);
-        //        }
-        //    }
-
-        //} else if(typeID == DatabaseObject.EMPLOYEE) {
-
-        //    foreach (Department department in departments)
-        //    {
-        //        if (department.getDivisions() == null) continue;
-        //        foreach (Division division in department.getDivisions())
-        //        {
-        //            if (division.getRoles() == null) continue;
-        //            foreach (Role role in division.getRoles())
-        //            {
-        //                if (role.getEmployees() == null) continue;
-        //                foreach (Employee employee in role.getEmployees())
-        //                {
-        //                    if (employee.getLabel().Contains(keyword))
-        //                    {
-        //                        profiables.Add(employee);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
 
         return profiables;
     }
@@ -227,28 +232,6 @@ public class DatabaseManager : MonoBehaviour {
     // finders
     public Profiable getProfiable(string qrID) {
         // search through departments and return the Profiable with the given qrID, or null if the qrID never comes up
-
-        if (departments != null)
-        {
-            foreach (Department department in departments)
-            {
-                if (department.equalQRID(qrID))
-                {
-                    return department;
-                }
-            }
-        }
-        if (employees != null)
-        {
-            foreach (Employee employee in employees)
-            {
-                if (employee.equalQRID(qrID))
-                {
-                    return employee;
-                }
-            }
-        }
-
         return null;
     }
 
