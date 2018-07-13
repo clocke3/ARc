@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestManager : ItemManager {
 
     public void showProfile() {
-        Employee employee = Employee.CreateInstance("Arnold", null, null, null, null);
+        Employee employee = Employee.CreateInstance("Arnold", null, null, null, "ummm, baseball, pooping, skydiving");
         Employee employee2 = Employee.CreateInstance("David", null, null, null, null);
         Employee employee3 = Employee.CreateInstance("Apple", null, null, null, null);
         Employee employee4 = Employee.CreateInstance("Pizza", null, null, null, null);
