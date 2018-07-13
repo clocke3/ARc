@@ -4,6 +4,7 @@ using UnityEngine;
 using Mono.Data.Sqlite;
 using System.Data;
 using System;
+using UnityEngine.SceneManagement;
 
 public class DatabaseManager : MonoBehaviour
 {
@@ -46,25 +47,34 @@ public class DatabaseManager : MonoBehaviour
             string dep = reader.GetString(4);
             string dur = reader.GetString(5);
             string hob = reader.GetString(6);
+
+            bool isNew = true;
             Department b = Department.CreateInstance(dep, qrid, null, null, null);
-            /*foreach (Department find in departments)
+            foreach (Department find in departments)
             {
                 if (b.isEqual(find))
                 {
+                    isNew = false;
                     break;
                 }
-                    departments.Add(b);
-
-            }*/
-            departments.Add(b);
-            Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
-            if (!(employees.Contains(e)))
-            {
-                employees.Add(e);
             }
-            Debug.Log("qr =" + qrid + "name = " + in_name + "  position = " + pos +
-                      "hob=" + hob);
-            Debug.Log(e.getHobbies());
+            if(isNew) departments.Add(b);
+
+            isNew = true;
+            Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
+            foreach (Employee find in employees)
+            {
+                if (e.isEqual(find))
+                {
+                    isNew = false;
+                    break;
+                }
+            }
+            if (isNew) employees.Add(e);
+
+            //Debug.Log("qr =" + qrid + "name = " + in_name + "  position = " + pos +
+            //          "hob=" + hob);
+            //Debug.Log(e.getHobbies());
         }
         reader.Close();
         reader = null;
@@ -72,6 +82,11 @@ public class DatabaseManager : MonoBehaviour
         dbcmd = null;
         dbconn.Close();
         dbconn = null;
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        Start();
     }
 
     // getters
