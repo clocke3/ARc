@@ -94,7 +94,7 @@ public class DatabaseManager : MonoBehaviour
 
         string hobbies = "running, being cool, bongos";
 
-        Employee employee1 = Employee.CreateInstance("Donkey Kong", null, null, null, hobbies);
+        Employee employee1 = Employee.CreateInstance("Donkey Kong", "34FEN3NIV", null, null, hobbies);
         Employee employee2 = Employee.CreateInstance("Mario", null, gallery1, null, null);
         gallery1.setProfiable(employee2);
         List<Employee> employeesList = new List<Employee>();
