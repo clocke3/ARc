@@ -5,14 +5,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Wizcorp.Utils.Logger;
 
-public class SimpleDemo : MonoBehaviour {
+public class ContinuousDemo : MonoBehaviour {
 
 	private IScanner BarcodeScanner;
 	public Text TextHeader;
 	public RawImage Image;
 	public AudioSource Audio;
+	private float RestartTime;
 
 	// Disable Screen Rotation on that screen
 	void Awake()
@@ -23,7 +23,7 @@ public class SimpleDemo : MonoBehaviour {
 
 	void Start () {
 		// Create a basic scanner
-		BarcodeScanner = new Scanner();
+		BarcodeScanner = new ScanManager();
 		BarcodeScanner.Camera.Play();
 
 		// Display the camera texture through a RawImage
@@ -37,40 +37,24 @@ public class SimpleDemo : MonoBehaviour {
 			var rect = Image.GetComponent<RectTransform>();
 			var newHeight = rect.sizeDelta.x * BarcodeScanner.Camera.Height / BarcodeScanner.Camera.Width;
 			rect.sizeDelta = new Vector2(rect.sizeDelta.x, newHeight);
-		};
 
-		// Track status of the scanner
-		BarcodeScanner.StatusChanged += (sender, arg) => {
-			TextHeader.text = "Status: " + BarcodeScanner.Status;
+			RestartTime = Time.realtimeSinceStartup;
 		};
 	}
 
 	/// <summary>
-	/// The Update method from unity need to be propagated to the scanner
+	/// Start a scan and wait for the callback (wait 1s after a scan success to avoid scanning multiple time the same element)
 	/// </summary>
-	void Update()
+	private void StartScanner()
 	{
-		if (BarcodeScanner == null)
-		{
-			return;
-		}
-		BarcodeScanner.Update();
-	}
-
-	#region UI Buttons
-
-	public void ClickStart()
-	{
-		if (BarcodeScanner == null)
-		{
-			Log.Warning("No valid camera - Click Start");
-			return;
-		}
-
-		// Start Scanning
 		BarcodeScanner.Scan((barCodeType, barCodeValue) => {
 			BarcodeScanner.Stop();
-			TextHeader.text = "Found: " + barCodeType + " / " + barCodeValue;
+			if (TextHeader.text.Length > 250)
+			{
+				TextHeader.text = "";
+			}
+			TextHeader.text += "Found: " + barCodeType + " / " + barCodeValue + "\n";
+			RestartTime += Time.realtimeSinceStartup + 1f;
 
 			// Feedback
 			Audio.Play();
@@ -81,23 +65,31 @@ public class SimpleDemo : MonoBehaviour {
 		});
 	}
 
-	public void ClickStop()
+	/// <summary>
+	/// The Update method from unity need to be propagated
+	/// </summary>
+	void Update()
 	{
-		if (BarcodeScanner == null)
+		if (BarcodeScanner != null)
 		{
-			Log.Warning("No valid camera - Click Stop");
-			return;
+			BarcodeScanner.Update();
 		}
 
-		// Stop Scanning
-		BarcodeScanner.Stop();
+		// Check if the Scanner need to be started or restarted
+		if (RestartTime != 0 && RestartTime < Time.realtimeSinceStartup)
+		{
+			StartScanner();
+			RestartTime = 0;
+		}
 	}
+
+	#region UI Buttons
 
 	public void ClickBack()
 	{
 		// Try to stop the camera before loading another scene
 		StartCoroutine(StopCamera(() => {
-			SceneManager.LoadScene("Boot");
+			SceneManager.LoadScene("MainMenu");
 		}));
 	}
 

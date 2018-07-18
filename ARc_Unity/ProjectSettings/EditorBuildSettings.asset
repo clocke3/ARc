@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ScanCodes.unity
     guid: 56551f96c18f54e93969aa765d7cb75b
   - enabled: 1
@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 990d54e4492f647748893dc0fa71e205
+  - enabled: 0
+    path: Assets/Barcode Assets/Samples/Boot.unity
+    guid: e0a52783a8802784296549d34db8f6d6
+  - enabled: 0
+    path: Assets/Barcode Assets/Samples/Simple/SimpleDemo.unity
+    guid: 93c1548587961484cb231b7f9c4a0734
+  - enabled: 1
+    path: Assets/Scenes/ContinuousDemo.unity
+    guid: 744a9a2b17efe6e48b5b541a2e5c70c1
   m_configObjects: {}

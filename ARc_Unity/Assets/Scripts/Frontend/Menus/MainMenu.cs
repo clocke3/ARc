@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
@@ -8,7 +6,7 @@ public class MainMenu : MonoBehaviour {
     // variables
     public QuitMenu quitMenu;
 
-    private string scanSceneName = "ScanCodes";
+    private string scanSceneName = "ContinuousDemo";
     private string searchSceneName = "SearchDatabase";
     private string tutorialSceneName = "Tutorials";
 
