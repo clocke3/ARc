@@ -49,20 +49,11 @@ public class ContinuousDemo : MonoBehaviour {
 	private void StartScanner()
 	{
 		BarcodeScanner.Scan((barCodeType, barCodeValue) => {
-			BarcodeScanner.Stop();
-<<<<<<< HEAD
-			if (TextHeader.text.Length > 250)
-			{
-				TextHeader.text = "";
-			}
-            TextHeader.text += "Found: Type: " + barCodeType + " Value: " + barCodeValue + "\n";
-			RestartTime += Time.realtimeSinceStartup + 1f;
-           
-=======
+            BarcodeScanner.Stop();
+          
 			RestartTime += Time.realtimeSinceStartup + 1f;
             scanManager.displayProfile(barCodeValue);
 
->>>>>>> QR
 			// Feedback
 			Audio.Play();
 
