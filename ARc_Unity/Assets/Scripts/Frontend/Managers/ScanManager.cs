@@ -15,8 +15,9 @@ namespace BarcodeScanner.Scanner
     /// * Simple methods : Scan / Stop
     /// * Simple events : OnStatus / StatusChanged
     /// </summary>
-    public class ScanManager : IScanner
+    public class ScanManager : ItemManager
     {
+<<<<<<< HEAD
         //
         public event EventHandler OnReady;
         public event EventHandler StatusChanged;
@@ -331,5 +332,12 @@ namespace BarcodeScanner.Scanner
         {
             return "[UnityBarcodeScanner]";
         }
+=======
+        public void displayProfile(string qrID) {
+            currentCode = qrID;
+            displayCodeProfile();
+        }
+
+>>>>>>> QR
     }
 }

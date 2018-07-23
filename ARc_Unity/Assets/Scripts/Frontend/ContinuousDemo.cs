@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class ContinuousDemo : MonoBehaviour {
 
-	private IScanner BarcodeScanner;
+    public ScanManager scanManager;
+    private IScanner BarcodeScanner;
 	public Text TextHeader;
 	public RawImage Image;
 	public AudioSource Audio;
@@ -23,7 +24,7 @@ public class ContinuousDemo : MonoBehaviour {
 
 	void Start () {
 		// Create a basic scanner
-		BarcodeScanner = new ScanManager();
+		BarcodeScanner = new Scanner();
 		BarcodeScanner.Camera.Play();
 
 		// Display the camera texture through a RawImage
@@ -49,6 +50,7 @@ public class ContinuousDemo : MonoBehaviour {
 	{
 		BarcodeScanner.Scan((barCodeType, barCodeValue) => {
 			BarcodeScanner.Stop();
+<<<<<<< HEAD
 			if (TextHeader.text.Length > 250)
 			{
 				TextHeader.text = "";
@@ -56,6 +58,11 @@ public class ContinuousDemo : MonoBehaviour {
             TextHeader.text += "Found: Type: " + barCodeType + " Value: " + barCodeValue + "\n";
 			RestartTime += Time.realtimeSinceStartup + 1f;
            
+=======
+			RestartTime += Time.realtimeSinceStartup + 1f;
+            scanManager.displayProfile(barCodeValue);
+
+>>>>>>> QR
 			// Feedback
 			Audio.Play();
 
