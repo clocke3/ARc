@@ -20,13 +20,11 @@ public class ContinuousDemo : MonoBehaviour {
 	{
 		Screen.autorotateToPortrait = false;
 		Screen.autorotateToPortraitUpsideDown = false;
-
-        BarcodeScanner = scanManager as IScanner;
 	}
 
 	void Start () {
 		// Create a basic scanner
-		//BarcodeScanner = new ScanManager();
+		BarcodeScanner = new Scanner();
 		BarcodeScanner.Camera.Play();
 
 		// Display the camera texture through a RawImage
@@ -52,11 +50,6 @@ public class ContinuousDemo : MonoBehaviour {
 	{
 		BarcodeScanner.Scan((barCodeType, barCodeValue) => {
 			BarcodeScanner.Stop();
-			if (TextHeader.text.Length > 250)
-			{
-				TextHeader.text = "";
-			}
-			TextHeader.text += "Found: " + barCodeType + " / " + barCodeValue + "\n";
 			RestartTime += Time.realtimeSinceStartup + 1f;
             scanManager.displayProfile(barCodeValue);
 
