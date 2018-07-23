@@ -16,6 +16,11 @@ public class DatabaseManager : MonoBehaviour
     public static List<Employee> employees;
 
     // Initialization
+    private void OnEnable()
+    {
+        addMock();
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -23,7 +28,7 @@ public class DatabaseManager : MonoBehaviour
             instance = this;
         }
         else Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         departments = new List<Department>();
         employees = new List<Employee>();
     }
@@ -139,12 +144,12 @@ public class DatabaseManager : MonoBehaviour
 
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-        Start();
-        addMock();
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    Start();
+    //    addMock();
 
-    }
+    //}
 
     // getters
     public static DatabaseManager getInstance()
@@ -161,7 +166,7 @@ public class DatabaseManager : MonoBehaviour
         {
             foreach (Department department in departments)
             {
-                Debug.Log(department.getLabel());
+                //Debug.Log(department.getLabel());
                 if (department.getLabel().ToLower().Contains(keyword.ToLower()))
                 {
                     profiables.Add(department);
@@ -172,7 +177,7 @@ public class DatabaseManager : MonoBehaviour
         {
             foreach (Employee employee in employees)
             {
-                Debug.Log(employee.getLabel());
+                //Debug.Log(employee.getLabel());
                 if (employee.getLabel().ToLower().Contains(keyword.ToLower()))
                 {
                     profiables.Add(employee);
