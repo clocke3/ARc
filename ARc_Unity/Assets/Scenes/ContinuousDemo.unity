@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eee3e399dbaf1a42b6470623255ce78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scanManager: {fileID: 968982026}
   TextHeader: {fileID: 1184638579}
   Image: {fileID: 570292425}
   Audio: {fileID: 103870422}
@@ -889,6 +890,11 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224066131679153186, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000015258789
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc, type: 2}

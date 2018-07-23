@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class ContinuousDemo : MonoBehaviour {
 
-	public IScanner BarcodeScanner;
+    public ScanManager scanManager;
+    private IScanner BarcodeScanner;
 	public Text TextHeader;
 	public RawImage Image;
 	public AudioSource Audio;
@@ -19,6 +20,8 @@ public class ContinuousDemo : MonoBehaviour {
 	{
 		Screen.autorotateToPortrait = false;
 		Screen.autorotateToPortraitUpsideDown = false;
+
+        BarcodeScanner = scanManager as IScanner;
 	}
 
 	void Start () {
