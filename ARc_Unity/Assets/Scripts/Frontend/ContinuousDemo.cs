@@ -53,9 +53,9 @@ public class ContinuousDemo : MonoBehaviour {
 			{
 				TextHeader.text = "";
 			}
-			TextHeader.text += "Found: " + barCodeType + " / " + barCodeValue + "\n";
+            TextHeader.text += "Found: Type: " + barCodeType + " Value: " + barCodeValue + "\n";
 			RestartTime += Time.realtimeSinceStartup + 1f;
-
+           
 			// Feedback
 			Audio.Play();
 
@@ -65,10 +65,12 @@ public class ContinuousDemo : MonoBehaviour {
 		});
 	}
 
-	/// <summary>
-	/// The Update method from unity need to be propagated
-	/// </summary>
-	void Update()
+   
+
+    /// <summary>
+    /// The Update method from unity need to be propagated
+    /// </summary>
+    void Update()
 	{
 		if (BarcodeScanner != null)
 		{

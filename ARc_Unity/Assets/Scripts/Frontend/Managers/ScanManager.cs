@@ -20,6 +20,7 @@ namespace BarcodeScanner.Scanner
         //
         public event EventHandler OnReady;
         public event EventHandler StatusChanged;
+        public ItemManager itemManager;
 
         //
         public IWebcam Camera { get; private set; }
@@ -305,6 +306,7 @@ namespace BarcodeScanner.Scanner
                     //
                     Log.Info(Result);
                     Callback(Result.Type, Result.Value);
+
 
                     // clean and return
                     Result = null;

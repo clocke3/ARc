@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class DatabaseManager : MonoBehaviour
 {
-
+    
     // variables
     private static DatabaseManager instance = null;       //database (FIX WHEN READY)
     private static List<Department> departments;
     //remove after
-    private static List<Employee> employees;
+    public static List<Employee> employees;
 
     // Initialization
     void Awake()
