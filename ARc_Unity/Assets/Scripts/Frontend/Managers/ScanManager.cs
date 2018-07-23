@@ -15,7 +15,7 @@ namespace BarcodeScanner.Scanner
     /// * Simple methods : Scan / Stop
     /// * Simple events : OnStatus / StatusChanged
     /// </summary>
-    public class ScanManager : IScanner
+    public class ScanManager : ItemManager, IScanner
     {
         //
         public event EventHandler OnReady;

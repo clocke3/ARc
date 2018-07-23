@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class ContinuousDemo : MonoBehaviour {
 
-	private IScanner BarcodeScanner;
+	public IScanner BarcodeScanner;
 	public Text TextHeader;
 	public RawImage Image;
 	public AudioSource Audio;
@@ -23,7 +23,7 @@ public class ContinuousDemo : MonoBehaviour {
 
 	void Start () {
 		// Create a basic scanner
-		BarcodeScanner = new ScanManager();
+		//BarcodeScanner = new ScanManager();
 		BarcodeScanner.Camera.Play();
 
 		// Display the camera texture through a RawImage
