@@ -169,7 +169,7 @@ Prefab:
     - target: {fileID: 224075893216921170, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224075893216921170, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
@@ -221,21 +221,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114772700258758108, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
-        type: 2}
-      propertyPath: itemManager
-      value: 
-      objectReference: {fileID: 87302650}
-    - target: {fileID: 224876030292446986, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224876030292446986, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224466639946496234, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -246,9 +231,14 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224066131679153186, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
+    - target: {fileID: 224876030292446986, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
-      propertyPath: m_SizeDelta.x
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224876030292446986, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
+        type: 2}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -315,7 +305,7 @@ Prefab:
     - target: {fileID: 224633267038132134, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224633267038132134, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
@@ -869,7 +859,7 @@ Prefab:
     - target: {fileID: 224597689505772594, guid: e66264a77c9da4b1a9becbed2a588c41,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224597689505772594, guid: e66264a77c9da4b1a9becbed2a588c41,
         type: 2}
