@@ -58,6 +58,7 @@ public class ContinuousDemo : MonoBehaviour {
 			}
 			TextHeader.text += "Found: " + barCodeType + " / " + barCodeValue + "\n";
 			RestartTime += Time.realtimeSinceStartup + 1f;
+            scanManager.displayProfile(barCodeValue);
 
 			// Feedback
 			Audio.Play();

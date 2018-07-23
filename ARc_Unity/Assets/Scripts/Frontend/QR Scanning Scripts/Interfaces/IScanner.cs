@@ -14,6 +14,7 @@ namespace BarcodeScanner
 		IWebcam Camera { get; }
 		ScannerSettings Settings { get; }
 
+        void Awake();
 		void Scan(Action<string, string> Callback);
 		void Stop();
 		void Update();

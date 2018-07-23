@@ -77,6 +77,18 @@ namespace BarcodeScanner.Scanner
         /// Used to start Scanning
         /// </summary>
         /// <param name="callback"></param>
+        /// 
+
+        private void Awake()
+        {
+            return;
+        }
+
+        void IScanner.Awake()
+        {
+            return;
+        }
+
         public void Scan(Action<string, string> callback)
         {
             if (Callback != null)
@@ -330,7 +342,7 @@ namespace BarcodeScanner.Scanner
             return "[UnityBarcodeScanner]";
         }
 
-        private void displayProfile(string qrID) {
+        public void displayProfile(string qrID) {
             currentCode = qrID;
             displayCodeProfile();
         }
