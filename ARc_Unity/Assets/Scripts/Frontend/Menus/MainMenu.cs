@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour {
     public QuitMenu quitMenu;
 
     private string scanSceneName = "betterScan";
-    private string searchSceneName = "SearchDatabase";
+    private string searchSceneName = "SearchScene";
     private string tutorialSceneName = "Tutorials";
 
 	// init. menus
