@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour {
     // variables
     public QuitMenu quitMenu;
 
-    private string scanSceneName = "ContinuousDemo";
+    private string scanSceneName = "betterScan";
     private string searchSceneName = "SearchDatabase";
     private string tutorialSceneName = "Tutorials";
 
