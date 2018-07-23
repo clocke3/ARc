@@ -329,5 +329,11 @@ namespace BarcodeScanner.Scanner
         {
             return "[UnityBarcodeScanner]";
         }
+
+        private void displayProfile(string qrID) {
+            currentCode = qrID;
+            displayCodeProfile();
+        }
+
     }
 }
