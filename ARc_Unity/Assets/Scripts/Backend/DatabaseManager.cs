@@ -54,7 +54,7 @@ public class DatabaseManager : MonoBehaviour
             string hob = reader.GetString(6);
 
             bool isNew = true;
-            Department b = Department.CreateInstance(dep, qrid, null, null, null);
+            Department b = Department.CreateInstance(dep, qrid, null, null, null, null);
             foreach (Department find in departments)
             {
                 if (b.isEqual(find))
@@ -66,7 +66,7 @@ public class DatabaseManager : MonoBehaviour
             if(isNew) departments.Add(b);
 
             isNew = true;
-            Employee e = Employee.CreateInstance(in_name, qrid, null, null, hob);
+            Employee e = Employee.CreateInstance(in_name, qrid, null, null, null, hob);
             foreach (Employee find in employees)
             {
                 if (e.isEqual(find))
@@ -94,13 +94,13 @@ public class DatabaseManager : MonoBehaviour
         if (hasMocked) return;
         hasMocked = true;
 
-        MediaGallery gallery1 = MediaGallery.CreateInstance(null, null, null);
-        MediaGallery gallery2 = MediaGallery.CreateInstance(null, null, null);
+        MediaGallery gallery1 = MediaGallery.CreateInstance(null, null);
+        MediaGallery gallery2 = MediaGallery.CreateInstance(null, null);
 
         string hobbies = "running, being cool, bongos";
 
-        Employee employee1 = Employee.CreateInstance("Donkey Kong", "34FEN3NIV", null, null, hobbies);
-        Employee employee2 = Employee.CreateInstance("Mario", null, gallery1, null, null);
+        Employee employee1 = Employee.CreateInstance("Donkey Kong", "34FEN3NIV", null, null, null, hobbies);
+        Employee employee2 = Employee.CreateInstance("Mario", null, gallery1, null, null, null);
         gallery1.setProfiable(employee2);
         List<Employee> employeesList = new List<Employee>();
         employeesList.Add(employee1);
@@ -121,7 +121,7 @@ public class DatabaseManager : MonoBehaviour
         divisions.Add(division1);
         divisions.Add(division2);
 
-        Department department = Department.CreateInstance("Utilities", "hello", gallery2, "This department is a department is a department is a department is a department!", divisions);
+        Department department = Department.CreateInstance("Utilities", "hello", gallery2, null, "This department is a department is a department is a department is a department!", divisions);
 
         gallery2.setProfiable(department);
 

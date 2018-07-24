@@ -440,12 +440,12 @@ Prefab:
     - target: {fileID: 224597689505772594, guid: e66264a77c9da4b1a9becbed2a588c41,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 38.7
+      value: 38.700012
       objectReference: {fileID: 0}
     - target: {fileID: 224597689505772594, guid: e66264a77c9da4b1a9becbed2a588c41,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -13.3
+      value: -13.299988
       objectReference: {fileID: 0}
     - target: {fileID: 224597689505772594, guid: e66264a77c9da4b1a9becbed2a588c41,
         type: 2}
@@ -487,6 +487,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1803172105196436, guid: e66264a77c9da4b1a9becbed2a588c41, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e66264a77c9da4b1a9becbed2a588c41, type: 2}
   m_IsPrefabParent: 0
@@ -502,6 +506,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1095684675}
     m_Modifications:
+    - target: {fileID: 114772700258758108, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
+        type: 2}
+      propertyPath: panelPrefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 224075893216921170, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -627,6 +636,16 @@ Prefab:
       propertyPath: itemManager
       value: 
       objectReference: {fileID: 2072366494}
+    - target: {fileID: 1586568919911662, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772700258758108, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
+        type: 2}
+      propertyPath: panelPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 114668900940551180, guid: 79e157950ba3d490f863175d89227a18,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc, type: 2}
   m_IsPrefabParent: 0
@@ -850,6 +869,10 @@ Prefab:
       propertyPath: profileManager
       value: 
       objectReference: {fileID: 1345779880}
+    - target: {fileID: 1248735793383476, guid: 74dea51f56ace491fa31502a721a99a7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74dea51f56ace491fa31502a721a99a7, type: 2}
   m_IsPrefabParent: 0
