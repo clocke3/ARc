@@ -12,9 +12,7 @@ public class MediaGalleryBlock : Panel
     public Text profiableHeader;
     public DatabaseObjectButton profiableButton;
     public GameObject picturesParent;
-    public RawImage imagePrefab;
-    public GameObject videosParent;
-    public VideoPlayer videoPlayerPrefab;
+    public Image imagePrefab;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -51,24 +49,12 @@ public class MediaGalleryBlock : Panel
         // set up pictures
         if (gallery.getImages() != null)
         {
-            List<RawImage> images = gallery.getImages();
-            foreach (RawImage image in images)
+            List<Sprite> images = gallery.getImages();
+            foreach (Sprite image in images)
             {
-                RawImage imageHolder = Instantiate(imagePrefab, transform.position, Quaternion.identity) as RawImage;
-                imageHolder = image;
+                Image imageHolder = Instantiate(imagePrefab, transform.position, Quaternion.identity) as Image;
+                imageHolder.sprite = image;
                 imageHolder.transform.SetParent(picturesParent.transform, true);
-            }
-        }
-
-        // set up videos
-        if (gallery.getVideos() != null)
-        {
-            List<VideoClip> videos = gallery.getVideos();
-            foreach (VideoClip video in videos)
-            {
-                VideoPlayer videoPlayer = Instantiate(videoPlayerPrefab, transform.position, Quaternion.identity) as VideoPlayer;
-                videoPlayer.clip = video;
-                videoPlayer.transform.SetParent(videosParent.transform, true);
             }
         }
     }

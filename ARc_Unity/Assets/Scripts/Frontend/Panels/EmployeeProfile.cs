@@ -13,6 +13,7 @@ public class EmployeeProfile : Panel
     public GameObject hobbiesParent;
     public Text hobbiesText;
     public Text textPrefab;
+    public LocationButton locationButton;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -42,5 +43,10 @@ public class EmployeeProfile : Panel
         {
             hobbiesText.text = employee.getHobbies();
         }
+
+        // set up location button
+        //if(employee.getLocationImage() != null) {
+            locationButton.setup(profileManager, employee.getLocationImage());
+        //}
     }
 }

@@ -11,6 +11,7 @@ public class DepartmentProfile : Panel {
     public Text description;
     public DatabaseObjectButton galleryButton;
     public GameObject divisionsParent;
+    public LocationButton locationButton;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -43,5 +44,11 @@ public class DepartmentProfile : Panel {
                 divisionButton.transform.SetParent(divisionsParent.transform, true);
             }
         }
+
+        // set up location button
+        //if (department.getLocationImage() != null)
+        //{
+            locationButton.setup(profileManager, department.getLocationImage());
+        //}
     }
 }

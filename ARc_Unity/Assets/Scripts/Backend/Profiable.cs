@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public abstract class Profiable : DatabaseObject
 {
@@ -8,19 +9,22 @@ public abstract class Profiable : DatabaseObject
     // variables
     protected string qrID;
     protected MediaGallery gallery;
+    protected Sprite locationImage;
 
     // constructors
     protected void profiableInit()
     {
         this.qrID = "";
         this.gallery = MediaGallery.CreateInstance();
+        this.locationImage = null;
         this.databaseObjectInit();
     }
 
     protected void profiableInit(string label, string qrID,
-                        MediaGallery gallery) {
+                                 MediaGallery gallery, Sprite locationImage) {
         this.qrID = qrID;
         this.gallery = gallery;
+        this.locationImage = locationImage;
         this.databaseObjectInit(label);
     }
 
@@ -31,6 +35,10 @@ public abstract class Profiable : DatabaseObject
 
     public string getQRID(){
         return qrID;
+    }
+
+    public Sprite getLocationImage() {
+        return locationImage;
     }
 
     // comparison

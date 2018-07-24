@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Employee : Profiable
 {
@@ -16,11 +17,11 @@ public class Employee : Profiable
         this.profiableInit();
     }
 
-    private void init(string label, string qrID, MediaGallery gallery, Role role, string hobbies)
+    private void init(string label, string qrID, MediaGallery gallery, Sprite locationImage, Role role, string hobbies)
     {
         this.role = role;
         this.hobbies = hobbies;
-        this.profiableInit(label, qrID, gallery);
+        this.profiableInit(label, qrID, gallery, locationImage);
     }
 
     public static Employee CreateInstance()
@@ -30,10 +31,10 @@ public class Employee : Profiable
         return employee;
     }
 
-    public static Employee CreateInstance(string label, string qrID, MediaGallery gallery, Role role, string hobbies)
+    public static Employee CreateInstance(string label, string qrID, MediaGallery gallery, Sprite locationImage, Role role, string hobbies)
     {
         Employee employee = CreateInstance<Employee>();
-        employee.init(label, qrID, gallery, role, hobbies);
+        employee.init(label, qrID, gallery, locationImage, role, hobbies);
         return employee;
     }
 

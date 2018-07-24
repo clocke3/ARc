@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.UI;
 
 public class Department : Profiable
 {
@@ -17,10 +18,10 @@ public class Department : Profiable
         this.profiableInit();
     }
 
-    private void init(string label, string qrID, MediaGallery gallery, string description, List<Division> divisions) {
+    private void init(string label, string qrID, MediaGallery gallery, Sprite locationImage, string description, List<Division> divisions) {
         this.description = description;
         this.divisions = divisions;
-        this.profiableInit(label, qrID, gallery);
+        this.profiableInit(label, qrID, gallery, locationImage);
     }
 
     public static Department CreateInstance()
@@ -30,9 +31,9 @@ public class Department : Profiable
         return department;
     }
 
-    public static Department CreateInstance(string label, string qrID, MediaGallery gallery, string description, List<Division> divisions) {
+    public static Department CreateInstance(string label, string qrID, MediaGallery gallery, Sprite locationImage, string description, List<Division> divisions) {
         Department department = CreateInstance<Department>();
-        department.init(label, qrID, gallery, description, divisions);
+        department.init(label, qrID, gallery, locationImage, description, divisions);
         return department;
     }
 

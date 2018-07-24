@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 using UnityEngine.UI;
 
 public class MediaGallery : DatabaseObject {
 
     // variables
     private Profiable profiable;
-    private List<RawImage> images;
-    private List<VideoClip> videos;
+    private List<Sprite> images;
 
     private string constantLabel = "Media Gallery";
 
@@ -17,16 +15,14 @@ public class MediaGallery : DatabaseObject {
     private void init()
     {
         profiable = null;
-        images = new List<RawImage>();
-        videos = new List<VideoClip>();
+        images = new List<Sprite>();
         this.databaseObjectInit(constantLabel);
     }
 
-    private void init(Profiable profiable, List<RawImage> images, List<VideoClip> videos)
+    private void init(Profiable profiable, List<Sprite> images)
     {
         this.profiable = profiable;
         this.images = images;
-        this.videos = videos;
         this.databaseObjectInit(constantLabel);
     }
 
@@ -37,10 +33,10 @@ public class MediaGallery : DatabaseObject {
         return gallery;
     }
 
-    public static MediaGallery CreateInstance(Profiable profiable, List<RawImage> images, List<VideoClip> videos)
+    public static MediaGallery CreateInstance(Profiable profiable, List<Sprite> images)
     {
         MediaGallery gallery = CreateInstance<MediaGallery>();
-        gallery.init(profiable, images, videos);
+        gallery.init(profiable, images);
         return gallery;
     }
 
@@ -58,14 +54,9 @@ public class MediaGallery : DatabaseObject {
         return profiable;
     }
 
-    public List<RawImage> getImages()
+    public List<Sprite> getImages()
     {
         return images;
-    }
-
-    public List<VideoClip> getVideos()
-    {
-        return videos;
     }
 
 }
