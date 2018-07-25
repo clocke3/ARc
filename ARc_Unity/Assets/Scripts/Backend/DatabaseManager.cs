@@ -16,10 +16,11 @@ public class DatabaseManager : MonoBehaviour
     public static List<Employee> employees;
 
     // Initialization
-    private void OnEnable()
-    {
-        addMock();
-    }
+
+    //private void OnEnable()
+    //{
+    //    addMock();
+    //}
 
     void Awake()
     {
@@ -31,6 +32,8 @@ public class DatabaseManager : MonoBehaviour
         //DontDestroyOnLoad(gameObject);
         departments = new List<Department>();
         employees = new List<Employee>();
+
+        addMock();
     }
 
     void Start()
