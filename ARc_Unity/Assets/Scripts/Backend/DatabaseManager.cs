@@ -97,53 +97,212 @@ public class DatabaseManager : MonoBehaviour
         //if (hasMocked) return;
         //hasMocked = true;
 
-        MediaGallery gallery1 = MediaGallery.CreateInstance(null, null);
-        MediaGallery gallery2 = MediaGallery.CreateInstance(null, null);
+        // DEPARTMENT1
+        //  MEDIAGALLERIES FOR EMPLOYEES
+        List<Sprite> d1employee1photos = new List<Sprite>();
+        d1employee1photos.Add(null);
 
-        string hobbies = "running, being cool, bongos";
+        List<Sprite> d1employee2photos = new List<Sprite>();
+        d1employee2photos.Add(null);
 
-        Employee employee1 = Employee.CreateInstance("Donkey Kong", "34FEN3NIV", null, null, null, hobbies);
-        Employee employee2 = Employee.CreateInstance("Mario", null, gallery1, null, null, null);
-        gallery1.setProfiable(employee2);
-        List<Employee> employeesList = new List<Employee>();
-        employeesList.Add(employee1);
-        employeesList.Add(employee2);
+        List<Sprite> d1employee3photos = new List<Sprite>();
+        d1employee3photos.Add(null);
 
-        employees.Add(employee1);
-        employees.Add(employee2);
+        MediaGallery d1employee1gallery = MediaGallery.CreateInstance(null, d1employee1photos);
+        MediaGallery d1employee2gallery = MediaGallery.CreateInstance(null, d1employee2photos);
+        MediaGallery d1employee3gallery = MediaGallery.CreateInstance(null, d1employee3photos);
 
-        Role role1 = Role.CreateInstance("Developers", null, null);
-        Role role2 = Role.CreateInstance("PM", null, employeesList);
-        List<Role> roles = new List<Role>();
-        roles.Add(role1);
-        roles.Add(role2);
 
-        Division division1 = Division.CreateInstance("Application Development", null, roles);
-        Division division2 = Division.CreateInstance("Finances", null, null);
-        List<Division> divisions = new List<Division>();
-        divisions.Add(division1);
-        divisions.Add(division2);
+        //  MEDIAGALLERY FOR DEPARTMENT
+        List<Sprite> department1photos = new List<Sprite>();
+        department1photos.Add(null);
 
-        Department department = Department.CreateInstance("Utilities", "hello", gallery2, null, "This department is a department is a department is a department is a department!", divisions);
+        MediaGallery department1gallery = MediaGallery.CreateInstance(null, department1photos);
 
-        gallery2.setProfiable(department);
 
-        foreach (Employee employee in employees)
+        //  EMPLOYEES
+        string d1employee1hobbies = "";
+        string d1employee2hobbies = "";
+        string d1employee3hobbies = "";
+
+        Sprite d1employee1location = null;
+        Sprite d1employee2location = null;
+        Sprite d1employee3location = null;
+
+        Employee d1employee1 = Employee.CreateInstance("D1EMPLOYEE1", "QRID", d1employee1gallery, d1employee1location, null, d1employee1hobbies);
+        Employee d1employee2 = Employee.CreateInstance("D1EMPLOYEE2", "QRID", d1employee2gallery, d1employee2location, null, d1employee2hobbies);
+        Employee d1employee3 = Employee.CreateInstance("D1EMPLOYEE3", "QRID", d1employee3gallery, d1employee3location, null, d1employee3hobbies);
+
+        employees.Add(d1employee1);
+        employees.Add(d1employee2);
+        employees.Add(d1employee3);
+
+        d1employee1gallery.setProfiable(d1employee1);
+        d1employee2gallery.setProfiable(d1employee2);
+        d1employee3gallery.setProfiable(d1employee3);
+
+
+        //  ROLES
+        List<Employee> d1role1employeesList = new List<Employee>();
+        d1role1employeesList.Add(d1employee1);
+
+        List<Employee> d1role2employeesList = new List<Employee>();
+        d1role2employeesList.Add(d1employee2);
+
+        List<Employee> d1role3employeesList = new List<Employee>();
+        d1role3employeesList.Add(d1employee3);
+
+        Role d1role1 = Role.CreateInstance("D1ROLE1", null, d1role1employeesList);
+        Role d1role2 = Role.CreateInstance("D1ROLE2", null, d1role2employeesList);
+        Role d1role3 = Role.CreateInstance("D1ROLE3", null, d1role3employeesList);
+
+        d1employee1.setRole(d1role1);
+        d1employee2.setRole(d1role2);
+        d1employee3.setRole(d1role3);
+
+
+        //  DIVISIONS
+        List<Role> d1div1rolesList = new List<Role>();
+        d1div1rolesList.Add(d1role1);
+
+        List<Role> d1div2rolesList = new List<Role>();
+        d1div2rolesList.Add(d1role2);
+
+        List<Role> d1div3rolesList = new List<Role>();
+        d1div3rolesList.Add(d1role3);
+
+        Division d1div1 = Division.CreateInstance("D1DIV1", null, d1div1rolesList);
+        Division d1div2 = Division.CreateInstance("D1DIV2", null, d1div2rolesList);
+        Division d1div3 = Division.CreateInstance("D1DIV3", null, d1div3rolesList);
+
+        d1role1.setDivision(d1div1);
+        d1role2.setDivision(d1div2);
+        d1role3.setDivision(d1div3);
+
+
+        //  DEPARTMENT
+        List<Division> d1divList = new List<Division>();
+        d1divList.Add(d1div1);
+        d1divList.Add(d1div2);
+        d1divList.Add(d1div3);
+
+        string d1desc = "";
+
+        Department d1 = Department.CreateInstance("D1", "QRID", department1gallery, null, d1desc, d1divList);
+
+        department1gallery.setProfiable(d1);
+
+        foreach (Division division in d1divList)
         {
-            employee.setRole(role2);
+            division.setDepartment(d1);
         }
 
-        foreach (Role role in roles)
+        departments.Add(d1);
+
+
+        // DEPARTMENT2
+        //  MEDIAGALLERIES FOR EMPLOYEES
+        List<Sprite> d2employee1photos = new List<Sprite>();
+        d2employee1photos.Add(null);
+
+        List<Sprite> d2employee2photos = new List<Sprite>();
+        d2employee2photos.Add(null);
+
+        List<Sprite> d2employee3photos = new List<Sprite>();
+        d2employee3photos.Add(null);
+
+        MediaGallery d2employee1gallery = MediaGallery.CreateInstance(null, d2employee1photos);
+        MediaGallery d2employee2gallery = MediaGallery.CreateInstance(null, d2employee2photos);
+        MediaGallery d2employee3gallery = MediaGallery.CreateInstance(null, d2employee3photos);
+
+
+        //  MEDIAGALLERY FOR DEPARTMENT
+        List<Sprite> department2photos = new List<Sprite>();
+        department2photos.Add(null);
+
+        MediaGallery department2gallery = MediaGallery.CreateInstance(null, department2photos);
+
+
+        //  EMPLOYEES
+        string d2employee1hobbies = "";
+        string d2employee2hobbies = "";
+        string d2employee3hobbies = "";
+
+        Sprite d2employee1location = null;
+        Sprite d2employee2location = null;
+        Sprite d2employee3location = null;
+
+        Employee d2employee1 = Employee.CreateInstance("D2EMPLOYEE1", "QRID", d2employee1gallery, d2employee1location, null, d2employee1hobbies);
+        Employee d2employee2 = Employee.CreateInstance("D2EMPLOYEE2", "QRID", d2employee2gallery, d2employee2location, null, d2employee2hobbies);
+        Employee d2employee3 = Employee.CreateInstance("D2EMPLOYEE3", "QRID", d2employee3gallery, d2employee3location, null, d2employee3hobbies);
+
+        employees.Add(d2employee1);
+        employees.Add(d2employee2);
+        employees.Add(d2employee3);
+
+        d2employee1gallery.setProfiable(d2employee1);
+        d2employee2gallery.setProfiable(d2employee2);
+        d2employee3gallery.setProfiable(d2employee3);
+
+
+        //  ROLES
+        List<Employee> d2role1employeesList = new List<Employee>();
+        d2role1employeesList.Add(d2employee1);
+
+        List<Employee> d2role2employeesList = new List<Employee>();
+        d2role2employeesList.Add(d2employee2);
+
+        List<Employee> d2role3employeesList = new List<Employee>();
+        d2role3employeesList.Add(d2employee3);
+
+        Role d2role1 = Role.CreateInstance("D2ROLE1", null, d2role1employeesList);
+        Role d2role2 = Role.CreateInstance("D2ROLE2", null, d2role2employeesList);
+        Role d2role3 = Role.CreateInstance("D2ROLE3", null, d2role3employeesList);
+
+        d2employee1.setRole(d2role1);
+        d2employee2.setRole(d2role2);
+        d2employee3.setRole(d2role3);
+
+
+        //  DIVISIONS
+        List<Role> d2div1rolesList = new List<Role>();
+        d2div1rolesList.Add(d2role1);
+
+        List<Role> d2div2rolesList = new List<Role>();
+        d2div2rolesList.Add(d2role2);
+
+        List<Role> d2div3rolesList = new List<Role>();
+        d2div3rolesList.Add(d2role3);
+
+        Division d2div1 = Division.CreateInstance("D2DIV1", null, d2div1rolesList);
+        Division d2div2 = Division.CreateInstance("D2DIV2", null, d2div2rolesList);
+        Division d2div3 = Division.CreateInstance("D2DIV3", null, d2div3rolesList);
+
+        d2role1.setDivision(d2div1);
+        d2role2.setDivision(d2div2);
+        d2role3.setDivision(d2div3);
+
+
+        //  DEPARTMENT
+        List<Division> d2divList = new List<Division>();
+        d2divList.Add(d2div1);
+        d2divList.Add(d2div2);
+        d2divList.Add(d2div3);
+
+        string d2desc = "";
+
+        Department d2 = Department.CreateInstance("D2", "QRID", department2gallery, null, d2desc, d2divList);
+
+        department2gallery.setProfiable(d2);
+
+        foreach (Division division in d2divList)
         {
-            role.setDivision(division1);
+            division.setDepartment(d2);
         }
 
-        foreach (Division division in divisions)
-        {
-            division.setDepartment(department);
-        }
+        departments.Add(d2);
 
-        departments.Add(department);
+
 
     }
 
