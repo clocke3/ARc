@@ -100,6 +100,7 @@ public class DatabaseManager : MonoBehaviour
         // DEPARTMENT1
         //  MEDIAGALLERIES FOR EMPLOYEES
         List<Sprite> d1employee1photos = new List<Sprite>();
+        //Sprite sprite = Resources.Load<Sprite>("Images/GalleryPictures/python");
         d1employee1photos.Add(null);
 
         List<Sprite> d1employee2photos = new List<Sprite>();
