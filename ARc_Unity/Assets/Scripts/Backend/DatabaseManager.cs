@@ -115,7 +115,7 @@ public class DatabaseManager : MonoBehaviour
 
         //  MEDIAGALLERY FOR DEPARTMENT
         List<Sprite> department1photos = new List<Sprite>();
-        department1photos.Add(null);
+        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/InformationTechnology"));
 
         MediaGallery department1gallery = MediaGallery.CreateInstance(null, department1photos);
 
@@ -220,7 +220,7 @@ public class DatabaseManager : MonoBehaviour
 
         //  MEDIAGALLERY FOR DEPARTMENT
         List<Sprite> department2photos = new List<Sprite>();
-        department2photos.Add(null);
+        department2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/HumanResources"));
 
         MediaGallery department2gallery = MediaGallery.CreateInstance(null, department2photos);
 
