@@ -100,14 +100,13 @@ public class DatabaseManager : MonoBehaviour
         // DEPARTMENT1
         //  MEDIAGALLERIES FOR EMPLOYEES
         List<Sprite> d1employee1photos = new List<Sprite>();
-        //Sprite sprite = Resources.Load<Sprite>("Images/GalleryPictures/python");
-        d1employee1photos.Add(null);
+        d1employee1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/VennardWright"));
 
         List<Sprite> d1employee2photos = new List<Sprite>();
-        d1employee2photos.Add(null);
+        d1employee2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/DennisPhillips"));
 
         List<Sprite> d1employee3photos = new List<Sprite>();
-        d1employee3photos.Add(null);
+        d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/MonicaCunanan"));
 
         MediaGallery d1employee1gallery = MediaGallery.CreateInstance(null, d1employee1photos);
         MediaGallery d1employee2gallery = MediaGallery.CreateInstance(null, d1employee2photos);
@@ -206,13 +205,13 @@ public class DatabaseManager : MonoBehaviour
         // DEPARTMENT2
         //  MEDIAGALLERIES FOR EMPLOYEES
         List<Sprite> d2employee1photos = new List<Sprite>();
-        d2employee1photos.Add(null);
+        d2employee1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/ChristinaGaskins"));
 
         List<Sprite> d2employee2photos = new List<Sprite>();
-        d2employee2photos.Add(null);
+        d2employee2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/JamesUhrich"));
 
         List<Sprite> d2employee3photos = new List<Sprite>();
-        d2employee3photos.Add(null);
+        d2employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/LeeMcDonough"));
 
         MediaGallery d2employee1gallery = MediaGallery.CreateInstance(null, d2employee1photos);
         MediaGallery d2employee2gallery = MediaGallery.CreateInstance(null, d2employee2photos);
