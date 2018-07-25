@@ -130,9 +130,9 @@ public class DatabaseManager : MonoBehaviour
         Sprite d1employee2location = null;
         Sprite d1employee3location = null;
 
-        Employee d1employee1 = Employee.CreateInstance("D1EMPLOYEE1", "QRID", d1employee1gallery, d1employee1location, null, d1employee1hobbies);
-        Employee d1employee2 = Employee.CreateInstance("D1EMPLOYEE2", "QRID", d1employee2gallery, d1employee2location, null, d1employee2hobbies);
-        Employee d1employee3 = Employee.CreateInstance("D1EMPLOYEE3", "QRID", d1employee3gallery, d1employee3location, null, d1employee3hobbies);
+        Employee d1employee1 = Employee.CreateInstance("D1EMPLOYEE1", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies);
+        Employee d1employee2 = Employee.CreateInstance("D1EMPLOYEE2", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies);
+        Employee d1employee3 = Employee.CreateInstance("D1EMPLOYEE3", "d1employee3", d1employee3gallery, d1employee3location, null, d1employee3hobbies);
 
         employees.Add(d1employee1);
         employees.Add(d1employee2);
@@ -189,7 +189,7 @@ public class DatabaseManager : MonoBehaviour
 
         string d1desc = "";
 
-        Department d1 = Department.CreateInstance("D1", "QRID", department1gallery, null, d1desc, d1divList);
+        Department d1 = Department.CreateInstance("Information Technology", "d1", department1gallery, null, d1desc, d1divList);
 
         department1gallery.setProfiable(d1);
 
@@ -233,9 +233,9 @@ public class DatabaseManager : MonoBehaviour
         Sprite d2employee2location = null;
         Sprite d2employee3location = null;
 
-        Employee d2employee1 = Employee.CreateInstance("D2EMPLOYEE1", "QRID", d2employee1gallery, d2employee1location, null, d2employee1hobbies);
-        Employee d2employee2 = Employee.CreateInstance("D2EMPLOYEE2", "QRID", d2employee2gallery, d2employee2location, null, d2employee2hobbies);
-        Employee d2employee3 = Employee.CreateInstance("D2EMPLOYEE3", "QRID", d2employee3gallery, d2employee3location, null, d2employee3hobbies);
+        Employee d2employee1 = Employee.CreateInstance("D2EMPLOYEE1", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies);
+        Employee d2employee2 = Employee.CreateInstance("D2EMPLOYEE2", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies);
+        Employee d2employee3 = Employee.CreateInstance("D2EMPLOYEE3", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies);
 
         employees.Add(d2employee1);
         employees.Add(d2employee2);
@@ -292,7 +292,7 @@ public class DatabaseManager : MonoBehaviour
 
         string d2desc = "";
 
-        Department d2 = Department.CreateInstance("D2", "QRID", department2gallery, null, d2desc, d2divList);
+        Department d2 = Department.CreateInstance("Human Resources", "d2", department2gallery, null, d2desc, d2divList);
 
         department2gallery.setProfiable(d2);
 
