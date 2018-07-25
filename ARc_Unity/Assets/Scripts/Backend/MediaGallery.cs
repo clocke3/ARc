@@ -47,6 +47,7 @@ public class MediaGallery : DatabaseObject {
 
     public void setProfiable(Profiable profiable) {
         this.profiable = profiable;
+        this.label = profiable.getLabel() + " " + constantLabel;
     }
 
     // getters
