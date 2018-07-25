@@ -122,17 +122,17 @@ public class DatabaseManager : MonoBehaviour
 
 
         //  EMPLOYEES
-        string d1employee1hobbies = "";
-        string d1employee2hobbies = "";
-        string d1employee3hobbies = "";
+        string d1employee1hobbies = "Track and Field";
+        string d1employee2hobbies = "Hunting, Fishing";
+        string d1employee3hobbies = "Comic-Con, Gym, and Dogs";
 
         Sprite d1employee1location = null;
         Sprite d1employee2location = null;
         Sprite d1employee3location = null;
 
-        Employee d1employee1 = Employee.CreateInstance("D1EMPLOYEE1", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies);
-        Employee d1employee2 = Employee.CreateInstance("D1EMPLOYEE2", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies);
-        Employee d1employee3 = Employee.CreateInstance("D1EMPLOYEE3", "d1employee3", d1employee3gallery, d1employee3location, null, d1employee3hobbies);
+        Employee d1employee1 = Employee.CreateInstance("Vennard Wright", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies);
+        Employee d1employee2 = Employee.CreateInstance("Dennis Phillips", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies);
+        Employee d1employee3 = Employee.CreateInstance("Monica Cunanan", "d1employee3", d1employee3gallery, d1employee3location, null, d1employee3hobbies);
 
         employees.Add(d1employee1);
         employees.Add(d1employee2);
@@ -153,9 +153,9 @@ public class DatabaseManager : MonoBehaviour
         List<Employee> d1role3employeesList = new List<Employee>();
         d1role3employeesList.Add(d1employee3);
 
-        Role d1role1 = Role.CreateInstance("D1ROLE1", null, d1role1employeesList);
-        Role d1role2 = Role.CreateInstance("D1ROLE2", null, d1role2employeesList);
-        Role d1role3 = Role.CreateInstance("D1ROLE3", null, d1role3employeesList);
+        Role d1role1 = Role.CreateInstance("Chief Information Officer", null, d1role1employeesList);
+        Role d1role2 = Role.CreateInstance("Quality Assurance Manager", null, d1role2employeesList);
+        Role d1role3 = Role.CreateInstance("Management Support Specialist", null, d1role3employeesList);
 
         d1employee1.setRole(d1role1);
         d1employee2.setRole(d1role2);
@@ -165,29 +165,31 @@ public class DatabaseManager : MonoBehaviour
         //  DIVISIONS
         List<Role> d1div1rolesList = new List<Role>();
         d1div1rolesList.Add(d1role1);
+        d1div1rolesList.Add(d1role3);
 
         List<Role> d1div2rolesList = new List<Role>();
         d1div2rolesList.Add(d1role2);
 
-        List<Role> d1div3rolesList = new List<Role>();
-        d1div3rolesList.Add(d1role3);
+        //List<Role> d1div3rolesList = new List<Role>();
+        //d1div3rolesList.Add(d1role3);
 
-        Division d1div1 = Division.CreateInstance("D1DIV1", null, d1div1rolesList);
-        Division d1div2 = Division.CreateInstance("D1DIV2", null, d1div2rolesList);
-        Division d1div3 = Division.CreateInstance("D1DIV3", null, d1div3rolesList);
+        Division d1div1 = Division.CreateInstance("Office of the Chief Information Officer", null, d1div1rolesList);
+        Division d1div2 = Division.CreateInstance("Quality Assurance", null, d1div2rolesList);
+        //Division d1div3 = Division.CreateInstance("D1DIV3", null, d1div3rolesList);
 
         d1role1.setDivision(d1div1);
         d1role2.setDivision(d1div2);
-        d1role3.setDivision(d1div3);
+        //d1role3.setDivision(d1div3);
+        d1role3.setDivision(d1div1);
 
 
         //  DEPARTMENT
         List<Division> d1divList = new List<Division>();
         d1divList.Add(d1div1);
         d1divList.Add(d1div2);
-        d1divList.Add(d1div3);
+        //d1divList.Add(d1div3);
 
-        string d1desc = "";
+        string d1desc = "The Information Technology(IT) Team is a strategic partner to WSSC's business units. We provide fully - integrated information technology solutions that will help business units to use technology more effectively and efficiently and have a positive effect on reducing the Commission's  overall operating costs.";
 
         Department d1 = Department.CreateInstance("Information Technology", "d1", department1gallery, null, d1desc, d1divList);
 
@@ -225,17 +227,17 @@ public class DatabaseManager : MonoBehaviour
 
 
         //  EMPLOYEES
-        string d2employee1hobbies = "";
-        string d2employee2hobbies = "";
-        string d2employee3hobbies = "";
+        string d2employee1hobbies = "Reading inspirational quotes, Loves family";
+        string d2employee2hobbies = "Biking and Watching football";
+        string d2employee3hobbies = "Gardening and Biking";
 
         Sprite d2employee1location = null;
         Sprite d2employee2location = null;
         Sprite d2employee3location = null;
 
-        Employee d2employee1 = Employee.CreateInstance("D2EMPLOYEE1", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies);
-        Employee d2employee2 = Employee.CreateInstance("D2EMPLOYEE2", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies);
-        Employee d2employee3 = Employee.CreateInstance("D2EMPLOYEE3", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies);
+        Employee d2employee1 = Employee.CreateInstance("Christina Gaskins", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies);
+        Employee d2employee2 = Employee.CreateInstance("James Uhrich", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies);
+        Employee d2employee3 = Employee.CreateInstance("Lee McDonough", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies);
 
         employees.Add(d2employee1);
         employees.Add(d2employee2);
@@ -256,9 +258,9 @@ public class DatabaseManager : MonoBehaviour
         List<Employee> d2role3employeesList = new List<Employee>();
         d2role3employeesList.Add(d2employee3);
 
-        Role d2role1 = Role.CreateInstance("D2ROLE1", null, d2role1employeesList);
-        Role d2role2 = Role.CreateInstance("D2ROLE2", null, d2role2employeesList);
-        Role d2role3 = Role.CreateInstance("D2ROLE3", null, d2role3employeesList);
+        Role d2role1 = Role.CreateInstance("Human Resource Coordinator", null, d2role1employeesList);
+        Role d2role2 = Role.CreateInstance("Human Resource Specialist", null, d2role2employeesList);
+        Role d2role3 = Role.CreateInstance("Benefits Specialist", null, d2role3employeesList);
 
         d2employee1.setRole(d2role1);
         d2employee2.setRole(d2role2);
@@ -275,9 +277,9 @@ public class DatabaseManager : MonoBehaviour
         List<Role> d2div3rolesList = new List<Role>();
         d2div3rolesList.Add(d2role3);
 
-        Division d2div1 = Division.CreateInstance("D2DIV1", null, d2div1rolesList);
-        Division d2div2 = Division.CreateInstance("D2DIV2", null, d2div2rolesList);
-        Division d2div3 = Division.CreateInstance("D2DIV3", null, d2div3rolesList);
+        Division d2div1 = Division.CreateInstance("Talent Acquisition", null, d2div1rolesList);
+        Division d2div2 = Division.CreateInstance("Compensation", null, d2div2rolesList);
+        Division d2div3 = Division.CreateInstance("Benefits", null, d2div3rolesList);
 
         d2role1.setDivision(d2div1);
         d2role2.setDivision(d2div2);
