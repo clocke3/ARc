@@ -35,64 +35,64 @@ public class DatabaseManager : MonoBehaviour
 
     void Start()
     {
-        string conn = "URI=file:" + Application.dataPath + "/test.db"; //Path to database.
-        IDbConnection dbconn;
-        dbconn = (IDbConnection)new SqliteConnection(conn);
-        dbconn.Open(); //Open connection to the database.
-        IDbCommand dbcmd = dbconn.CreateCommand();
-        string sqlQuery = "SELECT QR_ID,LAST_NAME,FIRST_NAME,POSITION,DIVISION," +
-               "WORK_DURATION,HOBBIES " + "FROM EMPLOYEE";
-        dbcmd.CommandText = sqlQuery;
-        IDataReader reader = dbcmd.ExecuteReader();
-        while (reader.Read())
-        {
-            string qrid = reader.GetString(0);
-            string in_name = reader.GetString(1) + "," + reader.GetString(2);
-            string pos = reader.GetString(3);
-            string dep = reader.GetString(4);
-            string dur = reader.GetString(5);
-            string hob = reader.GetString(6);
+        //string conn = "URI=file:" + Application.dataPath + "/test.db"; //Path to database.
+        //IDbConnection dbconn;
+        //dbconn = (IDbConnection)new SqliteConnection(conn);
+        //dbconn.Open(); //Open connection to the database.
+        //IDbCommand dbcmd = dbconn.CreateCommand();
+        //string sqlQuery = "SELECT QR_ID,LAST_NAME,FIRST_NAME,POSITION,DIVISION," +
+        //       "WORK_DURATION,HOBBIES " + "FROM EMPLOYEE";
+        //dbcmd.CommandText = sqlQuery;
+        //IDataReader reader = dbcmd.ExecuteReader();
+        //while (reader.Read())
+        //{
+        //    string qrid = reader.GetString(0);
+        //    string in_name = reader.GetString(1) + "," + reader.GetString(2);
+        //    string pos = reader.GetString(3);
+        //    string dep = reader.GetString(4);
+        //    string dur = reader.GetString(5);
+        //    string hob = reader.GetString(6);
 
-            bool isNew = true;
-            Department b = Department.CreateInstance(dep, qrid, null, null, null, null);
-            foreach (Department find in departments)
-            {
-                if (b.isEqual(find))
-                {
-                    isNew = false;
-                    break;
-                }
-            }
-            if(isNew) departments.Add(b);
+        //    bool isNew = true;
+        //    Department b = Department.CreateInstance(dep, qrid, null, null, null, null);
+        //    foreach (Department find in departments)
+        //    {
+        //        if (b.isEqual(find))
+        //        {
+        //            isNew = false;
+        //            break;
+        //        }
+        //    }
+        //    if(isNew) departments.Add(b);
 
-            isNew = true;
-            Employee e = Employee.CreateInstance(in_name, qrid, null, null, null, hob);
-            foreach (Employee find in employees)
-            {
-                if (e.isEqual(find))
-                {
-                    isNew = false;
-                    break;
-                }
-            }
-            if (isNew) employees.Add(e);
+        //    isNew = true;
+        //    Employee e = Employee.CreateInstance(in_name, qrid, null, null, null, hob);
+        //    foreach (Employee find in employees)
+        //    {
+        //        if (e.isEqual(find))
+        //        {
+        //            isNew = false;
+        //            break;
+        //        }
+        //    }
+        //    if (isNew) employees.Add(e);
 
-            //Debug.Log("qr =" + qrid + "name = " + in_name + "  position = " + pos +
-            //          "hob=" + hob);
-            //Debug.Log(e.getHobbies());
-        }
-        reader.Close();
-        reader = null;
-        dbcmd.Dispose();
-        dbcmd = null;
-        dbconn.Close();
-        dbconn = null;
+        //    //Debug.Log("qr =" + qrid + "name = " + in_name + "  position = " + pos +
+        //    //          "hob=" + hob);
+        //    //Debug.Log(e.getHobbies());
+        //}
+        //reader.Close();
+        //reader = null;
+        //dbcmd.Dispose();
+        //dbcmd = null;
+        //dbconn.Close();
+        //dbconn = null;
     }
 
-    bool hasMocked = false;
+    //bool hasMocked = false;
     private void addMock() {
-        if (hasMocked) return;
-        hasMocked = true;
+        //if (hasMocked) return;
+        //hasMocked = true;
 
         MediaGallery gallery1 = MediaGallery.CreateInstance(null, null);
         MediaGallery gallery2 = MediaGallery.CreateInstance(null, null);
