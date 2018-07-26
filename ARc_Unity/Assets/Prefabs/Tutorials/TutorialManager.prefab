@@ -149,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1169514702095262
 GameObject:
   m_ObjectHideFlags: 1
@@ -439,7 +439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1530229164889332
 GameObject:
   m_ObjectHideFlags: 1
@@ -837,7 +837,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ab1b6f4466c144964bb30465bd101de7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1056,8 +1056,8 @@ MonoBehaviour:
   decelerationRate: 10
   prevButton: {fileID: 1553278088163040}
   nextButton: {fileID: 1570374286752616}
-  unselectedPage: {fileID: 21300000, guid: ab1b6f4466c144964bb30465bd101de7, type: 3}
-  selectedPage: {fileID: 21300000, guid: bfb898ec701c4437294d460daff24ef0, type: 3}
+  unselectedPage: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
+  selectedPage: {fileID: 21300000, guid: bd448eb7cbff74615acaef8e2bc4613b, type: 3}
   pageSelectionIcons: {fileID: 224820103434713460}
 --- !u!114 &114160329970247970
 MonoBehaviour:
@@ -1078,7 +1078,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1037224dd7b94dcfa4cd22d1d930213, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1105,7 +1105,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c68669d2b3d6b4e478d7a02653cf09ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1395,7 +1395,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1037224dd7b94dcfa4cd22d1d930213, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1660,7 +1660,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ab1b6f4466c144964bb30465bd101de7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1720,7 +1720,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1037224dd7b94dcfa4cd22d1d930213, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1881,7 +1881,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1037224dd7b94dcfa4cd22d1d930213, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1974,7 +1974,7 @@ MonoBehaviour:
   decelerationRate: 10
   prevButton: {fileID: 1754740550807380}
   nextButton: {fileID: 1906929009133024}
-  unselectedPage: {fileID: 21300000, guid: ab1b6f4466c144964bb30465bd101de7, type: 3}
+  unselectedPage: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   selectedPage: {fileID: 21300000, guid: bd448eb7cbff74615acaef8e2bc4613b, type: 3}
   pageSelectionIcons: {fileID: 224141631310578984}
 --- !u!114 &114729063153743818
@@ -2083,7 +2083,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ab1b6f4466c144964bb30465bd101de7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2257,7 +2257,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ab1b6f4466c144964bb30465bd101de7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c66b307e76b8842eea544a84d210cb76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2677,7 +2677,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 305, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224036627909738292
 RectTransform:
@@ -2733,7 +2733,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 68, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224131386937800068
 RectTransform:
@@ -2796,7 +2796,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 220, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224176612123920318
 RectTransform:
@@ -2970,7 +2970,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224357027904266588
 RectTransform:
@@ -3029,7 +3029,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 162, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224394884696223180
 RectTransform:
@@ -3213,7 +3213,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -68, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224618453110203508
 RectTransform:
@@ -3307,7 +3307,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -291, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224820103434713460
 RectTransform:
@@ -3348,7 +3348,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -149, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224855330420162740
 RectTransform:
@@ -3385,7 +3385,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -220, y: 28}
-  m_SizeDelta: {x: 56, y: 56}
+  m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224928443009599684
 RectTransform:
