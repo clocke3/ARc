@@ -125,9 +125,9 @@ public class DatabaseManager : MonoBehaviour
         string d1employee2hobbies = "Hunting, Fishing";
         string d1employee3hobbies = "Comic-Con, Gym, and Dogs";
 
-        Sprite d1employee1location = null;
-        Sprite d1employee2location = null;
-        Sprite d1employee3location = null;
+        Sprite d1employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/VennardWright");
+        Sprite d1employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/DennisPhillips");
+        Sprite d1employee3location = Resources.Load<Sprite>("Sprites/LocationSprites/MonicaCunanan");
 
         Employee d1employee1 = Employee.CreateInstance("Vennard Wright", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies);
         Employee d1employee2 = Employee.CreateInstance("Dennis Phillips", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies);
@@ -190,7 +190,9 @@ public class DatabaseManager : MonoBehaviour
 
         string d1desc = "The Information Technology(IT) Team is a strategic partner to WSSC's business units. We provide fully - integrated information technology solutions that will help business units to use technology more effectively and efficiently and have a positive effect on reducing the Commission's  overall operating costs.";
 
-        Department d1 = Department.CreateInstance("Information Technology", "d1", department1gallery, null, d1desc, d1divList);
+        Sprite d1Location = Resources.Load<Sprite>("Sprites/LocationSprites/4thFloor");
+
+        Department d1 = Department.CreateInstance("Information Technology", "d1", department1gallery, d1Location, d1desc, d1divList);
 
         department1gallery.setProfiable(d1);
 
@@ -230,9 +232,9 @@ public class DatabaseManager : MonoBehaviour
         string d2employee2hobbies = "Biking and Watching football";
         string d2employee3hobbies = "Gardening and Biking";
 
-        Sprite d2employee1location = null;
-        Sprite d2employee2location = null;
-        Sprite d2employee3location = null;
+        Sprite d2employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/ChristinaGaskins");
+        Sprite d2employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/JamesUhrich");
+        Sprite d2employee3location = Resources.Load<Sprite>("Sprites/LocationSprites/LeeMcDonough");
 
         Employee d2employee1 = Employee.CreateInstance("Christina Gaskins", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies);
         Employee d2employee2 = Employee.CreateInstance("James Uhrich", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies);
@@ -291,9 +293,11 @@ public class DatabaseManager : MonoBehaviour
         d2divList.Add(d2div2);
         d2divList.Add(d2div3);
 
-        string d2desc = "";
+        string d2desc = "The Human Resource Office supports employee, team, and organizational success; and the Commission by providing quality employee systems in talent management, employee development, and total rewards.";
 
-        Department d2 = Department.CreateInstance("Human Resources", "d2", department2gallery, null, d2desc, d2divList);
+        Sprite d2Location = Resources.Load<Sprite>("Sprites/LocationSprites/6thFloor");
+
+        Department d2 = Department.CreateInstance("Human Resources", "d2", department2gallery, d2Location, d2desc, d2divList);
 
         department2gallery.setProfiable(d2);
 
