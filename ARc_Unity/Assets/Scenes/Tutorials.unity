@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &177609998
+--- !u!1001 &231940200
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -212,51 +212,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1528143612992460, guid: 22f4bab3d77854775a2a28bc918b14c3, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1564426184659228, guid: 22f4bab3d77854775a2a28bc918b14c3, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224245934304581790, guid: 22f4bab3d77854775a2a28bc918b14c3,
+        type: 2}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224245934304581790, guid: 22f4bab3d77854775a2a28bc918b14c3,
         type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224245934304581790, guid: 22f4bab3d77854775a2a28bc918b14c3,
-        type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224245934304581790, guid: 22f4bab3d77854775a2a28bc918b14c3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 355.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224246469986212092, guid: 22f4bab3d77854775a2a28bc918b14c3,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224246469986212092, guid: 22f4bab3d77854775a2a28bc918b14c3,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224246469986212092, guid: 22f4bab3d77854775a2a28bc918b14c3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 441.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224245934304581790, guid: 22f4bab3d77854775a2a28bc918b14c3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -185.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224246469986212092, guid: 22f4bab3d77854775a2a28bc918b14c3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -185.5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22f4bab3d77854775a2a28bc918b14c3, type: 2}
@@ -265,7 +265,7 @@ Prefab:
 RectTransform:
   m_PrefabParentObject: {fileID: 224632184034688256, guid: 22f4bab3d77854775a2a28bc918b14c3,
     type: 2}
-  m_PrefabInternal: {fileID: 177609998}
+  m_PrefabInternal: {fileID: 231940200}
 --- !u!1001 &762861895
 Prefab:
   m_ObjectHideFlags: 0
