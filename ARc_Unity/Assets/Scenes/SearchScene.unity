@@ -239,7 +239,7 @@ Prefab:
     - target: {fileID: 224783294135478216, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224783294135478216, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
@@ -290,16 +290,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224005284145991226, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224005284145991226, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114168994465704290, guid: 7c6cedc897fb14b66ab9f5dc6eeb6ddc,
         type: 2}
@@ -550,7 +540,7 @@ Prefab:
     - target: {fileID: 224597689505772594, guid: e66264a77c9da4b1a9becbed2a588c41,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224597689505772594, guid: e66264a77c9da4b1a9becbed2a588c41,
         type: 2}
@@ -732,7 +722,7 @@ Prefab:
     - target: {fileID: 224633267038132134, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224633267038132134, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
@@ -797,6 +787,11 @@ Prefab:
     - target: {fileID: 224585279965209124, guid: 74dea51f56ace491fa31502a721a99a7,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919996384614962, guid: 74dea51f56ace491fa31502a721a99a7,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
