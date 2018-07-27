@@ -10,6 +10,8 @@ public class EmployeeProfile : Panel
     public Text label;
     public DatabaseObjectButton roleButton;
     public DatabaseObjectButton galleryButton;
+    public DatabaseObjectButton divisionButton;
+    public DatabaseObjectButton departmentButton;
     public GameObject hobbiesParent;
     public Text hobbiesText;
     public Text textPrefab;
@@ -38,6 +40,19 @@ public class EmployeeProfile : Panel
         {
             galleryButton.setup(this, employee.getGallery());
         }
+
+        // set up divisionButton
+        if (employee.getDivision() != null)
+        {
+            divisionButton.setup(this, employee.getDivision());
+        }
+
+        // set up departmentButton
+        if (employee.getDepartment() != null)
+        {
+            departmentButton.setup(this, employee.getDepartment());
+        }
+
 
         // set up hobbies
         if (employee.getHobbies() != null)

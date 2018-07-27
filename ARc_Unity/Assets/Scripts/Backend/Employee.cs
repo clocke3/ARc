@@ -9,6 +9,7 @@ public class Employee : Profiable
     private Role role;
     private string hobbies;
     private string email;
+    private Sprite profilePic;
 
     // constructors
     private void init()
@@ -16,14 +17,16 @@ public class Employee : Profiable
         role = Role.CreateInstance();
         hobbies = "";
         email = "";
+        profilePic = null;
         this.profiableInit();
     }
 
-    private void init(string label, string qrID, MediaGallery gallery, Sprite locationImage, Role role, string hobbies, string email)
+    private void init(string label, string qrID, MediaGallery gallery, Sprite locationImage, Role role, string hobbies, string email, Sprite profilePic)
     {
         this.role = role;
         this.hobbies = hobbies;
         this.email = email;
+        this.profilePic = profilePic;
         this.profiableInit(label, qrID, gallery, locationImage);
     }
 
@@ -34,10 +37,10 @@ public class Employee : Profiable
         return employee;
     }
 
-    public static Employee CreateInstance(string label, string qrID, MediaGallery gallery, Sprite locationImage, Role role, string hobbies, string email)
+    public static Employee CreateInstance(string label, string qrID, MediaGallery gallery, Sprite locationImage, Role role, string hobbies, string email, Sprite profilePic)
     {
         Employee employee = CreateInstance<Employee>();
-        employee.init(label, qrID, gallery, locationImage, role, hobbies, email);
+        employee.init(label, qrID, gallery, locationImage, role, hobbies, email, profilePic);
         return employee;
     }
 
@@ -67,6 +70,10 @@ public class Employee : Profiable
 
     public string getEmail() {
         return email;
+    }
+
+    public Sprite getProfilePic() {
+        return profilePic;
     }
 
     public Division getDivision() {
