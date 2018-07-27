@@ -14,6 +14,7 @@ public class EmployeeProfile : Panel
     public Text hobbiesText;
     public Text textPrefab;
     public LocationButton locationButton;
+    public Text emailText;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -45,8 +46,14 @@ public class EmployeeProfile : Panel
         }
 
         // set up location button
-        //if(employee.getLocationImage() != null) {
+        if(employee.getLocationImage() != null) {
             locationButton.setup(profileManager, employee.getLocationImage());
-        //}
+        }
+
+        // set up email text
+        if(employee.getEmail() != null) {
+            emailText.text = employee.getEmail();
+        }
+
     }
 }
