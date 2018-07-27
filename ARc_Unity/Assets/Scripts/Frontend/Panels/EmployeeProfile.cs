@@ -17,6 +17,7 @@ public class EmployeeProfile : Panel
     public Text textPrefab;
     public LocationButton locationButton;
     public Text emailText;
+    public Image profilePic;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -68,6 +69,11 @@ public class EmployeeProfile : Panel
         // set up email text
         if(employee.getEmail() != null) {
             emailText.text = employee.getEmail();
+        }
+
+        // set up profile pic
+        if(employee.getProfilePic() != null) {
+            profilePic.sprite = employee.getProfilePic();
         }
 
     }
