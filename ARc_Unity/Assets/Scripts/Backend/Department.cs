@@ -1,0 +1,66 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using UnityEngine.UI;
+
+public class Department : Profiable
+{
+
+    // variables
+    private string description;
+    private List<Division> divisions;
+
+    // constructors
+    private void init() {
+        description = "";
+        divisions = new List<Division>();
+        this.profiableInit();
+    }
+
+    private void init(string label, string qrID, MediaGallery gallery, Sprite locationImage, string description, List<Division> divisions) {
+        this.description = description;
+        this.divisions = divisions;
+        this.profiableInit(label, qrID, gallery, locationImage);
+    }
+
+    public static Department CreateInstance()
+    {
+        Department department = CreateInstance<Department>();
+        department.init();
+        return department;
+    }
+
+    public static Department CreateInstance(string label, string qrID, MediaGallery gallery, Sprite locationImage, string description, List<Division> divisions) {
+        Department department = CreateInstance<Department>();
+        department.init(label, qrID, gallery, locationImage, description, divisions);
+        return department;
+    }
+
+    // setters
+    protected override void setTypeID()
+    {
+        this.typeID = DatabaseObject.DEPARTMENT;
+    }
+
+    public void setMediaGallery(MediaGallery gallery)
+    {
+        this.gallery = gallery;
+    }
+
+    public void setDivisions(List<Division> divisions) {
+        this.divisions = divisions;
+    }
+
+    // getters
+    public string getDescription()
+    {
+        return description;
+    }
+
+    public List<Division> getDivisions()
+    {
+        return divisions;
+    }
+   
+}
