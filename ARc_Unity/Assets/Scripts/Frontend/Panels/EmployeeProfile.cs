@@ -10,10 +10,14 @@ public class EmployeeProfile : Panel
     public Text label;
     public DatabaseObjectButton roleButton;
     public DatabaseObjectButton galleryButton;
+    public DatabaseObjectButton divisionButton;
+    public DatabaseObjectButton departmentButton;
     public GameObject hobbiesParent;
     public Text hobbiesText;
     public Text textPrefab;
     public LocationButton locationButton;
+    public Text emailText;
+    public Image profilePic;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -38,6 +42,19 @@ public class EmployeeProfile : Panel
             galleryButton.setup(this, employee.getGallery());
         }
 
+        // set up divisionButton
+        if (employee.getDivision() != null)
+        {
+            divisionButton.setup(this, employee.getDivision());
+        }
+
+        // set up departmentButton
+        if (employee.getDepartment() != null)
+        {
+            departmentButton.setup(this, employee.getDepartment());
+        }
+
+
         // set up hobbies
         if (employee.getHobbies() != null)
         {
@@ -45,8 +62,19 @@ public class EmployeeProfile : Panel
         }
 
         // set up location button
-        //if(employee.getLocationImage() != null) {
+        if(employee.getLocationImage() != null) {
             locationButton.setup(profileManager, employee.getLocationImage());
-        //}
+        }
+
+        // set up email text
+        if(employee.getEmail() != null) {
+            emailText.text = employee.getEmail();
+        }
+
+        // set up profile pic
+        if(employee.getProfilePic() != null) {
+            profilePic.sprite = employee.getProfilePic();
+        }
+
     }
 }

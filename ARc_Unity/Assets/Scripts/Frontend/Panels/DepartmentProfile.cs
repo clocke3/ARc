@@ -46,9 +46,9 @@ public class DepartmentProfile : Panel {
         }
 
         // set up location button
-        //if (department.getLocationImage() != null)
-        //{
+        if (department.getLocationImage() != null)
+        {
             locationButton.setup(profileManager, department.getLocationImage());
-        //}
+        }
     }
 }

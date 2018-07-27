@@ -125,13 +125,17 @@ public class DatabaseManager : MonoBehaviour
         string d1employee2hobbies = "Hunting, Fishing";
         string d1employee3hobbies = "Comic-Con, Gym, and Dogs";
 
+        Sprite d1employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/VennardWright");
+        Sprite d1employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/DennisPhillips");
+        Sprite d1employee3profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/MonicaCunanan");
+
         Sprite d1employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/VennardWright");
         Sprite d1employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/DennisPhillips");
         Sprite d1employee3location = Resources.Load<Sprite>("Sprites/LocationSprites/MonicaCunanan");
 
-        Employee d1employee1 = Employee.CreateInstance("Vennard Wright", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies);
-        Employee d1employee2 = Employee.CreateInstance("Dennis Phillips", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies);
-        Employee d1employee3 = Employee.CreateInstance("Monica Cunanan", "d1employee3", d1employee3gallery, d1employee3location, null, d1employee3hobbies);
+        Employee d1employee1 = Employee.CreateInstance("Vennard Wright", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies, "VennardWright", d1employee1profilepic);
+        Employee d1employee2 = Employee.CreateInstance("Dennis Phillips", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies, "DennisPhillips", d1employee2profilepic);
+        Employee d1employee3 = Employee.CreateInstance("Monica Cunanan", "d1employee3", d1employee3gallery, d1employee3location, null, d1employee3hobbies, "MonicaCunanan", d1employee3profilepic);
 
         employees.Add(d1employee1);
         employees.Add(d1employee2);
@@ -232,13 +236,17 @@ public class DatabaseManager : MonoBehaviour
         string d2employee2hobbies = "Biking and Watching football";
         string d2employee3hobbies = "Gardening and Biking";
 
+        Sprite d2employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/ChristinaGaskins");
+        Sprite d2employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/JamesUhrich");
+        Sprite d2employee3profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/LeeMcDonough");
+
         Sprite d2employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/ChristinaGaskins");
         Sprite d2employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/JamesUhrich");
         Sprite d2employee3location = Resources.Load<Sprite>("Sprites/LocationSprites/LeeMcDonough");
 
-        Employee d2employee1 = Employee.CreateInstance("Christina Gaskins", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies);
-        Employee d2employee2 = Employee.CreateInstance("James Uhrich", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies);
-        Employee d2employee3 = Employee.CreateInstance("Lee McDonough", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies);
+        Employee d2employee1 = Employee.CreateInstance("Christina Gaskins", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies, "ChristinaGaskins", d2employee1profilepic);
+        Employee d2employee2 = Employee.CreateInstance("James Uhrich", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies, "JamesUhrich", d2employee2profilepic);
+        Employee d2employee3 = Employee.CreateInstance("Lee McDonough", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies, "LeeMcDonough", d2employee3profilepic);
 
         employees.Add(d2employee1);
         employees.Add(d2employee2);
