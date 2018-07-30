@@ -62,17 +62,20 @@ public class EmployeeProfile : Panel
         }
 
         // set up location button
-        if(employee.getLocationImage() != null) {
+        if (employee.getLocationImage() != null)
+        {
             locationButton.setup(profileManager, employee.getLocationImage());
         }
 
         // set up email text
-        if(employee.getEmail() != null) {
+        if (employee.getEmail() != null)
+        {
             emailText.text = employee.getEmail();
         }
 
         // set up profile pic
-        if(employee.getProfilePic() != null) {
+        if (employee.getProfilePic() != null)
+        {
             profilePic.sprite = employee.getProfilePic();
         }
 
