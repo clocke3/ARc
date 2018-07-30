@@ -5,15 +5,20 @@ using Mono.Data.Sqlite;
 using System.Data;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.IO;
 
 public class DatabaseManager : MonoBehaviour
 {
-    
+
     // variables
     private static DatabaseManager instance = null;       //database (FIX WHEN READY)
     private static List<Department> departments;
     //remove after
     public static List<Employee> employees;
+    public MediaGallery gallery;
+    private string conn = null;
+    private string connectionString = null;
 
     // Initialization
 
@@ -38,6 +43,120 @@ public class DatabaseManager : MonoBehaviour
 
     void Start()
     {
+        //Application.dataPath
+        // ARc\ARc_Unity\Assets\Resources
+       if (Application.platform == RuntimePlatform.Android) {
+            string filepath = Application.persistentDataPath + "//database.db";
+            WWW wwwfile = new WWW("jar:file://" + Application.dataPath + "!/assets/");
+            while (!wwwfile.isDone) { }
+            File.WriteAllBytes(filepath, wwwfile.bytes);
+            conn = "URI=file:" + filepath;
+        }
+        else 
+        {
+            conn = "URI=file:" + Application.dataPath + "/StreamingAssets/database.db"; //Path to database.
+        }
+        Debug.Log(Application.dataPath + "/StreamingAssets/database.db");
+        IDbConnection dbconn;
+        dbconn = (IDbConnection)new SqliteConnection(conn);
+        dbconn.Open(); //Open connection to the database.
+        IDbCommand dbcmd = dbconn.CreateCommand();
+        string sqlQuery = "SELECT QR_ID,LAST_NAME,FIRST_NAME,POSITION,DIVISION," +
+               "WORK_DURATION,HOBBIES FROM" + " test";
+        dbcmd.CommandText = sqlQuery;
+        IDataReader reader = dbcmd.ExecuteReader();
+        while (reader.Read())
+        { 
+            string qrid = reader.GetString(0);
+            string in_name = reader.GetString(1) + "," + reader.GetString(2);
+            string pos = reader.GetString(3);
+            string dep = reader.GetString(4);
+            string dur = reader.GetString(5);
+            string hob = reader.GetString(6);
+
+            bool isNew = true;
+            Department b = Department.CreateInstance(dep, qrid, null, null, null, null);
+            foreach (Department find in departments)
+            {
+                if (b.isEqual(find))
+                {
+                    isNew = false;
+                    break;
+                }
+            }
+            if (isNew)
+            {
+                departments.Add(b);
+                gallery = MediaGallery.CreateInstance(getProfiable(qrid), new List<Sprite> { GetImage(reader.GetString(0)) });
+                b.setMediaGallery(gallery);
+            }
+
+            isNew = true;
+            Employee e = Employee.CreateInstance(in_name, qrid, null, null, null, hob);
+            foreach (Employee find in employees)
+            {
+                if (e.isEqual(find))
+                {
+                    isNew = false;
+                    break;
+                }
+            }
+            if (isNew)
+            {
+                employees.Add(e);
+                e.setMediaGallery(MediaGallery.CreateInstance(getProfiable(qrid), new List<Sprite> { GetImage(reader.GetString(0)) }));
+            }
+
+        }
+        reader.Close();
+        reader = null;
+        dbcmd.Dispose();
+        dbcmd = null;
+        dbconn.Close();
+        dbconn = null;
+    }
+
+    private Sprite GetImage(String qr)
+    {
+        //string connectionString = "URI=file:" + Application.dataPath + "/database.db";
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            string filepath = Application.persistentDataPath + "//database.db";
+            WWW wwwfile = new WWW("jar:file://" + Application.dataPath + "!/assets/");
+            while (!wwwfile.isDone) { }
+            File.WriteAllBytes(filepath, wwwfile.bytes);
+            connectionString = "URI=file:" + filepath;
+        }
+        else
+        {
+            connectionString = "URI=file:" + Application.dataPath + "/StreamingAssets/database.db"; //Path to database.
+        }
+        IDbConnection dbcon = new SqliteConnection(connectionString);
+        IDbCommand dbcmd;
+        IDataReader reader;
+        var tex = new Texture2D(64, 64);
+        Sprite imager = null;
+
+        dbcon.Open();
+        string sql = "SELECT PHOTO FROM test WHERE " + qr;
+
+        dbcmd = dbcon.CreateCommand();
+        dbcmd.CommandText = sql;
+        reader = dbcmd.ExecuteReader();
+
+        while (reader.Read())
+        {
+            byte[] img = (byte[])reader["PHOTO"];
+            tex.LoadImage(img);
+            // image 266x199
+            imager = Sprite.Create(tex, new Rect(200, 200, 2000, 2000), new Vector2(0.5f, 0.5f));
+            //Debug.Log(imager + qr);
+        }
+        dbcon.Close();
+        reader.Dispose();
+        return imager;
+    }
+   
         //string conn = "URI=file:" + Application.dataPath + "/test.db"; //Path to database.
         //IDbConnection dbconn;
         //dbconn = (IDbConnection)new SqliteConnection(conn);
@@ -90,7 +209,7 @@ public class DatabaseManager : MonoBehaviour
         //dbcmd = null;
         //dbconn.Close();
         //dbconn = null;
-    }
+
 
     //bool hasMocked = false;
     private void addMock() {
