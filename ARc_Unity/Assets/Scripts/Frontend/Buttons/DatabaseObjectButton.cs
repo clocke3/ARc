@@ -34,7 +34,11 @@ public class DatabaseObjectButton : MonoBehaviour {
     }
 
     public void setText() {
-        button.GetComponentInChildren<Text>().text = databaseObject.getLabel();
+        if(databaseObject.getTypeID() == DatabaseObject.MEDIAGALLERY) {
+            button.GetComponentInChildren<Text>().text = MediaGallery.BUTTONLABEL;
+        } else {
+            button.GetComponentInChildren<Text>().text = databaseObject.getLabel();   
+        }
     }
 
     // openers

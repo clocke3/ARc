@@ -9,6 +9,7 @@ public class MediaGallery : DatabaseObject {
     private Profiable profiable;
     private List<Sprite> images;
 
+    public const string BUTTONLABEL = "Media Gallery";
     private string constantLabel = "Media Gallery";
 
     // constructors
