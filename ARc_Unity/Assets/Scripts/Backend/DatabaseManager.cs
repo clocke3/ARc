@@ -47,16 +47,19 @@ public class DatabaseManager : MonoBehaviour
         // ARc\ARc_Unity\Assets\Resources
        if (Application.platform == RuntimePlatform.Android) {
             string filepath = Application.persistentDataPath + "//database.db";
-            WWW wwwfile = new WWW("jar:file://" + Application.dataPath + "!/assets/");
+            WWW wwwfile = new WWW("jar:file://" + Application.streamingAssetsPath + "!/assets/");
             while (!wwwfile.isDone) { }
             File.WriteAllBytes(filepath, wwwfile.bytes);
             conn = "URI=file:" + filepath;
         }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer ) {
+            conn = "URI=file:" + Application.streamingAssetsPath + "/Raw";
+        }
         else 
         {
-            conn = "URI=file:" + Application.dataPath + "/StreamingAssets/database.db"; //Path to database.
+            conn = "URI=file:" + Application.streamingAssetsPath + "/database.db"; //Path to database.
         }
-        Debug.Log(Application.dataPath + "/StreamingAssets/database.db");
+        Debug.Log(Application.streamingAssetsPath);
         IDbConnection dbconn;
         dbconn = (IDbConnection)new SqliteConnection(conn);
         dbconn.Open(); //Open connection to the database.
@@ -122,14 +125,18 @@ public class DatabaseManager : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android)
         {
             string filepath = Application.persistentDataPath + "//database.db";
-            WWW wwwfile = new WWW("jar:file://" + Application.dataPath + "!/assets/");
+            WWW wwwfile = new WWW("jar:file://" + Application.streamingAssetsPath + "!/assets/");
             while (!wwwfile.isDone) { }
             File.WriteAllBytes(filepath, wwwfile.bytes);
             connectionString = "URI=file:" + filepath;
         }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            conn = "URI=file:" + Application.streamingAssetsPath + "/Raw";
+        }
         else
         {
-            connectionString = "URI=file:" + Application.dataPath + "/StreamingAssets/database.db"; //Path to database.
+            connectionString = "URI=file:" + Application.streamingAssetsPath + "/database.db"; //Path to database.
         }
         IDbConnection dbcon = new SqliteConnection(connectionString);
         IDbCommand dbcmd;
