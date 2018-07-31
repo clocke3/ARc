@@ -48,19 +48,23 @@ public class ContinuousDemo : MonoBehaviour {
 	/// </summary>
 	private void StartScanner()
 	{
-		BarcodeScanner.Scan((barCodeType, barCodeValue) => {
-            BarcodeScanner.Stop();
-          
-			RestartTime += Time.realtimeSinceStartup + 1f;
-            scanManager.displayProfile(barCodeValue);
+        if (ScanManager.canScan)
+        {
+            BarcodeScanner.Scan((barCodeType, barCodeValue) =>
+            {
+                BarcodeScanner.Stop();
 
-			// Feedback
-			Audio.Play();
+                RestartTime += Time.realtimeSinceStartup + 1f;
+                scanManager.displayProfile(barCodeValue);
 
-			#if UNITY_ANDROID || UNITY_IOS
-			Handheld.Vibrate();
-			#endif
-		});
+                // Feedback
+                Audio.Play();
+
+                #if UNITY_ANDROID || UNITY_IOS
+                    Handheld.Vibrate();
+                #endif
+            });
+        }
 	}
 
    
