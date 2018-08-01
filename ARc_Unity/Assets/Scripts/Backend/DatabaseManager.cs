@@ -46,8 +46,8 @@ public class DatabaseManager : MonoBehaviour
         //Application.dataPath
         // ARc\ARc_Unity\Assets\Resources
        if (Application.platform == RuntimePlatform.Android) {
-            string filepath = Application.persistentDataPath + "//database.db";
-            WWW wwwfile = new WWW("jar:file://" + Application.streamingAssetsPath + "!/assets/");
+            string filepath = Application.persistentDataPath + "/database.db";
+            WWW wwwfile = new WWW("jar:file://" + Application.streamingAssetsPath + "!/assets/database.db");
             while (!wwwfile.isDone) { }
             File.WriteAllBytes(filepath, wwwfile.bytes);
             conn = "URI=file:" + filepath;
@@ -124,8 +124,8 @@ public class DatabaseManager : MonoBehaviour
         //string connectionString = "URI=file:" + Application.dataPath + "/database.db";
         if (Application.platform == RuntimePlatform.Android)
         {
-            string filepath = Application.persistentDataPath + "//database.db";
-            WWW wwwfile = new WWW("jar:file://" + Application.streamingAssetsPath + "!/assets/");
+            string filepath = Application.persistentDataPath + "/database.db";
+            WWW wwwfile = new WWW("jar:file://" + Application.streamingAssetsPath + "!/assets/database.db");
             while (!wwwfile.isDone) { }
             File.WriteAllBytes(filepath, wwwfile.bytes);
             connectionString = "URI=file:" + filepath;
