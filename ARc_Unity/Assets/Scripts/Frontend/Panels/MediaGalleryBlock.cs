@@ -13,6 +13,7 @@ public class MediaGalleryBlock : Panel
     public DatabaseObjectButton profiableButton;
     public GameObject picturesParent;
     public Image imagePrefab;
+    public Text noPicsLabel;
 
     // panel stuff
     protected override void setToRepresent(DatabaseObject databaseObject)
@@ -49,12 +50,19 @@ public class MediaGalleryBlock : Panel
         // set up pictures
         if (gallery.getImages() != null)
         {
-            List<Sprite> images = gallery.getImages();
-            foreach (Sprite image in images)
+            if (gallery.getImages().Count == 0 || gallery.getImages()[0] == null)
             {
-                Image imageHolder = Instantiate(imagePrefab, transform.position, Quaternion.identity) as Image;
-                imageHolder.sprite = image;
-                imageHolder.transform.SetParent(picturesParent.transform, true);
+                noPicsLabel.gameObject.SetActive(true);
+            }
+            else
+            {
+                List<Sprite> images = gallery.getImages();
+                foreach (Sprite image in images)
+                {
+                    Image imageHolder = Instantiate(imagePrefab, transform.position, Quaternion.identity) as Image;
+                    imageHolder.sprite = image;
+                    imageHolder.transform.SetParent(picturesParent.transform, true);
+                }
             }
         }
     }
