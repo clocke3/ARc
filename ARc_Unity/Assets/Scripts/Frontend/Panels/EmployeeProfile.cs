@@ -56,16 +56,15 @@ public class EmployeeProfile : Panel
 
 
         // set up hobbies
-        if (employee.getHobbies() != null)
+        if (employee.getHobbies() != null && !employee.getHobbies().Equals(""))
         {
             hobbiesText.text = employee.getHobbies();
+        } else {
+            hobbiesText.text = "N/A";
         }
 
         // set up location button
-        if (employee.getLocationImage() != null)
-        {
-            locationButton.setup(profileManager, employee.getLocationImage());
-        }
+        locationButton.setup(profileManager, employee.getLocationImage());
 
         // set up email text
         if (employee.getEmail() != null)
@@ -77,6 +76,8 @@ public class EmployeeProfile : Panel
         if (employee.getProfilePic() != null)
         {
             profilePic.sprite = employee.getProfilePic();
+        } else {
+            profilePic.sprite = Resources.Load<Sprite>("Sprites/GallerySprites/Default");
         }
 
     }

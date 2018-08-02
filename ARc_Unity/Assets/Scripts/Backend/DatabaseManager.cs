@@ -384,6 +384,70 @@ public class DatabaseManager : MonoBehaviour
 
 
 
+
+        // DEFAULT DEPARTMENT
+        //  MEDIAGALLERIES FOR EMPLOYEES
+        List<Sprite> dfemployee1photos = null;
+
+        MediaGallery dfemployee1gallery = MediaGallery.CreateInstance(null, dfemployee1photos);
+
+        //  MEDIAGALLERY FOR DEPARTMENT
+        List<Sprite> departmentfphotos = null;
+
+        MediaGallery departmentfgallery = MediaGallery.CreateInstance(null, departmentfphotos);
+
+
+        //  EMPLOYEE
+        string dfemployee1hobbies = null;
+
+        Sprite dfemployee1profilepic = null;
+
+        Sprite dfemployee1location = null;
+
+        Employee dfemployee1 = Employee.CreateInstance("Default Employee", "dfemployee1", dfemployee1gallery, dfemployee1location, null, dfemployee1hobbies, "default@wsscwater.com", dfemployee1profilepic);
+
+        employees.Add(dfemployee1);
+
+        dfemployee1gallery.setProfiable(dfemployee1);
+
+
+        //  ROLE
+        List<Employee> dfrole1employeesList = new List<Employee>();
+        dfrole1employeesList.Add(dfemployee1);
+
+        Role dfrole1 = Role.CreateInstance("Default Role", null, dfrole1employeesList);
+
+        dfemployee1.setRole(dfrole1);
+
+
+        //  DIVISION
+        List<Role> dfdiv1rolesList = new List<Role>();
+        dfdiv1rolesList.Add(dfrole1);
+
+        Division dfdiv1 = Division.CreateInstance("Default Division", null, dfdiv1rolesList);
+
+        dfrole1.setDivision(dfdiv1);
+
+
+        //  DEPARTMENT
+        List<Division> dfdivList = new List<Division>();
+        dfdivList.Add(dfdiv1);
+
+        string dfdesc = "Default Description";
+
+        Sprite dfLocation = Resources.Load<Sprite>("Sprites/LocationSprites/Default");
+
+        Department df = Department.CreateInstance("Default Department", "df", departmentfgallery, dfLocation, dfdesc, dfdivList);
+
+        departmentfgallery.setProfiable(df);
+
+        foreach (Division division in dfdivList)
+        {
+            division.setDepartment(df);
+        }
+
+        departments.Add(df);
+
     }
 
     //private void OnLevelWasLoaded(int level)

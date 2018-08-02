@@ -64,6 +64,8 @@ public class MediaGalleryBlock : Panel
                     imageHolder.transform.SetParent(picturesParent.transform, true);
                 }
             }
+        } else {
+            noPicsLabel.gameObject.SetActive(true);
         }
     }
 }

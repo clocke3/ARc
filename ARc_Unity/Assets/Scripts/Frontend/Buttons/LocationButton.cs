@@ -12,7 +12,12 @@ public class LocationButton : MonoBehaviour {
     // set up
     public void setup(ProfileManager profileManager, Sprite sprite) {
         this.profileManager = profileManager;
-        this.sprite = sprite;
+
+        if(sprite == null) {
+            this.sprite = Resources.Load<Sprite>("Sprites/LocationSprites/Default");
+        } else {
+            this.sprite = sprite;
+        }
     }
 
     // on click
