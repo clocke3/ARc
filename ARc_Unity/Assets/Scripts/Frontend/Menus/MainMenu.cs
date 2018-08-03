@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour {
     private string scanSceneName = "betterScan";
     private string searchSceneName = "SearchScene";
     private string tutorialSceneName = "Tutorials";
+    private string camScreen = "backgroundCam";
 
 	// init. menus
 	void Start () {
