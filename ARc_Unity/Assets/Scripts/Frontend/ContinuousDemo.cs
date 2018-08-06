@@ -48,8 +48,6 @@ public class ContinuousDemo : MonoBehaviour {
 	/// </summary>
 	private void StartScanner()
 	{
-        if (ScanManager.canScan)
-        {
             BarcodeScanner.Scan((barCodeType, barCodeValue) =>
             {
                 BarcodeScanner.Stop();
@@ -64,7 +62,6 @@ public class ContinuousDemo : MonoBehaviour {
                     Handheld.Vibrate();
                 #endif
             });
-        }
 	}
 
    
