@@ -377,6 +377,7 @@ public class DatabaseManager : MonoBehaviour
         d2role2.setDivision(d2div2);
         d2role3.setDivision(d2div3);
         d2role4.setDivision(d2div4);
+        d2role5.setDivision(d2div1);
 
 
         //  DEPARTMENT
