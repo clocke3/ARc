@@ -105,13 +105,9 @@ public class DatabaseManager : MonoBehaviour
 
         List<Sprite> d1employee2photos = new List<Sprite>();
         d1employee2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/DennisPhillips"));
-        d1employee2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/Fishing"));
 
         List<Sprite> d1employee3photos = new List<Sprite>();
         d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/MonicaCunanan"));
-        d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/ComicCon"));
-        d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/Gym"));
-        d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/Dogs"));
 
         List<Sprite> d1employee4photos = new List<Sprite>();
         d1employee4photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/ScottWray"));
@@ -130,11 +126,6 @@ public class DatabaseManager : MonoBehaviour
         //  MEDIAGALLERY FOR DEPARTMENT
         List<Sprite> department1photos = new List<Sprite>();
         department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/InformationTechnology"));
-        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/VennardWright"));
-        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/DennisPhillips"));
-        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/ScottWray"));
-        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/CharlenaLove"));
-        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/MonicaCunanan"));
 
         MediaGallery department1gallery = MediaGallery.CreateInstance(null, department1photos);
 
@@ -512,7 +503,7 @@ public class DatabaseManager : MonoBehaviour
         string d4desc = "General Services";
         Sprite d4Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
 
-        Department d4 = Department.CreateInstance("General Services", "d4", 
+        Department d4 = Department.CreateInstance("General Services Office", "d4", 
                                                   department4gallery, d4Location, d4desc, d4divList);
 
         department4gallery.setProfiable(d4);
@@ -620,6 +611,9 @@ public class DatabaseManager : MonoBehaviour
         List<Employee> d6role1employeesList = new List<Employee>();
         List<Employee> d6role2employeesList = new List<Employee>();
 
+        d6role1employeesList.Add(d6employee1);
+        d6role2employeesList.Add(d6employee2);
+
         Role d6role1 = Role.CreateInstance("Deputy GM for Operations", null, d6role1employeesList);
         Role d6role2 = Role.CreateInstance("General Manager/CEO", null, d6role2employeesList);
 
@@ -652,70 +646,6 @@ public class DatabaseManager : MonoBehaviour
         }
 
         departments.Add(d6);
-
-
-        // DEFAULT DEPARTMENT
-        //  MEDIAGALLERIES FOR EMPLOYEES
-        List<Sprite> dfemployee1photos = null;
-
-        MediaGallery dfemployee1gallery = MediaGallery.CreateInstance(null, dfemployee1photos);
-
-        //  MEDIAGALLERY FOR DEPARTMENT
-        List<Sprite> departmentfphotos = null;
-
-        MediaGallery departmentfgallery = MediaGallery.CreateInstance(null, departmentfphotos);
-
-
-        //  EMPLOYEE
-        string dfemployee1hobbies = null;
-
-        Sprite dfemployee1profilepic = null;
-
-        Sprite dfemployee1location = null;
-
-        Employee dfemployee1 = Employee.CreateInstance("Default Employee", "dfemployee1", dfemployee1gallery, dfemployee1location, null, dfemployee1hobbies, "default@wsscwater.com", dfemployee1profilepic);
-
-        employees.Add(dfemployee1);
-
-        dfemployee1gallery.setProfiable(dfemployee1);
-
-
-        //  ROLE
-        List<Employee> dfrole1employeesList = new List<Employee>();
-        dfrole1employeesList.Add(dfemployee1);
-
-        Role dfrole1 = Role.CreateInstance("Default Role", null, dfrole1employeesList);
-
-        dfemployee1.setRole(dfrole1);
-
-
-        //  DIVISION
-        List<Role> dfdiv1rolesList = new List<Role>();
-        dfdiv1rolesList.Add(dfrole1);
-
-        Division dfdiv1 = Division.CreateInstance("Default Division", null, dfdiv1rolesList);
-
-        dfrole1.setDivision(dfdiv1);
-
-
-        //  DEPARTMENT
-        List<Division> dfdivList = new List<Division>();
-        dfdivList.Add(dfdiv1);
-
-        string dfdesc = "Default Description";
-
-        Sprite dfLocation = Resources.Load<Sprite>("Sprites/LocationSprites/Default");
-
-        Department df = Department.CreateInstance("Default Department", "df", departmentfgallery, dfLocation, dfdesc, dfdivList);
-
-        departmentfgallery.setProfiable(df);
-
-        foreach (Division division in dfdivList)
-        {
-            division.setDepartment(df);
-        }
-
-        departments.Add(df);
 
     }
 
