@@ -93,7 +93,8 @@ public class DatabaseManager : MonoBehaviour
     }
 
     //bool hasMocked = false;
-    private void addMock() {
+    private void addMock()
+    {
         //if (hasMocked) return;
         //hasMocked = true;
 
@@ -113,6 +114,7 @@ public class DatabaseManager : MonoBehaviour
 
         List<Sprite> d1employee5photos = new List<Sprite>();
         d1employee5photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/CharlenaLove"));
+
 
         MediaGallery d1employee1gallery = MediaGallery.CreateInstance(null, d1employee1photos);
         MediaGallery d1employee2gallery = MediaGallery.CreateInstance(null, d1employee2photos);
@@ -258,12 +260,15 @@ public class DatabaseManager : MonoBehaviour
         List<Sprite> d2employee5photos = new List<Sprite>();
         d2employee5photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/NanaOlibris"));
 
+        List<Sprite> d2employee6photos = new List<Sprite>();
+        d2employee5photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/HumanResources"));
+
         MediaGallery d2employee1gallery = MediaGallery.CreateInstance(null, d2employee1photos);
         MediaGallery d2employee2gallery = MediaGallery.CreateInstance(null, d2employee2photos);
         MediaGallery d2employee3gallery = MediaGallery.CreateInstance(null, d2employee3photos);
         MediaGallery d2employee4gallery = MediaGallery.CreateInstance(null, d2employee4photos);
         MediaGallery d2employee5gallery = MediaGallery.CreateInstance(null, d2employee5photos);
-
+        MediaGallery d2employee6gallery = MediaGallery.CreateInstance(null, d2employee6photos);
 
         //  MEDIAGALLERY FOR DEPARTMENT
         List<Sprite> department2photos = new List<Sprite>();
@@ -278,36 +283,42 @@ public class DatabaseManager : MonoBehaviour
         string d2employee3hobbies = "Gardening and Biking";
         string d2employee4hobbies = "Reading";
         string d2employee5hobbies = "Soccer";
+        string d2employee6hobbies = "Cooking, Reading, Christmas, and Mystery Movies";
 
         Sprite d2employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/ChristinaGaskins");
         Sprite d2employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/JamesUhrich");
         Sprite d2employee3profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/LeeMcDonough");
         Sprite d2employee4profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/PamelaPalmer");
         Sprite d2employee5profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/NanaOlibris");
+        Sprite d2employee6profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/ChristinaRobinson");
 
         Sprite d2employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/ChristinaGaskins");
         Sprite d2employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/JamesUhrich");
         Sprite d2employee3location = Resources.Load<Sprite>("Sprites/LocationSprites/LeeMcDonough");
         Sprite d2employee4location = Resources.Load<Sprite>("Sprites/LocationSprites/PamelaPalmer");
         Sprite d2employee5location = Resources.Load<Sprite>("Sprites/LocationSprites/NanaOlibris");
+        Sprite d2employee6location = Resources.Load<Sprite>("Sprites/LocationSprites/ChristinaRobinson");
 
         Employee d2employee1 = Employee.CreateInstance("Christina Gaskins", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies, "ChristinaGaskins", d2employee1profilepic);
         Employee d2employee2 = Employee.CreateInstance("James Uhrich", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies, "JamesUhrich", d2employee2profilepic);
         Employee d2employee3 = Employee.CreateInstance("Lee McDonough", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies, "LeeMcDonough", d2employee3profilepic);
         Employee d2employee4 = Employee.CreateInstance("Pamela Palmer", "d2employee4", d2employee4gallery, d2employee4location, null, d2employee4hobbies, "PamelaPalmer", d2employee4profilepic);
         Employee d2employee5 = Employee.CreateInstance("Nana Olibris", "d2employee5", d2employee5gallery, d2employee5location, null, d2employee5hobbies, "PamelaPalmer", d2employee5profilepic);
+        Employee d2employee6 = Employee.CreateInstance("Christina Robinson", "d2employee6", d2employee6gallery, d2employee6location, null, d2employee6hobbies, "ChristinaRobinson", d2employee6profilepic);
 
         employees.Add(d2employee1);
         employees.Add(d2employee2);
         employees.Add(d2employee3);
         employees.Add(d2employee4);
         employees.Add(d2employee5);
+        employees.Add(d2employee6);
 
         d2employee1gallery.setProfiable(d2employee1);
         d2employee2gallery.setProfiable(d2employee2);
         d2employee3gallery.setProfiable(d2employee3);
         d2employee4gallery.setProfiable(d2employee4);
         d2employee5gallery.setProfiable(d2employee5);
+        d2employee6gallery.setProfiable(d2employee6);
 
 
         //  ROLES
@@ -324,21 +335,29 @@ public class DatabaseManager : MonoBehaviour
         List<Employee> d2role4employeesList = new List<Employee>();
         d2role4employeesList.Add(d2employee5);
 
+        List<Employee> d2role5employeesList = new List<Employee>();
+        d2role5employeesList.Add(d2employee6);
+
         Role d2role1 = Role.CreateInstance("Human Resource Coordinator", null, d2role1employeesList);
         Role d2role2 = Role.CreateInstance("Human Resource Specialist", null, d2role2employeesList);
         Role d2role3 = Role.CreateInstance("Benefits Specialist", null, d2role3employeesList);
         Role d2role4 = Role.CreateInstance("Human Resource Specialist", null, d2role4employeesList);
+        Role d2role5 = Role.CreateInstance("Division Manager", null, d2role5employeesList);
+
 
         d2employee1.setRole(d2role1);
         d2employee2.setRole(d2role2);
         d2employee3.setRole(d2role3);
         d2employee4.setRole(d2role2);
         d2employee5.setRole(d2role4);
+        d2employee6.setRole(d2role5);
+
 
 
         //  DIVISIONS
         List<Role> d2div1rolesList = new List<Role>();
         d2div1rolesList.Add(d2role1);
+        d2div1rolesList.Add(d2role5);
 
         List<Role> d2div2rolesList = new List<Role>();
         d2div2rolesList.Add(d2role2);
@@ -383,6 +402,247 @@ public class DatabaseManager : MonoBehaviour
         departments.Add(d2);
 
 
+
+
+
+        //Commissioners Office
+        List<Sprite> d3employee1photos = new List<Sprite>();
+        d3employee1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery d3employee1gallery = MediaGallery.CreateInstance(null, d3employee1photos);
+
+        string d3employee1hobbies = "Reading, Theater, Live Music, Pilates, and Socializing";
+
+        List<Sprite> department3photos = new List<Sprite>();
+        department3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery department3gallery = MediaGallery.CreateInstance(null, department3photos);
+
+        Sprite d3employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+
+        Sprite d3employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+
+        Employee d3employee1 = Employee.CreateInstance("Eloise Fisher", "d3employee1", d3employee1gallery, d3employee1location,
+                                                       null, d3employee1hobbies, "EloiseFisher", d3employee1profilepic);
+        employees.Add(d3employee1);
+
+        d3employee1gallery.setProfiable(d3employee1);
+
+        List<Employee> d3role1employeesList = new List<Employee>();
+        d3role1employeesList.Add(d3employee1);
+
+        Role d3role1 = Role.CreateInstance("Commissioner", null, d3role1employeesList);
+
+        d3employee1.setRole(d3role1);
+
+        List<Role> d3div1rolesList = new List<Role>();
+        d3div1rolesList.Add(d3role1);
+
+        Division d3div1 = Division.CreateInstance("Corporate Secretary's Office", null, d3div1rolesList);
+
+        d3role1.setDivision(d3div1);
+
+        List<Division> d3divList = new List<Division>();
+        d3divList.Add(d3div1);
+
+        string d3desc = "Commissioners' Office";
+    Sprite d3Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
+
+        Department d3 = Department.CreateInstance("Commissioners' Office", "d3", department3gallery, d3Location, d3desc, d3divList);
+
+        department3gallery.setProfiable(d3);
+
+        foreach (Division division in d3divList)
+        {
+            division.setDepartment(d3);
+        }
+
+        departments.Add(d3);
+
+        //General Services
+        List<Sprite> d4employee1photos = new List<Sprite>();
+        d4employee1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery d4employee1gallery = MediaGallery.CreateInstance(null, d4employee1photos);
+
+        string d4employee1hobbies = "Reading, Travel, and Good Eats";
+
+        List<Sprite> department4photos = new List<Sprite>();
+        department4photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery department4gallery = MediaGallery.CreateInstance(null, department4photos);
+
+        Sprite d4employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+
+        Sprite d4employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+
+        Employee d4employee1 = Employee.CreateInstance("Robert Hsu", "d4employee1", d4employee1gallery, 
+                                                       d4employee1location,
+                                                       null, d4employee1hobbies, "RobertHsu", d4employee1profilepic);
+        employees.Add(d4employee1);
+
+        d4employee1gallery.setProfiable(d4employee1);
+
+        List<Employee> d4role1employeesList = new List<Employee>();
+        d4role1employeesList.Add(d4employee1);
+
+        Role d4role1 = Role.CreateInstance("Business Development Manager", null, d4role1employeesList);
+
+        d4employee1.setRole(d4role1);
+
+        List<Role> d4div1rolesList = new List<Role>();
+        d4div1rolesList.Add(d4role1);
+
+        Division d4div1 = Division.CreateInstance("General Services", null, d4div1rolesList);
+
+        d4role1.setDivision(d4div1);
+
+        List<Division> d4divList = new List<Division>();
+        d4divList.Add(d4div1);
+
+        string d4desc = "General Services";
+        Sprite d4Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
+
+        Department d4 = Department.CreateInstance("General Services", "d4", 
+                                                  department4gallery, d4Location, d4desc, d4divList);
+
+        department4gallery.setProfiable(d4);
+
+        foreach (Division division in d4divList)
+        {
+            division.setDepartment(d4);
+        }
+
+        departments.Add(d4);
+
+        //Finance Office
+        List<Sprite> d5employee1photos = new List<Sprite>();
+        d5employee1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery d5employee1gallery = MediaGallery.CreateInstance(null, d5employee1photos);
+
+        string d5employee1hobbies = "Gardening, Exercise, Reading, Football, and Basketball";
+
+        List<Sprite> department5photos = new List<Sprite>();
+        department5photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery department5gallery = MediaGallery.CreateInstance(null, department5photos);
+
+        Sprite d5employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+
+        Sprite d5employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+
+        Employee d5employee1 = Employee.CreateInstance("Joe Beach", "d5employee1", d5employee1gallery,
+                                                       d5employee1location,
+                                                       null, d5employee1hobbies, "JoeBeach", d5employee1profilepic);
+        employees.Add(d5employee1);
+
+        d5employee1gallery.setProfiable(d5employee1);
+
+        List<Employee> d5role1employeesList = new List<Employee>();
+        d5role1employeesList.Add(d5employee1);
+
+        Role d5role1 = Role.CreateInstance("Chief Financial Officer", null, d5role1employeesList);
+
+        d5employee1.setRole(d5role1);
+
+        List<Role> d5div1rolesList = new List<Role>();
+        d5div1rolesList.Add(d5role1);
+
+        Division d5div1 = Division.CreateInstance("Department Head", null, d5div1rolesList);
+
+        d5role1.setDivision(d5div1);
+
+        List<Division> d5divList = new List<Division>();
+        d5divList.Add(d5div1);
+
+        string d5desc = "Department Head";
+        Sprite d5Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
+
+        Department d5 = Department.CreateInstance("Finance Office", "d5",
+                                                  department5gallery, d5Location, d5desc, d5divList);
+
+        department5gallery.setProfiable(d5);
+
+        foreach (Division division in d5divList)
+        {
+            division.setDepartment(d5);
+        }
+
+        departments.Add(d5);
+
+        //General Manager's Office
+        List<Sprite> d6employee1photos = new List<Sprite>();
+        List<Sprite> d6employee2photos = new List<Sprite>();
+
+        d6employee1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+        d6employee2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery d6employee1gallery = MediaGallery.CreateInstance(null, d6employee1photos);
+        MediaGallery d6employee2gallery = MediaGallery.CreateInstance(null, d6employee2photos);
+
+        string d6employee1hobbies = "Redskins, Capitals, Nats, and Concerts";
+        string d6employee2hobbies = "Reading, Dancing, Tea Parties, Playing Cards, and Scrapbooking";
+
+        List<Sprite> department6photos = new List<Sprite>();
+        department6photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/wssc"));
+
+        MediaGallery department6gallery = MediaGallery.CreateInstance(null, department6photos);
+
+        Sprite d6employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+        Sprite d6employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+
+        Sprite d6employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+        Sprite d6employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+
+        Employee d6employee1 = Employee.CreateInstance("Joe Mantua", "d6employee1", d6employee1gallery,
+                                                       d6employee1location,
+                                                       null, d6employee1hobbies, "JoeMantua", d6employee1profilepic);
+        Employee d6employee2 = Employee.CreateInstance("Carla Reid", "d6employee2", d6employee2gallery,
+                                                       d6employee2location,
+                                                      null, d6employee2hobbies, "CarlaReid", d6employee2profilepic);
+        
+        employees.Add(d6employee1);
+        employees.Add(d6employee2);
+
+        d6employee1gallery.setProfiable(d6employee1);
+        d6employee2gallery.setProfiable(d6employee2);
+
+        List<Employee> d6role1employeesList = new List<Employee>();
+        List<Employee> d6role2employeesList = new List<Employee>();
+
+        Role d6role1 = Role.CreateInstance("Deputy GM for Operations", null, d6role1employeesList);
+        Role d6role2 = Role.CreateInstance("General Manager/CEO", null, d6role2employeesList);
+
+        d6employee1.setRole(d6role1);
+        d6employee2.setRole(d6role2);
+
+        List<Role> d6div1rolesList = new List<Role>();
+        d6div1rolesList.Add(d6role1);
+        d6div1rolesList.Add(d6role2);
+
+        Division d6div1 = Division.CreateInstance("Department Head", null, d6div1rolesList);
+
+        d6role1.setDivision(d6div1);
+        d6role2.setDivision(d6div1);
+
+        List<Division> d6divList = new List<Division>();
+        d6divList.Add(d6div1);
+
+        string d6desc = "Department Head";
+        Sprite d6Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
+
+        Department d6 = Department.CreateInstance("General Manager's Office", "d6",
+                                                  department6gallery, d6Location, d6desc, d6divList);
+
+        department6gallery.setProfiable(d6);
+
+        foreach (Division division in d6divList)
+        {
+            division.setDepartment(d6);
+        }
+
+        departments.Add(d6);
 
     }
 
