@@ -1,34 +1,47 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MultiWebcamManager : MonoBehaviour {
+    private WebCamTexture camTexture;
+    private Texture defaultBackground;
 
-    public GameObject multiwebCamTexturePrefab;
+    public RawImage background;
+    public AspectRatioFitter fitter;
 
-    private string[] nameofCams;
-    private List<WebCamTexture> webCamTextures = new List<WebCamTexture>();
+    private void Start(){
+        defaultBackground = background.texture;
+        WebCamDevice[] devices = WebCamTexture.devices;
 
-    // Use this for initialization
-    void Start()
-    {
-        int numOfCams = WebCamTexture.devices.Length;
-        nameofCams = new string[numOfCams];
-
-        for (int i = 0; i < numOfCams; i++)
-        {
-
-            nameofCams[i] = WebCamTexture.devices[i].name;
-            GameObject go = Instantiate(multiwebCamTexturePrefab, new Vector3(i * 5, 0, 0), Quaternion.identity) as GameObject;
-
-            go.transform.parent = gameObject.transform;
-
-            WebCamTexture webCamTexture = new WebCamTexture();
-            webCamTexture.deviceName = nameofCams[i];
-            webCamTextures.Add(webCamTexture);
-
-            go.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = webCamTextures[i];
-            webCamTextures[i].Play();
-
+        if (devices.Length == 0){
+            Debug.Log("No camera found.");
+            return;
         }
-    }	
+
+        for (int i = 0; i < devices.Length; i++){
+            if (!devices[i].isFrontFacing){
+                camTexture = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
+            }
+        }
+
+        if (camTexture == null){
+            Debug.Log("Unable to find camera");
+            return;
+        }
+
+        camTexture.Play();
+        background.texture = camTexture;
+    }
+
+    private void Update(){
+        float ratio = (float)camTexture.width / (float)camTexture.height;
+        fitter.aspectRatio = ratio;
+
+        float scaleY = camTexture.videoVerticallyMirrored ? -1f : 1f;
+        background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
+
+        int orient = camTexture.videoRotationAngle;
+        background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
+    }
+    	
 }
