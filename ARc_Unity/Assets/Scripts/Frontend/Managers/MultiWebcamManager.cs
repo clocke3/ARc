@@ -7,8 +7,7 @@ public class MultiWebcamManager : MonoBehaviour {
     private Texture defaultBackground;
 
     public RawImage background;
-    public AspectRatioFitter fitter;
-
+ 
     private void Start(){
         defaultBackground = background.texture;
         WebCamDevice[] devices = WebCamTexture.devices;
@@ -34,9 +33,6 @@ public class MultiWebcamManager : MonoBehaviour {
     }
 
     private void Update(){
-        float ratio = (float)camTexture.width / (float)camTexture.height;
-        fitter.aspectRatio = ratio;
-
         float scaleY = camTexture.videoVerticallyMirrored ? -1f : 1f;
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
 

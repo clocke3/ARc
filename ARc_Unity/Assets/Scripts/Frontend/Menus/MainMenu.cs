@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour {
 
     // load scan scene
     public void openScan() {
+        Destroy(this.gameObject);
         SceneManager.LoadScene(scanSceneName);
     }
 
