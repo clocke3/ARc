@@ -158,11 +158,11 @@ public class DatabaseManager : MonoBehaviour
         Sprite d1employee4location = Resources.Load<Sprite>("Sprites/LocationSprites/ScottWray");
         Sprite d1employee5location = Resources.Load<Sprite>("Sprites/LocationSprites/CharlenaLove");
 
-        Employee d1employee1 = Employee.CreateInstance("Vennard Wright", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies, "VennardWright", d1employee1profilepic);
-        Employee d1employee2 = Employee.CreateInstance("Dennis Phillips", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies, "DennisPhillips", d1employee2profilepic);
-        Employee d1employee3 = Employee.CreateInstance("Monica Cunanan", "d1employee3", d1employee3gallery, d1employee3location, null, d1employee3hobbies, "MonicaCunanan", d1employee3profilepic);
-        Employee d1employee4 = Employee.CreateInstance("Scott Wray", "d1employee4", d1employee4gallery, d1employee4location, null, d1employee4hobbies, "ScottWray", d1employee4profilepic);
-        Employee d1employee5 = Employee.CreateInstance("Charlena Love", "d1employee5", d1employee5gallery, d1employee5location, null, d1employee5hobbies, "CharlenaLove", d1employee5profilepic);
+        Employee d1employee1 = Employee.CreateInstance("Vennard Wright", "d1employee1", d1employee1gallery, d1employee1location, null, d1employee1hobbies, "Vennard.Wright@wsscwater.com", d1employee1profilepic);
+        Employee d1employee2 = Employee.CreateInstance("Dennis Phillips", "d1employee2", d1employee2gallery, d1employee2location, null, d1employee2hobbies, "Dennis.Phillips@wsscwater.com", d1employee2profilepic);
+        Employee d1employee3 = Employee.CreateInstance("Monica Cunanan", "d1employee3", d1employee3gallery, d1employee3location, null, d1employee3hobbies, "Monica.Cunanan@wsscwater.com", d1employee3profilepic);
+        Employee d1employee4 = Employee.CreateInstance("Scott Wray", "d1employee4", d1employee4gallery, d1employee4location, null, d1employee4hobbies, "Scott.Wray@wsscwater.com", d1employee4profilepic);
+        Employee d1employee5 = Employee.CreateInstance("Charlena Love", "d1employee5", d1employee5gallery, d1employee5location, null, d1employee5hobbies, "Charlena.Love@wsscwater.com", d1employee5profilepic);
 
         employees.Add(d1employee1);
         employees.Add(d1employee2);
@@ -308,12 +308,12 @@ public class DatabaseManager : MonoBehaviour
         Sprite d2employee5location = Resources.Load<Sprite>("Sprites/LocationSprites/NanaOlibris");
         Sprite d2employee6location = Resources.Load<Sprite>("Sprites/LocationSprites/ChristinaRobinson");
 
-        Employee d2employee1 = Employee.CreateInstance("Christina Gaskins", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies, "ChristinaGaskins", d2employee1profilepic);
-        Employee d2employee2 = Employee.CreateInstance("James Uhrich", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies, "JamesUhrich", d2employee2profilepic);
-        Employee d2employee3 = Employee.CreateInstance("Lee McDonough", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies, "LeeMcDonough", d2employee3profilepic);
-        Employee d2employee4 = Employee.CreateInstance("Pamela Palmer", "d2employee4", d2employee4gallery, d2employee4location, null, d2employee4hobbies, "PamelaPalmer", d2employee4profilepic);
-        Employee d2employee5 = Employee.CreateInstance("Nana Olibris", "d2employee5", d2employee5gallery, d2employee5location, null, d2employee5hobbies, "PamelaPalmer", d2employee5profilepic);
-        Employee d2employee6 = Employee.CreateInstance("Christina Robinson", "d2employee6", d2employee6gallery, d2employee6location, null, d2employee6hobbies, "ChristinaRobinson", d2employee6profilepic);
+        Employee d2employee1 = Employee.CreateInstance("Christina Gaskins", "d2employee1", d2employee1gallery, d2employee1location, null, d2employee1hobbies, "Christina.Gaskins@wsscwater.com", d2employee1profilepic);
+        Employee d2employee2 = Employee.CreateInstance("James Uhrich", "d2employee2", d2employee2gallery, d2employee2location, null, d2employee2hobbies, "James.Uhrich@wsscwater.com", d2employee2profilepic);
+        Employee d2employee3 = Employee.CreateInstance("Lee McDonough", "d2employee3", d2employee3gallery, d2employee3location, null, d2employee3hobbies, "Lee.McDonough@wsscwater.com", d2employee3profilepic);
+        Employee d2employee4 = Employee.CreateInstance("Pamela Palmer", "d2employee4", d2employee4gallery, d2employee4location, null, d2employee4hobbies, "Pamela.Palmer@wsscwater.com", d2employee4profilepic);
+        Employee d2employee5 = Employee.CreateInstance("Nana Olibris", "d2employee5", d2employee5gallery, d2employee5location, null, d2employee5hobbies, "Nana.Olibris@wsscwater.com", d2employee5profilepic);
+        Employee d2employee6 = Employee.CreateInstance("Christina Robinson", "d2employee6", d2employee6gallery, d2employee6location, null, d2employee6hobbies, "Christina.Robinson@wsscwater.com", d2employee6profilepic);
 
         employees.Add(d2employee1);
         employees.Add(d2employee2);
