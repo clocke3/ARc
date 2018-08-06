@@ -420,7 +420,7 @@ public class DatabaseManager : MonoBehaviour
 
         Sprite d3employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/T.EloiseFoster");
 
-        Sprite d3employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+        Sprite d3employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/EloiseFoster");
 
         Employee d3employee1 = Employee.CreateInstance("T.Eloise Foster", "d3employee1", d3employee1gallery, d3employee1location,
                                                        null, d3employee1hobbies, "T.EloiseFoster", d3employee1profilepic);
@@ -474,7 +474,7 @@ public class DatabaseManager : MonoBehaviour
 
         Sprite d4employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/RobertHsu");
 
-        Sprite d4employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+        Sprite d4employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/RobertHsu");
 
         Employee d4employee1 = Employee.CreateInstance("Robert Hsu", "d4employee1", d4employee1gallery, 
                                                        d4employee1location,
@@ -530,7 +530,7 @@ public class DatabaseManager : MonoBehaviour
 
         Sprite d5employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/JoeBeach");
 
-        Sprite d5employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+        Sprite d5employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/JoeBeach");
 
         Employee d5employee1 = Employee.CreateInstance("Joe Beach", "d5employee1", d5employee1gallery,
                                                        d5employee1location,
@@ -592,8 +592,8 @@ public class DatabaseManager : MonoBehaviour
         Sprite d6employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/JoeMantua");
         Sprite d6employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/CarlaReid");
 
-        Sprite d6employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
-        Sprite d6employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
+        Sprite d6employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/JoeMantua");
+        Sprite d6employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/CarlaReid");
 
         Employee d6employee1 = Employee.CreateInstance("Joe Mantua", "d6employee1", d6employee1gallery,
                                                        d6employee1location,
