@@ -423,7 +423,7 @@ public class DatabaseManager : MonoBehaviour
         Sprite d3employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/EloiseFoster");
 
         Employee d3employee1 = Employee.CreateInstance("T.Eloise Foster", "d3employee1", d3employee1gallery, d3employee1location,
-                                                       null, d3employee1hobbies, "T.EloiseFoster", d3employee1profilepic);
+                                                       null, d3employee1hobbies, "Eloise.Foster@wsscwater.com", d3employee1profilepic);
         employees.Add(d3employee1);
 
         d3employee1gallery.setProfiable(d3employee1);
@@ -446,7 +446,7 @@ public class DatabaseManager : MonoBehaviour
         d3divList.Add(d3div1);
 
         string d3desc = "Commissioners' Office";
-    Sprite d3Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
+    Sprite d3Location = Resources.Load<Sprite>("Sprites/LocationSprites/Lobby");
 
         Department d3 = Department.CreateInstance("Commissioners' Office", "d3", department3gallery, d3Location, d3desc, d3divList);
 
@@ -478,7 +478,7 @@ public class DatabaseManager : MonoBehaviour
 
         Employee d4employee1 = Employee.CreateInstance("Robert Hsu", "d4employee1", d4employee1gallery, 
                                                        d4employee1location,
-                                                       null, d4employee1hobbies, "RobertHsu", d4employee1profilepic);
+                                                       null, d4employee1hobbies, "Robert.Hsu@wsscwater.com", d4employee1profilepic);
         employees.Add(d4employee1);
 
         d4employee1gallery.setProfiable(d4employee1);
@@ -501,7 +501,7 @@ public class DatabaseManager : MonoBehaviour
         d4divList.Add(d4div1);
 
         string d4desc = "General Services";
-        Sprite d4Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
+        Sprite d4Location = Resources.Load<Sprite>("Sprites/LocationSprites/8thFloor");
 
         Department d4 = Department.CreateInstance("General Services Office", "d4", 
                                                   department4gallery, d4Location, d4desc, d4divList);
@@ -534,7 +534,7 @@ public class DatabaseManager : MonoBehaviour
 
         Employee d5employee1 = Employee.CreateInstance("Joe Beach", "d5employee1", d5employee1gallery,
                                                        d5employee1location,
-                                                       null, d5employee1hobbies, "JoeBeach", d5employee1profilepic);
+                                                       null, d5employee1hobbies, "Joseph.Beach@wsscwater.com", d5employee1profilepic);
         employees.Add(d5employee1);
 
         d5employee1gallery.setProfiable(d5employee1);
@@ -557,7 +557,7 @@ public class DatabaseManager : MonoBehaviour
         d5divList.Add(d5div1);
 
         string d5desc = "Department Head";
-        Sprite d5Location = Resources.Load<Sprite>("Sprites/LocationSprites/12thFloor");
+        Sprite d5Location = Resources.Load<Sprite>("Sprites/LocationSprites/11thFloor");
 
         Department d5 = Department.CreateInstance("Finance Office", "d5",
                                                   department5gallery, d5Location, d5desc, d5divList);
@@ -597,10 +597,10 @@ public class DatabaseManager : MonoBehaviour
 
         Employee d6employee1 = Employee.CreateInstance("Joe Mantua", "d6employee1", d6employee1gallery,
                                                        d6employee1location,
-                                                       null, d6employee1hobbies, "JoeMantua", d6employee1profilepic);
+                                                       null, d6employee1hobbies, "Joe.Mantua@wsscwater.com", d6employee1profilepic);
         Employee d6employee2 = Employee.CreateInstance("Carla Reid", "d6employee2", d6employee2gallery,
                                                        d6employee2location,
-                                                      null, d6employee2hobbies, "CarlaReid", d6employee2profilepic);
+                                                       null, d6employee2hobbies, "Carla.Reid@wsscwater.com", d6employee2profilepic);
         
         employees.Add(d6employee1);
         employees.Add(d6employee2);
