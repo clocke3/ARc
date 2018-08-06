@@ -104,9 +104,13 @@ public class DatabaseManager : MonoBehaviour
 
         List<Sprite> d1employee2photos = new List<Sprite>();
         d1employee2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/DennisPhillips"));
+        d1employee2photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/Fishing"));
 
         List<Sprite> d1employee3photos = new List<Sprite>();
         d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/MonicaCunanan"));
+        d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/ComicCon"));
+        d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/Gym"));
+        d1employee3photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/Dogs"));
 
         List<Sprite> d1employee4photos = new List<Sprite>();
         d1employee4photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/ScottWray"));
@@ -124,6 +128,11 @@ public class DatabaseManager : MonoBehaviour
         //  MEDIAGALLERY FOR DEPARTMENT
         List<Sprite> department1photos = new List<Sprite>();
         department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/InformationTechnology"));
+        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/VennardWright"));
+        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/DennisPhillips"));
+        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/ScottWray"));
+        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/CharlenaLove"));
+        department1photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/MonicaCunanan"));
 
         MediaGallery department1gallery = MediaGallery.CreateInstance(null, department1photos);
 
