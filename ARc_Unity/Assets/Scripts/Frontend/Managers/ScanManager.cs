@@ -17,17 +17,9 @@ namespace BarcodeScanner.Scanner
     /// </summary>
     public class ScanManager : ItemManager{
 
-        public static bool canScan;
-
         public void displayProfile(string qrID) {
             currentCode = qrID;
-            canScan = false;
             displayCodeProfile();
-        }
-
-        private void OnEnable()
-        {
-            canScan = true;
         }
 
     }
