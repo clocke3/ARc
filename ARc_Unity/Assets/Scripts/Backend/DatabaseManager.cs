@@ -418,12 +418,12 @@ public class DatabaseManager : MonoBehaviour
 
         MediaGallery department3gallery = MediaGallery.CreateInstance(null, department3photos);
 
-        Sprite d3employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+        Sprite d3employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/T.EloiseFoster");
 
         Sprite d3employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
 
-        Employee d3employee1 = Employee.CreateInstance("Eloise Fisher", "d3employee1", d3employee1gallery, d3employee1location,
-                                                       null, d3employee1hobbies, "EloiseFisher", d3employee1profilepic);
+        Employee d3employee1 = Employee.CreateInstance("T.Eloise Foster", "d3employee1", d3employee1gallery, d3employee1location,
+                                                       null, d3employee1hobbies, "T.EloiseFoster", d3employee1profilepic);
         employees.Add(d3employee1);
 
         d3employee1gallery.setProfiable(d3employee1);
@@ -472,7 +472,7 @@ public class DatabaseManager : MonoBehaviour
 
         MediaGallery department4gallery = MediaGallery.CreateInstance(null, department4photos);
 
-        Sprite d4employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+        Sprite d4employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/RobertHsu");
 
         Sprite d4employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
 
@@ -528,7 +528,7 @@ public class DatabaseManager : MonoBehaviour
 
         MediaGallery department5gallery = MediaGallery.CreateInstance(null, department5photos);
 
-        Sprite d5employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+        Sprite d5employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/JoeBeach");
 
         Sprite d5employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
 
@@ -589,8 +589,8 @@ public class DatabaseManager : MonoBehaviour
 
         MediaGallery department6gallery = MediaGallery.CreateInstance(null, department6photos);
 
-        Sprite d6employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
-        Sprite d6employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/wssc");
+        Sprite d6employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/JoeMantua");
+        Sprite d6employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/CarlaReid");
 
         Sprite d6employee1location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
         Sprite d6employee2location = Resources.Load<Sprite>("Sprites/LocationSprites/wssc");
