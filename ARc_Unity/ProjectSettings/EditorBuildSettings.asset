@@ -21,9 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 990d54e4492f647748893dc0fa71e205
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/c1c6b6722f8854b4790e6eca5ef9f46f
+    path: Assets/Scenes/betterScan.unity
     guid: c1c6b6722f8854b4790e6eca5ef9f46f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SearchScene.unity
     guid: 496aa8fa26c2e41f4ba69b2f6e605c6d
   - enabled: 1
