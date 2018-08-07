@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour {
     // variables
     public QuitMenu quitMenu;
 
-    private string scanSceneName = "betterScan";
+    private string scanSceneName = "betterScan 1";
     private string searchSceneName = "SearchScene";
     private string tutorialSceneName = "Tutorials";
 
@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour {
 
     // load scan scene
     public void openScan() {
+        Destroy(this.gameObject);
         SceneManager.LoadScene(scanSceneName);
     }
 
