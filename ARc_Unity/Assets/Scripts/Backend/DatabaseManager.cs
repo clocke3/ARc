@@ -270,7 +270,8 @@ public class DatabaseManager : MonoBehaviour
         d2employee5photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/NanaOlibris"));
 
         List<Sprite> d2employee6photos = new List<Sprite>();
-        d2employee5photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/HumanResources"));
+        //d2employee5photos.Add(Resources.Load<Sprite>("Sprites/GallerySprites/HumanResources"));
+        d2employee5photos.Add(null);
 
         MediaGallery d2employee1gallery = MediaGallery.CreateInstance(null, d2employee1photos);
         MediaGallery d2employee2gallery = MediaGallery.CreateInstance(null, d2employee2photos);
@@ -292,7 +293,8 @@ public class DatabaseManager : MonoBehaviour
         string d2employee3hobbies = "Gardening and Biking";
         string d2employee4hobbies = "Reading";
         string d2employee5hobbies = "Soccer";
-        string d2employee6hobbies = "Cooking, Reading, Christmas, and Mystery Movies";
+        //string d2employee6hobbies = "Cooking, Reading, Christmas, and Mystery Movies";
+        string d2employee6hobbies = "";
 
         Sprite d2employee1profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/ChristinaGaskins");
         Sprite d2employee2profilepic = Resources.Load<Sprite>("Sprites/GallerySprites/JamesUhrich");
