@@ -264,6 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profileManager: {fileID: 114030080715222610}
+  scanCam: {fileID: 0}
+  rawImage: {fileID: 0}
 --- !u!114 &114399023870436882
 MonoBehaviour:
   m_ObjectHideFlags: 1
