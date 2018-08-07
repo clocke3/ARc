@@ -17,8 +17,19 @@ public class WebcamThing : MonoBehaviour {
 
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        webcamTexture.Stop();
+        if(webcamTexture != null) {
+            webcamTexture.Stop();
+        }
+        Debug.Log("Webcam Disabled");
+    }
+
+    private void OnEnable()
+    {
+        if(webcamTexture != null) {
+            webcamTexture.Play();
+        }
+        Debug.Log("Webcam Enabled");
     }
 }

@@ -43,9 +43,20 @@ public class ContinuousDemo : MonoBehaviour {
 		};
 	}
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        BarcodeScanner.Camera.Stop();
+        if(BarcodeScanner != null && BarcodeScanner.Camera != null) {
+            BarcodeScanner.Camera.Stop();
+        }
+        Debug.Log("Barcode Disabled");
+    }
+
+    private void OnEnable()
+    {
+        if(BarcodeScanner != null && BarcodeScanner.Camera != null) {
+            BarcodeScanner.Camera.Play();
+        }
+        Debug.Log("Barcode Enabled");
     }
 
     /// <summary>
