@@ -43,10 +43,15 @@ public class ContinuousDemo : MonoBehaviour {
 		};
 	}
 
-	/// <summary>
-	/// Start a scan and wait for the callback (wait 1s after a scan success to avoid scanning multiple time the same element)
-	/// </summary>
-	private void StartScanner()
+    private void OnDestroy()
+    {
+        BarcodeScanner.Camera.Stop();
+    }
+
+    /// <summary>
+    /// Start a scan and wait for the callback (wait 1s after a scan success to avoid scanning multiple time the same element)
+    /// </summary>
+    private void StartScanner()
 	{
             BarcodeScanner.Scan((barCodeType, barCodeValue) =>
             {

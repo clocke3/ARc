@@ -6,13 +6,21 @@ using UnityEngine.UI;
 public class WebcamThing : MonoBehaviour {
 
     public RawImage rawImage;
+    WebCamTexture webcamTexture;
 
     void Start()
     {
-        WebCamTexture webcamTexture = new WebCamTexture();
+        webcamTexture = new WebCamTexture();
         rawImage.texture = webcamTexture;
         rawImage.material.mainTexture = webcamTexture;
         webcamTexture.Play();
+        Debug.Log("Play");
 
+    }
+
+    private void OnDestroy()
+    {
+        webcamTexture.Stop();
+        Debug.Log("Stop");
     }
 }
