@@ -14,13 +14,11 @@ public class WebcamThing : MonoBehaviour {
         rawImage.texture = webcamTexture;
         rawImage.material.mainTexture = webcamTexture;
         webcamTexture.Play();
-        Debug.Log("Play");
 
     }
 
     private void OnDestroy()
     {
         webcamTexture.Stop();
-        Debug.Log("Stop");
     }
 }
