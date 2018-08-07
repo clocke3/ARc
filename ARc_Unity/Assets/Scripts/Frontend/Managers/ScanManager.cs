@@ -28,14 +28,22 @@ namespace BarcodeScanner.Scanner
 
         private void OnDisable()
         {
-            scanCam.gameObject.SetActive(false);
-            rawImage.gameObject.SetActive(true);
+            if(scanCam != null) {
+                scanCam.gameObject.SetActive(false);
+            }
+            if(rawImage != null) {
+                rawImage.gameObject.SetActive(true);   
+            }
         }
 
         private void OnEnable()
         {
-            rawImage.gameObject.SetActive(false);
-            scanCam.gameObject.SetActive(true);
+            if(rawImage != null) {
+                rawImage.gameObject.SetActive(false);   
+            }
+            if(scanCam != null) {
+                scanCam.gameObject.SetActive(true);   
+            }
         }
 
     }

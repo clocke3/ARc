@@ -22,7 +22,6 @@ public class WebcamThing : MonoBehaviour {
         if(webcamTexture != null) {
             webcamTexture.Stop();
         }
-        Debug.Log("Webcam Disabled");
     }
 
     private void OnEnable()
@@ -30,6 +29,5 @@ public class WebcamThing : MonoBehaviour {
         if(webcamTexture != null) {
             webcamTexture.Play();
         }
-        Debug.Log("Webcam Enabled");
     }
 }

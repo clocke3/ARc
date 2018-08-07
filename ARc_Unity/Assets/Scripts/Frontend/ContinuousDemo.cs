@@ -48,7 +48,6 @@ public class ContinuousDemo : MonoBehaviour {
         if(BarcodeScanner != null && BarcodeScanner.Camera != null) {
             BarcodeScanner.Camera.Stop();
         }
-        Debug.Log("Barcode Disabled");
     }
 
     private void OnEnable()
@@ -56,7 +55,6 @@ public class ContinuousDemo : MonoBehaviour {
         if(BarcodeScanner != null && BarcodeScanner.Camera != null) {
             BarcodeScanner.Camera.Play();
         }
-        Debug.Log("Barcode Enabled");
     }
 
     /// <summary>
