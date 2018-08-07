@@ -18,7 +18,7 @@ namespace BarcodeScanner.Scanner
     /// </summary>
     public class ScanManager : ItemManager{
         
-        public Camera scanCam;
+        public ContinuousDemo scanCam;
         public RawImage rawImage;
 
         public void displayProfile(string qrID) {
